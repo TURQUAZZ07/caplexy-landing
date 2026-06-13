@@ -1,0 +1,364 @@
+{
+  "meta": {
+    "title": "Caplexy | Learn English. Rise from Cadet to Admiral.",
+    "description": "Caplexy turns daily English practice into a naval career journey with missions, ranks, voyages, and rewards."
+  },
+  "nav": {
+    "howItWorks": "How it works",
+    "ranks": "Ranks",
+    "teachers": "Teachers",
+    "dashboard": "Dashboard",
+    "start": "Start"
+  },
+  "language": {
+    "label": "Interface language",
+    "nativeName": "English"
+  },
+  "hero": {
+    "eyebrow": "English practice disguised as a naval career",
+    "headline": "Learn English. Rise from Cadet to Admiral.",
+    "subheadline": "Caplexy turns daily English practice into a naval career journey with missions, ranks, voyages, and rewards.",
+    "primaryCta": "Start Your Voyage",
+    "secondaryCta": "See How It Works",
+    "badges": ["Daily voyages", "250 micro-ranks", "No flashcards"],
+    "stats": [
+      ["Current rank", "Deck Cadet 08"],
+      ["Active route", "Harbor to Open Sea"],
+      ["Today", "Watch Duty ready"],
+      ["Next unlock", "Radio Check"]
+    ]
+  },
+  "problem": {
+    "label": "The problem",
+    "headline": "Most learners quit because English apps feel like homework.",
+    "cards": [
+      ["Grammar first", "Learners see units, rules, and tests before they feel progress."],
+      ["Weak habit loop", "A simple counter alone is not enough to make practice feel meaningful."],
+      ["Flat identity", "Finishing another exercise rarely feels like becoming someone better."]
+    ]
+  },
+  "solution": {
+    "label": "The Caplexy solution",
+    "headline": "Build the habit through voyages, missions, ranks, and promotions.",
+    "body": "Caplexy keeps the learning engine underneath and gives learners a career journey on the surface. English practice becomes something to report for, complete, unlock, and remember.",
+    "features": [
+      ["Daily Watch Duty", "A short daily routine that keeps learners moving without making the app feel like homework."],
+      ["Voyage Log", "A motivating record of progress that replaces daily pressure with visible career momentum."],
+      ["Rank Promotions", "Learners rise through 250 micro-ranks and 10 major ranks from Cadet to Admiral."],
+      ["Missions", "Vocabulary, grammar, listening, reading, and speaking become cargo checks, radio calls, and ship logs."],
+      ["Ships and Ports", "New routes, ports, and ships make progress feel like a career journey, not a lesson list."]
+    ]
+  },
+  "how": {
+    "label": "How it works",
+    "headline": "A simple daily route with a deeper learning engine underneath.",
+    "progressLabel": "Daily progress",
+    "progressValue": "68% to next promotion",
+    "steps": [
+      "Complete daily missions",
+      "Earn XP and progress",
+      "Unlock new ranks",
+      "Learn English without feeling like grammar study"
+    ]
+  },
+  "preview": {
+    "label": "Product preview",
+    "headline": "A learning dashboard that feels like mission control.",
+    "body": "The first product screens can showcase the Bridge dashboard, Voyage Mode, rank progress, and teacher view while the platform is still in development.",
+    "dashboard": "Bridge Dashboard",
+    "badge": "Preview",
+    "cards": ["Voyage Mode", "Teacher Panel"]
+  },
+  "ranks": {
+    "label": "Rank system",
+    "headline": "Career progression from Cadet to Admiral.",
+    "body": "Caplexy uses 10 major ranks and 250 micro-ranks so every small session still feels like part of a larger career path.",
+    "rankPrefix": "Rank",
+    "items": [
+      "Cadet",
+      "Deck Cadet",
+      "Able Seaman",
+      "Boatswain",
+      "Third Officer",
+      "Second Officer",
+      "Chief Officer",
+      "Captain",
+      "Commodore",
+      "Admiral"
+    ]
+  },
+  "hiddenLearning": {
+    "label": "Hidden learning system",
+    "headline": "Learners see the journey. Caplexy handles the curriculum.",
+    "userSees": "User sees",
+    "systemTeaches": "System teaches",
+    "visible": ["Voyages", "Missions", "Ranks", "Ships", "Ports"],
+    "hidden": ["English vocabulary", "English grammar", "English listening", "English reading", "English speaking"],
+    "philosophyTitle": "Interface language and learning language are separate.",
+    "philosophyBody": "A Turkish learner can use interface labels like Görevler, Rütbeler, and Seferler while the learning content remains English vocabulary, grammar, listening, reading, and speaking.",
+    "games": [
+      ["Cargo Match", "Vocabulary appears as cargo, labels, manifests, and port requests."],
+      ["Fix The Ship Log", "Grammar correction becomes a log repair before departure."],
+      ["Radio Check", "Listening and speaking become realistic maritime communication."]
+    ]
+  },
+  "teacher": {
+    "label": "Teacher mode",
+    "headline": "Built for future classrooms, tutors, and school programs.",
+    "body": "Teachers will be able to create classes, assign missions, monitor hidden skill progress, and see which learners need support without breaking the learner-facing naval career fantasy.",
+    "panelTitle": "Class Mission Control",
+    "badge": "Future",
+    "cards": [
+      ["Create classes", "Invite learners and organize cohorts."],
+      ["Assign missions", "Choose skill targets under themed activities."],
+      ["Track progress", "View vocabulary, grammar, listening, reading, and speaking growth."]
+    ]
+  },
+  "finalCta": {
+    "headline": "Your English journey starts with your first voyage.",
+    "body": "Start with one mission, build the habit, and turn daily English practice into visible career progress.",
+    "button": "Start Your Voyage"
+  },
+  "footer": {
+    "tagline": "A global English learning platform where interface language adapts to the learner while English remains the learning destination.",
+    "links": ["Missions", "Voyages", "Ranks", "Teacher Mode"]
+  },
+  "dashboard": {
+    "nav": {
+      "bridge": "Bridge",
+      "missions": "Missions",
+      "dailyVoyage": "Daily Voyage",
+      "voyageLog": "Voyage Log",
+      "career": "Career",
+      "careerPath": "Career Path",
+      "backHome": "Home"
+    },
+    "welcome": {
+      "eyebrow": "Learner Bridge",
+      "title": "Welcome back, {rank}!",
+      "subtitle": "You are progressing toward your next rank.",
+      "currentRank": "Current rank",
+      "currentRankValue": "Cadet I",
+      "nextRank": "Next rank",
+      "nextRankValue": "Cadet II",
+      "xp": "XP",
+      "xpValue": "1250",
+      "progress": "65%",
+      "progressLabel": "Micro-rank progress",
+      "majorGroup": "Major rank group",
+      "rankNumber": "Rank {rank} / 250",
+      "resetProgress": "Reset Progress"
+    },
+    "dailyVoyage": {
+      "title": "Daily Voyage",
+      "description": "Complete today's missions and keep your voyage alive.",
+      "button": "Start Voyage",
+      "reward": "100 XP possible",
+      "progress": "{completed}/{total} completed",
+      "completed": "Today's voyage completed."
+    },
+    "voyageLog": {
+      "title": "Voyage Log",
+      "headline": "Keep your voyage alive.",
+      "body": "Complete every Daily Voyage to extend your active voyage and move toward maritime milestones.",
+      "current": "Current Voyage",
+      "longest": "Longest Voyage",
+      "nextMilestone": "Next Milestone",
+      "days": "{days} Days",
+      "viewLog": "Open Voyage Log"
+    },
+    "watchDuty": {
+      "title": "Daily Watch Duty",
+      "subtitle": "Complete each checkpoint before departure.",
+      "tasks": ["Vocabulary Mission", "Grammar Mission", "Listening Mission", "Quick Review"]
+    },
+    "stats": {
+      "totalXp": "Total XP",
+      "voyageLog": "Voyage Log",
+      "missionsCompleted": "Missions Completed",
+      "currentCrew": "Crew Members",
+      "days": "{days} days"
+    },
+    "missions": {
+      "title": "Mission Deck",
+      "subtitle": "Choose a mission and keep your naval career moving.",
+      "start": "Start",
+      "completedToday": "Completed today",
+      "difficulty": "Difficulty",
+      "xp": "XP",
+      "items": [
+        ["Cargo Match", "Match cargo labels to build English vocabulary.", "Easy", "+20 XP"],
+        ["Ship Log Repair", "Repair official ship records before the voyage continues.", "Easy", "+25 XP"],
+        ["Radio Check", "Listen to the transmission and answer like a crew member.", "Medium", "+25 XP"],
+        ["Harbor Quiz", "Review port instructions with a quick mixed challenge.", "Easy", "+15 XP"]
+      ]
+    },
+    "rankPath": {
+      "title": "Rank Path",
+      "subtitle": "Your nearby route through the 250 micro-rank career path.",
+      "current": "Current",
+      "completed": "Completed",
+      "locked": "Locked",
+      "viewFull": "View Full Career Path"
+    }
+  },
+  "cargoMatch": {
+    "nav": {
+      "back": "Back to Dashboard"
+    },
+    "title": "Cargo Match",
+    "subtitle": "Match the cargo with the correct meanings.",
+    "englishColumn": "English cargo",
+    "turkishColumn": "Turkish meanings",
+    "progress": "Matched cargo: {matched}/{total}",
+    "reward": "+25 XP",
+    "reset": "Reset mission",
+    "feedbackCorrect": "Cargo matched.",
+    "feedbackWrong": "Not quite. Try another meaning.",
+    "selectPrompt": "Select one English word and one Turkish meaning.",
+    "completedTitle": "Voyage completed!",
+    "completedMission": "You successfully completed the Cargo Match mission.",
+    "completedReward": "You earned +25 XP.",
+    "rankProgress": "You are closer to Cadet II.",
+    "rankProgressLabel": "Cadet I to Cadet II",
+    "rankProgressBefore": "65%",
+    "rankProgressAfter": "69%",
+    "returnDashboard": "Return to Dashboard",
+    "playAgain": "Play Again",
+    "nextMission": "Next Mission"
+  },
+  "radioCheck": {
+    "nav": {
+      "back": "Back to Dashboard"
+    },
+    "title": "Radio Check",
+    "subtitle": "Listen carefully to the radio transmission.",
+    "reward": "+25 XP",
+    "progress": "Question {current}/{total}",
+    "panelTitle": "Radio Receiver",
+    "incoming": "Incoming transmission",
+    "channel": "Bridge channel 07",
+    "playAudio": "Play Audio",
+    "reset": "Reset mission",
+    "optionsTitle": "Identify the transmission",
+    "optionsSubtitle": "Choose the sentence you heard over the radio.",
+    "feedback": {
+      "idle": "Listen to the transmission.",
+      "correct": "Correct transmission received.",
+      "wrong": "Transmission unclear. Try again."
+    },
+    "completedTitle": "Mission Completed",
+    "completedBody": "Radio Check mission completed successfully.",
+    "completedReward": "You Earned +25 XP",
+    "returnDashboard": "Return to Dashboard",
+    "playAgain": "Play Again"
+  },
+  "shipLogRepair": {
+    "nav": {
+      "back": "Back to Dashboard"
+    },
+    "title": "Ship Log Repair",
+    "subtitle": "Repair the records in the ship's log.",
+    "reward": "+25 XP",
+    "progress": "Record {current}/{total}",
+    "percentage": "{percent}% complete",
+    "logEntry": "Log Entry",
+    "damagedRecord": "Damaged record",
+    "officialRecord": "Official record",
+    "repairOptions": "Repair options",
+    "repairInstruction": "Select the corrected record before the voyage continues.",
+    "reset": "Reset mission",
+    "feedback": {
+      "idle": "Inspect the ship record.",
+      "correct": "Record repaired.",
+      "wrong": "Record still contains errors."
+    },
+    "topics": {
+      "present-simple": "Present Simple",
+      "present-continuous": "Present Continuous",
+      "to-be": "To Be",
+      "subject-verb-agreement": "Subject-verb agreement"
+    },
+    "completedTitle": "Ship Log Repaired",
+    "completedBody": "All records have been repaired successfully.",
+    "completedReward": "You earned +25 XP.",
+    "returnDashboard": "Return to Dashboard",
+    "playAgain": "Repair Again"
+  },
+  "dailyVoyagePage": {
+    "title": "Daily Voyage",
+    "subtitle": "Complete today's missions and move closer to your next rank.",
+    "reward": "100 XP possible today",
+    "backDashboard": "Back to Dashboard",
+    "progress": "{completed}/{total} completed",
+    "totalXp": "Total XP",
+    "earnedToday": "Earned today",
+    "xpToday": "{xp} XP",
+    "voyageLog": "Voyage Log",
+    "missionListTitle": "Today's route",
+    "missionListSubtitle": "Complete every mission to finish the voyage and claim the bonus.",
+    "completedStatus": "Today's voyage completed.",
+    "completed": "Completed",
+    "startMission": "Start Mission",
+    "types": {
+      "vocabulary": "Vocabulary",
+      "listening": "Listening",
+      "grammar": "Grammar"
+    },
+    "rankTitle": "Rank progress",
+    "rankRoute": "{current} to {next}",
+    "rankBody": "Every completed mission moves you closer to your next micro-rank.",
+    "bonusLockedTitle": "Bonus XP awaiting clearance",
+    "bonusLockedBody": "Complete all three missions to earn the daily voyage bonus.",
+    "completedTitle": "Voyage completed!",
+    "completedBody": "You finished all missions for today.",
+    "completedReward": "You earned +25 bonus XP.",
+    "tomorrow": "A new voyage awaits you tomorrow."
+  },
+  "voyageLog": {
+    "eyebrow": "Maritime habit record",
+    "title": "Voyage Log",
+    "subtitle": "Return each day, complete your voyage, and keep your career momentum alive.",
+    "backDashboard": "Back to Dashboard",
+    "current": "Current Voyage",
+    "longest": "Longest Voyage",
+    "nextMilestone": "Next Milestone",
+    "days": "{days} Days",
+    "statusTitle": "Today's completion",
+    "dailyComplete": "Today's voyage is complete. Your log is safe until tomorrow.",
+    "dailyOpen": "Today's voyage is still open. Complete all missions to keep it alive.",
+    "dailyProgress": "{completed}/{total} missions complete",
+    "keepAlive": "Complete today's voyage to keep moving toward the next milestone.",
+    "milestoneTitle": "Milestone rewards",
+    "milestoneBody": "Milestones reward long voyages with XP and title badges. Badge artwork can be added later.",
+    "completedDates": "Completed dates",
+    "completedDatesBody": "Every completed Daily Voyage is recorded in your logbook.",
+    "noCompletedDates": "No completed voyage dates yet.",
+    "milestones": {
+      "xp50": "+50 XP",
+      "steadySailor": "Badge: Steady Sailor",
+      "reliableCrewmate": "Badge: Reliable Crewmate",
+      "oceanRegular": "Badge: Ocean Regular",
+      "longVoyage": "Badge: Long Voyage",
+      "legendaryVoyage": "Badge: Legendary Voyage"
+    }
+  },
+  "fixShipLog": {
+    "title": "Fix the Ship Log",
+    "message": "This mission is coming soon.",
+    "returnDashboard": "Return to Dashboard"
+  },
+  "career": {
+    "title": "Caplexy Career Path",
+    "subtitle": "250 micro-ranks across 50 maritime career groups.",
+    "currentXp": "Current XP",
+    "currentRank": "Current rank",
+    "progress": "Progress to next micro-rank",
+    "backDashboard": "Return to Dashboard",
+    "xpRequired": "{xp} XP",
+    "rankNumber": "Rank {rank} / 250",
+    "completed": "Completed",
+    "current": "Current",
+    "locked": "Locked"
+  }
+}

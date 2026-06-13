@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "title": "Caplexy | Aprenda inglês. Suba de Cadete a Almirante.",
+    "description": "Caplexy transforma a prática diária de inglês em uma carreira naval com missões, patentes, viagens e recompensas."
+  },
+  "nav": {
+    "howItWorks": "Como funciona",
+    "ranks": "Patentes",
+    "teachers": "Professores",
+    "start": "Começar"
+  },
+  "language": {
+    "label": "Idioma da interface",
+    "nativeName": "Português"
+  },
+  "hero": {
+    "eyebrow": "Prática de inglês disfarçada de carreira naval",
+    "headline": "Aprenda inglês. Suba de Cadete a Almirante.",
+    "subheadline": "Caplexy transforma a prática diária de inglês em uma carreira naval com missões, patentes, viagens e recompensas.",
+    "primaryCta": "Inicie sua viagem",
+    "secondaryCta": "Ver como funciona",
+    "badges": ["Viagens diárias", "250 micro-patentes", "Sem flashcards"],
+    "stats": [
+      ["Patente atual", "Cadete de Convés 08"],
+      ["Rota ativa", "Do porto ao mar aberto"],
+      ["Hoje", "Guarda diária pronta"],
+      ["Próximo desbloqueio", "Radio Check"]
+    ]
+  },
+  "problem": {
+    "label": "O problema",
+    "headline": "Muitos alunos desistem porque apps de inglês parecem tarefa.",
+    "cards": [
+      ["Gramática primeiro", "Alunos veem unidades, regras e testes antes de sentir progresso."],
+      ["Hábito fraco", "Uma sequência sozinha não basta para tornar a prática significativa."],
+      ["Identidade sem evolução", "Terminar mais um exercício raramente parece virar alguém melhor."]
+    ]
+  },
+  "solution": {
+    "label": "A solução Caplexy",
+    "headline": "Crie o hábito com viagens, missões, patentes e promoções.",
+    "body": "Caplexy mantém o motor de aprendizagem por baixo e dá aos alunos uma jornada de carreira na superfície. Praticar inglês vira algo para relatar, completar, desbloquear e lembrar.",
+    "features": [
+      ["Daily Watch Duty", "Uma rotina diária curta que mantém o aluno avançando sem parecer tarefa."],
+      ["Voyage Log", "Um registro motivador que troca a pressão de sequência por progresso de carreira visível."],
+      ["Promoções de patente", "Alunos avançam por 250 micro-patentes e 10 patentes principais de Cadete a Almirante."],
+      ["Missões", "Vocabulário, gramática, escuta, leitura e fala viram cargas, chamadas de rádio e diários de bordo."],
+      ["Navios e portos", "Novas rotas, portos e navios fazem o progresso parecer uma carreira, não uma lista de aulas."]
+    ]
+  },
+  "how": {
+    "label": "Como funciona",
+    "headline": "Uma rota diária simples com um motor de aprendizagem mais profundo por baixo.",
+    "progressLabel": "Progresso diário",
+    "progressValue": "68% para a próxima promoção",
+    "steps": [
+      "Complete missões diárias",
+      "Ganhe XP e avance",
+      "Desbloqueie novas patentes",
+      "Aprenda inglês sem sentir que está estudando gramática"
+    ]
+  },
+  "preview": {
+    "label": "Prévia do produto",
+    "headline": "Um painel de aprendizagem com sensação de controle de missão.",
+    "body": "As primeiras telas podem mostrar o painel Bridge, Voyage Mode, progresso de patente e visão do professor enquanto a plataforma ainda está em desenvolvimento.",
+    "dashboard": "Painel Bridge",
+    "badge": "Prévia",
+    "cards": ["Voyage Mode", "Painel do professor"]
+  },
+  "ranks": {
+    "label": "Sistema de patentes",
+    "headline": "Progressão de carreira de Cadete a Almirante.",
+    "body": "Caplexy usa 10 patentes principais e 250 micro-patentes para que cada sessão curta pareça parte de uma carreira maior.",
+    "rankPrefix": "Patente",
+    "items": ["Cadete", "Cadete de Convés", "Marinheiro", "Contramestre", "Terceiro Oficial", "Segundo Oficial", "Imediato", "Capitão", "Comodoro", "Almirante"]
+  },
+  "hiddenLearning": {
+    "label": "Sistema de aprendizagem oculto",
+    "headline": "O aluno vê a jornada. Caplexy cuida do currículo.",
+    "userSees": "O usuário vê",
+    "systemTeaches": "O sistema ensina",
+    "visible": ["Viagens", "Missões", "Patentes", "Navios", "Portos"],
+    "hidden": ["Vocabulário em inglês", "Gramática em inglês", "Escuta em inglês", "Leitura em inglês", "Fala em inglês"],
+    "philosophyTitle": "Idioma da interface e idioma de aprendizagem são conceitos separados.",
+    "philosophyBody": "Um aluno brasileiro pode ver Missões, Patentes e Viagens na interface enquanto o conteúdo de aprendizagem continua sendo vocabulário, gramática, escuta, leitura e fala em inglês.",
+    "games": [
+      ["Cargo Match", "Vocabulário aparece como carga, etiquetas, manifestos e pedidos do porto."],
+      ["Fix The Ship Log", "Correção gramatical vira reparo no diário de bordo antes da partida."],
+      ["Radio Check", "Escuta e fala viram comunicação marítima realista."]
+    ]
+  },
+  "teacher": {
+    "label": "Modo professor",
+    "headline": "Preparado para futuras salas de aula, tutores e programas escolares.",
+    "body": "Professores poderão criar turmas, atribuir missões, monitorar habilidades ocultas e ver quem precisa de apoio sem quebrar a fantasia de carreira naval do aluno.",
+    "panelTitle": "Controle de Missões da Turma",
+    "badge": "Futuro",
+    "cards": [
+      ["Criar turmas", "Convide alunos e organize grupos."],
+      ["Atribuir missões", "Escolha objetivos de habilidade em atividades temáticas."],
+      ["Acompanhar progresso", "Veja crescimento em vocabulário, gramática, escuta, leitura e fala."]
+    ]
+  },
+  "finalCta": {
+    "headline": "Sua jornada em inglês começa com sua primeira viagem.",
+    "body": "Comece com uma missão, crie o hábito e transforme a prática diária de inglês em progresso visível.",
+    "button": "Inicie sua viagem"
+  },
+  "footer": {
+    "tagline": "Uma plataforma global de inglês onde a interface se adapta ao aluno enquanto o inglês continua sendo o destino de aprendizagem.",
+    "links": ["Missões", "Viagens", "Patentes", "Modo professor"]
+  }
+}

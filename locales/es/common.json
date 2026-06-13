@@ -1,0 +1,114 @@
+{
+  "meta": {
+    "title": "Caplexy | Aprende inglés. Asciende de Cadete a Almirante.",
+    "description": "Caplexy convierte la práctica diaria de inglés en una carrera naval con misiones, rangos, viajes y recompensas."
+  },
+  "nav": {
+    "howItWorks": "Cómo funciona",
+    "ranks": "Rangos",
+    "teachers": "Docentes",
+    "start": "Comenzar"
+  },
+  "language": {
+    "label": "Idioma de interfaz",
+    "nativeName": "Español"
+  },
+  "hero": {
+    "eyebrow": "Práctica de inglés disfrazada de carrera naval",
+    "headline": "Aprende inglés. Asciende de Cadete a Almirante.",
+    "subheadline": "Caplexy convierte la práctica diaria de inglés en una carrera naval con misiones, rangos, viajes y recompensas.",
+    "primaryCta": "Inicia tu viaje",
+    "secondaryCta": "Ver cómo funciona",
+    "badges": ["Viajes diarios", "250 micro-rangos", "Sin flashcards"],
+    "stats": [
+      ["Rango actual", "Cadete de Cubierta 08"],
+      ["Ruta activa", "Del puerto al mar abierto"],
+      ["Hoy", "Guardia diaria lista"],
+      ["Próximo desbloqueo", "Radio Check"]
+    ]
+  },
+  "problem": {
+    "label": "El problema",
+    "headline": "Muchos estudiantes abandonan porque las apps de inglés se sienten como tarea.",
+    "cards": [
+      ["Primero gramática", "Los estudiantes ven unidades, reglas y pruebas antes de sentir progreso."],
+      ["Hábito débil", "Una racha por sí sola no basta para que la práctica se sienta significativa."],
+      ["Identidad plana", "Terminar otro ejercicio rara vez se siente como convertirse en alguien mejor."]
+    ]
+  },
+  "solution": {
+    "label": "La solución Caplexy",
+    "headline": "Construye el hábito con viajes, misiones, rangos y ascensos.",
+    "body": "Caplexy mantiene el motor de aprendizaje debajo y ofrece una carrera visible en la superficie. Practicar inglés se convierte en algo que reportar, completar, desbloquear y recordar.",
+    "features": [
+      ["Daily Watch Duty", "Una rutina diaria corta que mantiene a los estudiantes avanzando sin sentirse como tarea."],
+      ["Voyage Log", "Un registro motivador que reemplaza la presión de las rachas con impulso de carrera visible."],
+      ["Ascensos de rango", "Los estudiantes avanzan por 250 micro-rangos y 10 rangos principales de Cadete a Almirante."],
+      ["Misiones", "Vocabulario, gramática, escucha, lectura y habla se convierten en carga, radio y bitácoras."],
+      ["Barcos y puertos", "Nuevas rutas, puertos y barcos hacen que avanzar se sienta como una carrera, no como una lista de lecciones."]
+    ]
+  },
+  "how": {
+    "label": "Cómo funciona",
+    "headline": "Una ruta diaria sencilla con un motor de aprendizaje más profundo debajo.",
+    "progressLabel": "Progreso diario",
+    "progressValue": "68% para el próximo ascenso",
+    "steps": [
+      "Completa misiones diarias",
+      "Gana XP y avanza",
+      "Desbloquea nuevos rangos",
+      "Aprende inglés sin sentir que estudias gramática"
+    ]
+  },
+  "preview": {
+    "label": "Vista previa",
+    "headline": "Un panel de aprendizaje que se siente como control de misión.",
+    "body": "Las primeras pantallas pueden mostrar el panel Bridge, Voyage Mode, progreso de rango y vista docente mientras la plataforma sigue en desarrollo.",
+    "dashboard": "Panel Bridge",
+    "badge": "Vista previa",
+    "cards": ["Voyage Mode", "Panel docente"]
+  },
+  "ranks": {
+    "label": "Sistema de rangos",
+    "headline": "Progresión de carrera de Cadete a Almirante.",
+    "body": "Caplexy usa 10 rangos principales y 250 micro-rangos para que cada sesión breve se sienta parte de una carrera mayor.",
+    "rankPrefix": "Rango",
+    "items": ["Cadete", "Cadete de Cubierta", "Marinero de Primera", "Contramaestre", "Tercer Oficial", "Segundo Oficial", "Primer Oficial", "Capitán", "Comodoro", "Almirante"]
+  },
+  "hiddenLearning": {
+    "label": "Sistema de aprendizaje oculto",
+    "headline": "El estudiante ve el viaje. Caplexy gestiona el currículo.",
+    "userSees": "El usuario ve",
+    "systemTeaches": "El sistema enseña",
+    "visible": ["Viajes", "Misiones", "Rangos", "Barcos", "Puertos"],
+    "hidden": ["Vocabulario en inglés", "Gramática en inglés", "Escucha en inglés", "Lectura en inglés", "Habla en inglés"],
+    "philosophyTitle": "El idioma de interfaz y el idioma de aprendizaje son conceptos separados.",
+    "philosophyBody": "Un estudiante hispanohablante puede ver Misiones, Rangos y Viajes en la interfaz mientras el contenido de aprendizaje sigue siendo vocabulario, gramática, escucha, lectura y habla en inglés.",
+    "games": [
+      ["Cargo Match", "El vocabulario aparece como carga, etiquetas, manifiestos y solicitudes de puerto."],
+      ["Fix The Ship Log", "La corrección gramatical se convierte en reparar la bitácora antes de zarpar."],
+      ["Radio Check", "La escucha y el habla se convierten en comunicación marítima realista."]
+    ]
+  },
+  "teacher": {
+    "label": "Modo docente",
+    "headline": "Preparado para futuras aulas, tutores y programas escolares.",
+    "body": "Los docentes podrán crear clases, asignar misiones, monitorear habilidades ocultas y ver quién necesita apoyo sin romper la fantasía de carrera naval del estudiante.",
+    "panelTitle": "Control de Misiones de Clase",
+    "badge": "Futuro",
+    "cards": [
+      ["Crear clases", "Invita estudiantes y organiza grupos."],
+      ["Asignar misiones", "Elige objetivos de habilidad dentro de actividades temáticas."],
+      ["Seguir progreso", "Consulta crecimiento en vocabulario, gramática, escucha, lectura y habla."]
+    ]
+  },
+  "finalCta": {
+    "headline": "Tu viaje de inglés comienza con tu primera travesía.",
+    "body": "Empieza con una misión, construye el hábito y convierte la práctica diaria de inglés en progreso visible.",
+    "button": "Inicia tu viaje"
+  },
+  "footer": {
+    "tagline": "Una plataforma global de inglés donde la interfaz se adapta al estudiante mientras el inglés sigue siendo el destino de aprendizaje.",
+    "links": ["Misiones", "Viajes", "Rangos", "Modo docente"]
+  }
+}

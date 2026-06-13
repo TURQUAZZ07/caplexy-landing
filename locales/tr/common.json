@@ -1,0 +1,364 @@
+{
+  "meta": {
+    "title": "Caplexy | İngilizce öğren. Cadet'ten Admiral'a yüksel.",
+    "description": "Caplexy günlük İngilizce pratiğini görevler, rütbeler, seferler ve ödüllerle denizcilik kariyeri yolculuğuna dönüştürür."
+  },
+  "nav": {
+    "howItWorks": "Nasıl çalışır",
+    "ranks": "Rütbeler",
+    "teachers": "Öğretmenler",
+    "dashboard": "Dashboard",
+    "start": "Başla"
+  },
+  "language": {
+    "label": "Arayüz dili",
+    "nativeName": "Türkçe"
+  },
+  "hero": {
+    "eyebrow": "Denizcilik kariyeri gibi hissettiren İngilizce pratiği",
+    "headline": "İngilizce öğren. Cadet'ten Admiral'a yüksel.",
+    "subheadline": "Caplexy günlük İngilizce pratiğini görevler, rütbeler, seferler ve ödüllerle denizcilik kariyeri yolculuğuna dönüştürür.",
+    "primaryCta": "İlk Seferine Başla",
+    "secondaryCta": "Nasıl Çalıştığını Gör",
+    "badges": ["Günlük seferler", "250 mikro rütbe", "Flashcard değil"],
+    "stats": [
+      ["Mevcut rütbe", "Deck Cadet 08"],
+      ["Aktif rota", "Limandan Açık Denize"],
+      ["Bugün", "Watch Duty hazır"],
+      ["Sıradaki kilit", "Radio Check"]
+    ]
+  },
+  "problem": {
+    "label": "Problem",
+    "headline": "Çoğu öğrenci bırakır çünkü İngilizce uygulamaları ödev gibi hissettirir.",
+    "cards": [
+      ["Önce gramer", "Öğrenciler ilerleme hissetmeden önce üniteler, kurallar ve testler görür."],
+      ["Zayıf alışkanlık döngüsü", "Tek başına seri sayacı, pratiği anlamlı hissettirmeye yetmez."],
+      ["Düz kimlik", "Bir egzersizi daha bitirmek çoğu zaman gelişen bir karakter gibi hissettirmez."]
+    ]
+  },
+  "solution": {
+    "label": "Caplexy çözümü",
+    "headline": "Alışkanlığı seferler, görevler, rütbeler ve terfilerle kur.",
+    "body": "Caplexy öğrenme motorunu altta tutar, öğrenciye yüzeyde bir kariyer yolculuğu verir. İngilizce pratiği rapor verilecek, tamamlanacak, açılacak ve hatırlanacak bir şeye dönüşür.",
+    "features": [
+      ["Daily Watch Duty", "Öğrenciyi ödev hissi vermeden ilerleten kısa günlük rutin."],
+      ["Voyage Log", "Günlük baskı yerine görünür kariyer ivmesi sağlayan motive edici kayıt."],
+      ["Rütbe terfileri", "Öğrenciler Cadet'ten Admiral'a 250 mikro rütbe ve 10 ana rütbe boyunca yükselir."],
+      ["Görevler", "Kelime, gramer, dinleme, okuma ve konuşma; kargo kontrollerine, telsiz çağrılarına ve gemi kayıtlarına dönüşür."],
+      ["Gemiler ve limanlar", "Yeni rotalar, limanlar ve gemiler ilerlemeyi ders listesi değil kariyer yolculuğu gibi hissettirir."]
+    ]
+  },
+  "how": {
+    "label": "Nasıl çalışır",
+    "headline": "Altta daha derin bir öğrenme motoru olan basit bir günlük rota.",
+    "progressLabel": "Günlük ilerleme",
+    "progressValue": "Sıradaki terfiye %68",
+    "steps": [
+      "Günlük görevleri tamamla",
+      "XP kazan ve ilerle",
+      "Yeni rütbelerin kilidini aç",
+      "Gramer çalışıyormuş gibi hissetmeden İngilizce öğren"
+    ]
+  },
+  "preview": {
+    "label": "Ürün önizlemesi",
+    "headline": "Görev kontrol merkezi gibi hissettiren bir öğrenme paneli.",
+    "body": "İlk ürün ekranları platform geliştirilirken Bridge panelini, Voyage Mode'u, rütbe ilerlemesini ve öğretmen görünümünü gösterebilir.",
+    "dashboard": "Bridge Paneli",
+    "badge": "Önizleme",
+    "cards": ["Voyage Mode", "Öğretmen Paneli"]
+  },
+  "ranks": {
+    "label": "Rütbe sistemi",
+    "headline": "Cadet'ten Admiral'a kariyer ilerlemesi.",
+    "body": "Caplexy 10 ana rütbe ve 250 mikro rütbe kullanır; böylece her kısa oturum daha büyük bir kariyer yolunun parçası gibi hissedilir.",
+    "rankPrefix": "Rütbe",
+    "items": [
+      "Cadet",
+      "Deck Cadet",
+      "Able Seaman",
+      "Boatswain",
+      "Third Officer",
+      "Second Officer",
+      "Chief Officer",
+      "Captain",
+      "Commodore",
+      "Admiral"
+    ]
+  },
+  "hiddenLearning": {
+    "label": "Gizli öğrenme sistemi",
+    "headline": "Öğrenci yolculuğu görür. Müfredatı Caplexy yönetir.",
+    "userSees": "Kullanıcı görür",
+    "systemTeaches": "Sistem öğretir",
+    "visible": ["Seferler", "Görevler", "Rütbeler", "Gemiler", "Limanlar"],
+    "hidden": ["İngilizce kelime", "İngilizce gramer", "İngilizce dinleme", "İngilizce okuma", "İngilizce konuşma"],
+    "philosophyTitle": "Arayüz dili ve öğrenme dili ayrı kavramlardır.",
+    "philosophyBody": "Türkçe konuşan bir öğrenci Görevler, Rütbeler ve Seferler gibi arayüz etiketleri görürken öğrenme içeriği İngilizce kelime, gramer, dinleme, okuma ve konuşma olarak kalır.",
+    "games": [
+      ["Cargo Match", "Kelimeler kargo, etiket, manifesto ve liman talepleri olarak görünür."],
+      ["Fix The Ship Log", "Gramer düzeltme, kalkıştan önce gemi kaydını onarmaya dönüşür."],
+      ["Radio Check", "Dinleme ve konuşma gerçekçi denizcilik iletişimine dönüşür."]
+    ]
+  },
+  "teacher": {
+    "label": "Öğretmen modu",
+    "headline": "Gelecekte sınıflar, özel dersler ve okul programları için hazır.",
+    "body": "Öğretmenler sınıf oluşturabilecek, görev atayabilecek, gizli beceri ilerlemesini izleyebilecek ve öğrencinin denizcilik kariyeri hissini bozmadan kimin desteğe ihtiyacı olduğunu görebilecek.",
+    "panelTitle": "Sınıf Görev Kontrolü",
+    "badge": "Yakında",
+    "cards": [
+      ["Sınıf oluştur", "Öğrencileri davet et ve grupları düzenle."],
+      ["Görev ata", "Temalı aktivitelerin altında beceri hedefleri seç."],
+      ["İlerlemeyi takip et", "Kelime, gramer, dinleme, okuma ve konuşma gelişimini gör."]
+    ]
+  },
+  "finalCta": {
+    "headline": "İngilizce yolculuğun ilk seferinle başlar.",
+    "body": "Bir görevle başla, alışkanlığı kur ve günlük İngilizce pratiğini görünür kariyer ilerlemesine dönüştür.",
+    "button": "İlk Seferine Başla"
+  },
+  "footer": {
+    "tagline": "Arayüz dili öğrenciye uyum sağlarken İngilizceyi öğrenme hedefi olarak koruyan global bir İngilizce öğrenme platformu.",
+    "links": ["Görevler", "Seferler", "Rütbeler", "Öğretmen Modu"]
+  },
+  "dashboard": {
+    "nav": {
+      "bridge": "Köprü",
+      "missions": "Görevler",
+      "dailyVoyage": "Günlük Sefer",
+      "voyageLog": "Sefer Günlüğü",
+      "career": "Kariyer",
+      "careerPath": "Kariyer Yolu",
+      "backHome": "Ana Sayfa"
+    },
+    "welcome": {
+      "eyebrow": "Öğrenci Köprüsü",
+      "title": "Tekrar hoş geldin, {rank}!",
+      "subtitle": "Bir sonraki rütbeye ilerliyorsun.",
+      "currentRank": "Mevcut rütbe",
+      "currentRankValue": "Cadet I",
+      "nextRank": "Sıradaki rütbe",
+      "nextRankValue": "Cadet II",
+      "xp": "XP",
+      "xpValue": "1250",
+      "progress": "65%",
+      "progressLabel": "Mikro rütbe ilerlemesi",
+      "majorGroup": "Ana rütbe grubu",
+      "rankNumber": "Rütbe {rank} / 250",
+      "resetProgress": "İlerlemeyi Sıfırla"
+    },
+    "dailyVoyage": {
+      "title": "Günlük Sefer",
+      "description": "Bugünün görevlerini tamamla ve seferini canlı tut.",
+      "button": "Sefere Başla",
+      "reward": "100 XP mümkün",
+      "progress": "{completed}/{total} tamamlandı",
+      "completed": "Bugünkü sefer tamamlandı."
+    },
+    "voyageLog": {
+      "title": "Sefer Günlüğü",
+      "headline": "Seferini canlı tut.",
+      "body": "Aktif seferini uzatmak ve denizcilik kilometre taşlarına yaklaşmak için her Günlük Seferi tamamla.",
+      "current": "Aktif Sefer",
+      "longest": "En Uzun Sefer",
+      "nextMilestone": "Sonraki Kilometre Taşı",
+      "days": "{days} Gün",
+      "viewLog": "Sefer Günlüğünü Aç"
+    },
+    "watchDuty": {
+      "title": "Günlük Nöbet",
+      "subtitle": "Kalkıştan önce her kontrol noktasını tamamla.",
+      "tasks": ["Kelime Görevi", "Dil Bilgisi Görevi", "Dinleme Görevi", "Hızlı Tekrar"]
+    },
+    "stats": {
+      "totalXp": "Toplam XP",
+      "voyageLog": "Sefer Günlüğü",
+      "missionsCompleted": "Tamamlanan Görev",
+      "currentCrew": "Mürettebat",
+      "days": "{days} gün"
+    },
+    "missions": {
+      "title": "Görev Güvertesi",
+      "subtitle": "Bir görev seç ve denizcilik kariyerinde ilerlemeye devam et.",
+      "start": "Başla",
+      "completedToday": "Bugün tamamlandı",
+      "difficulty": "Zorluk",
+      "xp": "XP",
+      "items": [
+        ["Cargo Match", "İngilizce kelime dağarcığını geliştirmek için kargo etiketlerini eşleştir.", "Kolay", "+20 XP"],
+        ["Ship Log Repair", "Sefer devam etmeden önce resmi gemi kayıtlarını onar.", "Kolay", "+25 XP"],
+        ["Radio Check", "Telsiz mesajını dinle ve bir mürettebat üyesi gibi cevap ver.", "Orta", "+25 XP"],
+        ["Harbor Quiz", "Kısa karma bir görevle liman talimatlarını tekrar et.", "Kolay", "+15 XP"]
+      ]
+    },
+    "rankPath": {
+      "title": "Rütbe Yolu",
+      "subtitle": "250 mikro rütbelik kariyer yolunda yakındaki rotan.",
+      "current": "Mevcut",
+      "completed": "Tamamlandı",
+      "locked": "Kilitli",
+      "viewFull": "Tüm Kariyer Yolunu Gör"
+    }
+  },
+  "cargoMatch": {
+    "nav": {
+      "back": "Dashboard'a dön"
+    },
+    "title": "Cargo Match",
+    "subtitle": "Kargoları doğru anlamlarla eşleştir.",
+    "englishColumn": "İngilizce kargo",
+    "turkishColumn": "Türkçe anlamlar",
+    "progress": "Eşleşen kargo: {matched}/{total}",
+    "reward": "+25 XP",
+    "reset": "Görevi sıfırla",
+    "feedbackCorrect": "Kargo eşleşti.",
+    "feedbackWrong": "Tam olmadı. Başka bir anlam dene.",
+    "selectPrompt": "Bir İngilizce kelime ve bir Türkçe anlam seç.",
+    "completedTitle": "Sefer tamamlandı!",
+    "completedMission": "Cargo Match görevini başarıyla bitirdin.",
+    "completedReward": "+25 XP kazandın.",
+    "rankProgress": "Cadet II rütbesine biraz daha yaklaştın.",
+    "rankProgressLabel": "Cadet I'den Cadet II'ye",
+    "rankProgressBefore": "65%",
+    "rankProgressAfter": "69%",
+    "returnDashboard": "Dashboard'a Dön",
+    "playAgain": "Tekrar Oyna",
+    "nextMission": "Sonraki Görev"
+  },
+  "radioCheck": {
+    "nav": {
+      "back": "Dashboard'a dön"
+    },
+    "title": "Radio Check",
+    "subtitle": "Radyo mesajını dikkatle dinle.",
+    "reward": "+25 XP",
+    "progress": "Soru {current}/{total}",
+    "panelTitle": "Radyo Alıcısı",
+    "incoming": "Gelen mesaj",
+    "channel": "Köprü kanalı 07",
+    "playAudio": "Sesi Çal",
+    "reset": "Görevi sıfırla",
+    "optionsTitle": "Mesajı tanımla",
+    "optionsSubtitle": "Radyoda duyduğun cümleyi seç.",
+    "feedback": {
+      "idle": "Radyo mesajını dinle.",
+      "correct": "Doğru mesaj alındı.",
+      "wrong": "Mesaj tekrar dinlenmeli."
+    },
+    "completedTitle": "Görev Tamamlandı",
+    "completedBody": "Radio Check görevi başarıyla tamamlandı.",
+    "completedReward": "+25 XP Kazandın",
+    "returnDashboard": "Dashboard'a Dön",
+    "playAgain": "Tekrar Oyna"
+  },
+  "shipLogRepair": {
+    "nav": {
+      "back": "Dashboard'a dön"
+    },
+    "title": "Ship Log Repair",
+    "subtitle": "Gemi günlüğündeki kayıtları düzelt.",
+    "reward": "+25 XP",
+    "progress": "Kayıt {current}/{total}",
+    "percentage": "%{percent} tamamlandı",
+    "logEntry": "Günlük Kaydı",
+    "damagedRecord": "Hatalı kayıt",
+    "officialRecord": "Resmi kayıt",
+    "repairOptions": "Onarım seçenekleri",
+    "repairInstruction": "Sefer devam etmeden önce düzeltilmiş kaydı seç.",
+    "reset": "Görevi sıfırla",
+    "feedback": {
+      "idle": "Gemi kaydını incele.",
+      "correct": "Kayıt düzeltildi.",
+      "wrong": "Kayıt hala hatalı."
+    },
+    "topics": {
+      "present-simple": "Present Simple",
+      "present-continuous": "Present Continuous",
+      "to-be": "To Be",
+      "subject-verb-agreement": "Özne-fiil uyumu"
+    },
+    "completedTitle": "Gemi Günlüğü Onarıldı",
+    "completedBody": "Tüm kayıtlar başarıyla düzeltildi.",
+    "completedReward": "+25 XP kazandın.",
+    "returnDashboard": "Dashboard'a Dön",
+    "playAgain": "Tekrar Onar"
+  },
+  "dailyVoyagePage": {
+    "title": "Günlük Sefer",
+    "subtitle": "Bugünkü görevlerini tamamla ve rütbene yaklaş.",
+    "reward": "Bugün 100 XP mümkün",
+    "backDashboard": "Dashboard'a Dön",
+    "progress": "{completed}/{total} tamamlandı",
+    "totalXp": "Toplam XP",
+    "earnedToday": "Bugün kazanılan",
+    "xpToday": "{xp} XP",
+    "voyageLog": "Sefer Günlüğü",
+    "missionListTitle": "Bugünün rotası",
+    "missionListSubtitle": "Seferi tamamlamak ve bonusu almak için tüm görevleri bitir.",
+    "completedStatus": "Bugünkü sefer tamamlandı.",
+    "completed": "Tamamlandı",
+    "startMission": "Göreve Başla",
+    "types": {
+      "vocabulary": "Kelime",
+      "listening": "Dinleme",
+      "grammar": "Dil bilgisi"
+    },
+    "rankTitle": "Rütbe ilerlemesi",
+    "rankRoute": "{current} -> {next}",
+    "rankBody": "Tamamlanan her görev seni bir sonraki mikro rütbeye yaklaştırır.",
+    "bonusLockedTitle": "Bonus XP onay bekliyor",
+    "bonusLockedBody": "Günlük sefer bonusunu kazanmak için üç görevi de tamamla.",
+    "completedTitle": "Sefer tamamlandı!",
+    "completedBody": "Bugünün tüm görevlerini bitirdin.",
+    "completedReward": "+25 bonus XP kazandın.",
+    "tomorrow": "Yarın yeni bir sefer seni bekliyor."
+  },
+  "voyageLog": {
+    "eyebrow": "Denizcilik alışkanlık kaydı",
+    "title": "Sefer Günlüğü",
+    "subtitle": "Her gün geri dön, seferini tamamla ve kariyer ivmeni canlı tut.",
+    "backDashboard": "Dashboard'a Dön",
+    "current": "Aktif Sefer",
+    "longest": "En Uzun Sefer",
+    "nextMilestone": "Sonraki Kilometre Taşı",
+    "days": "{days} Gün",
+    "statusTitle": "Bugünkü tamamlama",
+    "dailyComplete": "Bugünkü sefer tamamlandı. Günlüğün yarına kadar güvende.",
+    "dailyOpen": "Bugünkü sefer hala açık. Canlı tutmak için tüm görevleri tamamla.",
+    "dailyProgress": "{completed}/{total} görev tamamlandı",
+    "keepAlive": "Sonraki kilometre taşına ilerlemek için bugünkü seferi tamamla.",
+    "milestoneTitle": "Kilometre taşı ödülleri",
+    "milestoneBody": "Kilometre taşları uzun seferleri XP ve unvan rozetleriyle ödüllendirir. Rozet görselleri sonra eklenebilir.",
+    "completedDates": "Tamamlanan tarihler",
+    "completedDatesBody": "Tamamlanan her Günlük Sefer, gemi günlüğüne kaydedilir.",
+    "noCompletedDates": "Henüz tamamlanmış sefer tarihi yok.",
+    "milestones": {
+      "xp50": "+50 XP",
+      "steadySailor": "Rozet: Steady Sailor",
+      "reliableCrewmate": "Rozet: Reliable Crewmate",
+      "oceanRegular": "Rozet: Ocean Regular",
+      "longVoyage": "Rozet: Long Voyage",
+      "legendaryVoyage": "Rozet: Legendary Voyage"
+    }
+  },
+  "fixShipLog": {
+    "title": "Fix the Ship Log",
+    "message": "This mission is coming soon.",
+    "returnDashboard": "Dashboard'a Dön"
+  },
+  "career": {
+    "title": "Caplexy Kariyer Yolu",
+    "subtitle": "50 denizcilik kariyer grubunda 250 mikro rütbe.",
+    "currentXp": "Mevcut XP",
+    "currentRank": "Mevcut rütbe",
+    "progress": "Sıradaki mikro rütbeye ilerleme",
+    "backDashboard": "Dashboard'a Dön",
+    "xpRequired": "{xp} XP",
+    "rankNumber": "Rütbe {rank} / 250",
+    "completed": "Tamamlandı",
+    "current": "Mevcut",
+    "locked": "Kilitli"
+  }
+}
