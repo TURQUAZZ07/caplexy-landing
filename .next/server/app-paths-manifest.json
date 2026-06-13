@@ -1,7 +1,7 @@
 {
+  "/page": "app/page.js",
   "/dashboard/page": "app/dashboard/page.js",
-  "/missions/cargo-match/page": "app/missions/cargo-match/page.js",
-  "/missions/ship-log-repair/page": "app/missions/ship-log-repair/page.js",
+  "/voyage-log/page": "app/voyage-log/page.js",
   "/daily-voyage/page": "app/daily-voyage/page.js",
-  "/voyage-log/page": "app/voyage-log/page.js"
+  "/missions/radio-check/page": "app/missions/radio-check/page.js"
 }

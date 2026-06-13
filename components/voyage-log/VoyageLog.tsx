@@ -7,7 +7,6 @@ import {
   Check,
   Compass,
   Lock,
-  Medal,
   Ship,
   Trophy
 } from "lucide-react";
@@ -15,9 +14,26 @@ import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { useI18n } from "@/lib/i18n";
 import { usePlayerProgress } from "@/lib/progress";
 
+function getRecentDateKeys(dayCount: number) {
+  return Array.from({ length: dayCount }, (_, index) => {
+    const date = new Date();
+    date.setDate(date.getDate() - (dayCount - index - 1));
+
+    const month = String(date.getMonth() + 1).padStart(2, "0");
+    const day = String(date.getDate()).padStart(2, "0");
+
+    return {
+      dateKey: `${date.getFullYear()}-${month}-${day}`,
+      dayLabel: String(date.getDate())
+    };
+  });
+}
+
 export function VoyageLog() {
   const { t } = useI18n();
   const { dailyVoyage, voyageLog } = usePlayerProgress();
+  const completedDateSet = new Set(voyageLog.completedDates);
+  const recentDates = getRecentDateKeys(35);
   const currentLabel = t("voyageLog.days").replace(
     "{days}",
     String(voyageLog.currentVoyage)
@@ -33,6 +49,17 @@ export function VoyageLog() {
   const dailyStatus = dailyVoyage.isComplete
     ? t("voyageLog.dailyComplete")
     : t("voyageLog.dailyOpen");
+  const daysRemaining = Math.max(
+    0,
+    voyageLog.nextMilestone.days - voyageLog.currentVoyage
+  );
+  const daysRemainingLabel = t("voyageLog.daysRemaining").replace(
+    "{days}",
+    String(daysRemaining)
+  );
+  const currentBadgeProgressLabel = t("voyageLog.currentBadgeProgress")
+    .replace("{current}", String(voyageLog.currentVoyage))
+    .replace("{target}", String(voyageLog.nextMilestone.days));
 
   return (
     <main className="min-h-screen bg-[#f3f6f1] text-ink">
@@ -128,7 +155,7 @@ export function VoyageLog() {
                     {t("voyageLog.nextMilestone")}
                   </h2>
                   <p className="mt-2 text-sm leading-6 text-steel">
-                    {t("voyageLog.keepAlive")}
+                    {daysRemainingLabel}
                   </p>
                 </div>
               </div>
@@ -142,6 +169,12 @@ export function VoyageLog() {
                   style={{ width: `${voyageLog.milestoneProgressPercent}%` }}
                 />
               </div>
+              <p className="mt-3 text-sm font-bold text-steel">
+                {currentBadgeProgressLabel}
+              </p>
+              <p className="mt-2 text-sm leading-6 text-steel">
+                {t("voyageLog.keepAlive")}
+              </p>
             </section>
           </aside>
 
@@ -195,7 +228,41 @@ export function VoyageLog() {
               <div className="flex items-start justify-between gap-4">
                 <div>
                   <h2 className="text-2xl font-semibold text-ink">
-                    {t("voyageLog.completedDates")}
+                    {t("voyageLog.historyCalendar")}
+                  </h2>
+                  <p className="mt-2 text-sm leading-6 text-steel">
+                    {t("voyageLog.historyCalendarBody")}
+                  </p>
+                </div>
+                <CalendarDays className="h-6 w-6 text-tide" />
+              </div>
+
+              <div className="mt-6 grid grid-cols-7 gap-2">
+                {recentDates.map((day) => {
+                  const isCompleted = completedDateSet.has(day.dateKey);
+
+                  return (
+                    <div
+                      key={day.dateKey}
+                      className={`grid aspect-square min-h-10 place-items-center rounded-lg border text-sm font-bold ${
+                        isCompleted
+                          ? "border-tide bg-tide text-white"
+                          : "border-ink/8 bg-[#f6f8f3] text-steel"
+                      }`}
+                      title={day.dateKey}
+                    >
+                      {isCompleted ? <Check className="h-4 w-4" /> : day.dayLabel}
+                    </div>
+                  );
+                })}
+              </div>
+            </section>
+
+            <section className="rounded-lg border border-ink/8 bg-white p-6 shadow-soft">
+              <div className="flex items-start justify-between gap-4">
+                <div>
+                  <h2 className="text-2xl font-semibold text-ink">
+                    {t("voyageLog.completedVoyageDays")}
                   </h2>
                   <p className="mt-2 text-sm leading-6 text-steel">
                     {t("voyageLog.completedDatesBody")}

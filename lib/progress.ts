@@ -79,36 +79,6 @@ function getClientStorage() {
   }
 }
 
-function readCookieValue(key: string) {
-  if (typeof document === "undefined") {
-    return null;
-  }
-
-  const cookie = document.cookie
-    .split("; ")
-    .find((item) => item.startsWith(`${encodeURIComponent(key)}=`));
-
-  return cookie ? decodeURIComponent(cookie.split("=").slice(1).join("=")) : null;
-}
-
-function writeCookieValue(key: string, value: string) {
-  if (typeof document === "undefined") {
-    return;
-  }
-
-  document.cookie = `${encodeURIComponent(key)}=${encodeURIComponent(
-    value
-  )}; path=/; max-age=31536000; SameSite=Lax`;
-}
-
-function removeCookieValue(key: string) {
-  if (typeof document === "undefined") {
-    return;
-  }
-
-  document.cookie = `${encodeURIComponent(key)}=; path=/; max-age=0; SameSite=Lax`;
-}
-
 function readClientValue(key: string) {
   const storage = getClientStorage();
 

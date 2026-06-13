@@ -75,7 +75,7 @@ export function I18nProvider({ children }: { children: React.ReactNode }) {
       setLocale,
       dictionary,
       t: (key) => readTranslation(dictionary, key, ""),
-      list: (key) => readTranslation(dictionary, key, [])
+      list: <T,>(key: string) => readTranslation<T>(dictionary, key, [] as T)
     }),
     [dictionary, locale, setLocale]
   );

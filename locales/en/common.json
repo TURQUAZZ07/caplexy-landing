@@ -129,6 +129,7 @@
       "missions": "Missions",
       "dailyVoyage": "Daily Voyage",
       "voyageLog": "Voyage Log",
+      "academy": "Ship Academy",
       "career": "Career",
       "careerPath": "Career Path",
       "backHome": "Home"
@@ -165,7 +166,15 @@
       "longest": "Longest Voyage",
       "nextMilestone": "Next Milestone",
       "days": "{days} Days",
-      "viewLog": "Open Voyage Log"
+      "viewLog": "View Voyage Log"
+    },
+    "academy": {
+      "title": "Ship Academy",
+      "headline": "Continue your training.",
+      "description": "Continue your training before your next voyage.",
+      "unlocked": "Academy access",
+      "moduleCount": "{count}/{total} modules unlocked",
+      "button": "Enter Ship Academy"
     },
     "watchDuty": {
       "title": "Daily Watch Duty",
@@ -310,8 +319,8 @@
     "rankBody": "Every completed mission moves you closer to your next micro-rank.",
     "bonusLockedTitle": "Bonus XP awaiting clearance",
     "bonusLockedBody": "Complete all three missions to earn the daily voyage bonus.",
-    "completedTitle": "Voyage completed!",
-    "completedBody": "You finished all missions for today.",
+    "completedTitle": "Voyage Completed",
+    "completedBody": "All daily missions completed.",
     "completedReward": "You earned +25 bonus XP.",
     "tomorrow": "A new voyage awaits you tomorrow."
   },
@@ -329,9 +338,14 @@
     "dailyOpen": "Today's voyage is still open. Complete all missions to keep it alive.",
     "dailyProgress": "{completed}/{total} missions complete",
     "keepAlive": "Complete today's voyage to keep moving toward the next milestone.",
+    "daysRemaining": "{days} days remaining until the next milestone.",
+    "currentBadgeProgress": "Current badge progress: {current}/{target} days",
     "milestoneTitle": "Milestone rewards",
     "milestoneBody": "Milestones reward long voyages with XP and title badges. Badge artwork can be added later.",
+    "historyCalendar": "Voyage History Calendar",
+    "historyCalendarBody": "Completed voyage days are marked in your maritime logbook.",
     "completedDates": "Completed dates",
+    "completedVoyageDays": "Completed Voyage Days",
     "completedDatesBody": "Every completed Daily Voyage is recorded in your logbook.",
     "noCompletedDates": "No completed voyage dates yet.",
     "milestones": {
@@ -341,6 +355,127 @@
       "oceanRegular": "Badge: Ocean Regular",
       "longVoyage": "Badge: Long Voyage",
       "legendaryVoyage": "Badge: Legendary Voyage"
+    }
+  },
+  "academy": {
+    "eyebrow": "Maritime academy training",
+    "title": "Ship Academy",
+    "subtitle": "Train through maritime academy modules that unlock with your rank while English grammar and communication stay under the surface.",
+    "backDashboard": "Back to Dashboard",
+    "backAcademy": "Back to Academy",
+    "trainingDeck": "Training deck",
+    "currentRank": "Current Rank",
+    "unlockedModules": "Unlocked Modules",
+    "moduleCount": "{count}/{total}",
+    "moduleLabel": "Module {number}",
+    "requiredRank": "Required rank",
+    "rankRequired": "Rank {rank}",
+    "hiddenTopic": "Hidden topic",
+    "trainingFocus": "Training focus",
+    "trainingProgress": "Training progress",
+    "enterTraining": "Enter Training",
+    "viewLocked": "View Locked Training",
+    "statusLabel": "Training status",
+    "moduleOverview": "Module overview",
+    "moduleOverviewBody": "These academy objectives will become lessons, missions, and maritime communication drills.",
+    "comingSoonTitle": "Training bay coming soon",
+    "comingSoonBody": "Full lessons will be added here. For now, this page defines the academy structure and module direction.",
+    "lockedTrainingBody": "This training bay is visible for planning, but it opens when your rank reaches the required level.",
+    "returnDashboard": "Return to Dashboard",
+    "status": {
+      "locked": "Locked",
+      "available": "Available",
+      "completed": "Completed"
+    },
+    "summary": {
+      "route": "Academy route",
+      "routeValue": "8 structured training modules",
+      "training": "Training style",
+      "trainingValue": "Missions, records, reports, and orders",
+      "identity": "Learner identity",
+      "identityValue": "Maritime cadet, not grammar student"
+    },
+    "modules": {
+      "harborBasics": {
+        "title": "Harbor Basics",
+        "description": "Report to the harbor desk, introduce yourself, and learn the first signals every new crew member needs.",
+        "focus": "Harbor introductions",
+        "objectives": [
+          "Introduce yourself at the academy desk",
+          "Identify people, places, and simple roles",
+          "Understand basic shipboard introductions"
+        ]
+      },
+      "dailyDeckRoutine": {
+        "title": "Daily Deck Routine",
+        "description": "Follow the daily deck schedule and describe the routines that keep a vessel ready for departure.",
+        "focus": "Daily duty reports",
+        "objectives": [
+          "Describe regular ship routines",
+          "Read simple duty schedules",
+          "Report what crew members usually do"
+        ]
+      },
+      "weatherWatch": {
+        "title": "Weather Watch",
+        "description": "Join the watch team and report what is happening around the ship right now.",
+        "focus": "Live watch updates",
+        "objectives": [
+          "Describe current weather and deck actions",
+          "Understand live status reports",
+          "Choose the right message for an active situation"
+        ]
+      },
+      "voyageRecords": {
+        "title": "Voyage Records",
+        "description": "Review completed voyages and repair short records from earlier routes.",
+        "focus": "Completed voyage notes",
+        "objectives": [
+          "Read short past voyage notes",
+          "Report completed actions",
+          "Repair basic record entries"
+        ]
+      },
+      "stormReports": {
+        "title": "Storm Reports",
+        "description": "Study storm reports and explain what was happening when conditions changed at sea.",
+        "focus": "Incident reports",
+        "objectives": [
+          "Connect past events to ongoing actions",
+          "Understand weather incident reports",
+          "Describe interrupted ship operations"
+        ]
+      },
+      "captainsOrders": {
+        "title": "Captain's Orders",
+        "description": "Interpret orders, permissions, and safety instructions from the captain's bridge.",
+        "focus": "Bridge commands",
+        "objectives": [
+          "Understand duty instructions",
+          "Use permission and obligation language",
+          "Choose safe responses to ship commands"
+        ]
+      },
+      "futureRoutes": {
+        "title": "Future Routes",
+        "description": "Plan upcoming routes, schedules, and port arrivals with the navigation team.",
+        "focus": "Route planning",
+        "objectives": [
+          "Talk about planned routes",
+          "Read upcoming voyage schedules",
+          "Choose accurate future route messages"
+        ]
+      },
+      "missionConditions": {
+        "title": "Mission Conditions",
+        "description": "Handle mission briefings where each decision depends on weather, cargo, and crew readiness.",
+        "focus": "Conditional mission briefings",
+        "objectives": [
+          "Understand if-then mission briefings",
+          "Choose actions based on conditions",
+          "Read conditional safety instructions"
+        ]
+      }
     }
   },
   "fixShipLog": {

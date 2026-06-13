@@ -8,6 +8,7 @@ import {
   Check,
   ChevronRight,
   ClipboardCheck,
+  GraduationCap,
   HelpCircle,
   Map,
   Medal,
@@ -22,6 +23,7 @@ import {
   Waves
 } from "lucide-react";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
+import { academyModules, getUnlockedAcademyModules } from "@/lib/academy";
 import { useI18n } from "@/lib/i18n";
 import { usePlayerProgress } from "@/lib/progress";
 import { getNearbyRanks } from "@/lib/ranks";
@@ -87,6 +89,10 @@ export function LearnerDashboard() {
           <VoyageLogCard />
         </div>
 
+        <div className="mt-6 lg:mt-8">
+          <ShipAcademyCard />
+        </div>
+
         <div className="mt-6 grid gap-6 lg:mt-8 xl:grid-cols-[1.35fr_0.65fr]">
           <MissionDeck missions={missions} />
           <RankPath />
@@ -121,6 +127,9 @@ function DashboardHeader() {
           </a>
           <a className="rounded-lg px-3 py-2 hover:bg-white/10" href="/voyage-log">
             {t("dashboard.nav.voyageLog")}
+          </a>
+          <a className="rounded-lg px-3 py-2 hover:bg-white/10" href="/academy">
+            {t("dashboard.nav.academy")}
           </a>
           <a className="rounded-lg px-3 py-2 hover:bg-white/10" href="#career">
             {t("dashboard.nav.career")}
@@ -284,6 +293,65 @@ function DailyVoyageCard() {
         </a>
       </div>
     </article>
+  );
+}
+
+function ShipAcademyCard() {
+  const { t } = useI18n();
+  const { rankIndex } = usePlayerProgress();
+  const unlockedModules = getUnlockedAcademyModules(rankIndex);
+  const progressPercent = Math.floor(
+    (unlockedModules.length / academyModules.length) * 100
+  );
+
+  return (
+    <section className="rounded-lg border border-ink/8 bg-white p-6 shadow-soft">
+      <div className="grid gap-6 lg:grid-cols-[0.82fr_1.18fr] lg:items-center">
+        <div>
+          <div className="inline-flex items-center gap-2 rounded-lg bg-signal/24 px-3 py-2 text-sm font-bold text-ink">
+            <GraduationCap className="h-4 w-4" />
+            {t("dashboard.academy.title")}
+          </div>
+          <h2 className="mt-4 text-2xl font-semibold text-ink">
+            {t("dashboard.academy.headline")}
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-steel">
+            {t("dashboard.academy.description")}
+          </p>
+        </div>
+
+        <div className="rounded-lg border border-ink/8 bg-[#f6f8f3] p-4">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold text-steel">
+                {t("dashboard.academy.unlocked")}
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-ink">
+                {t("dashboard.academy.moduleCount")
+                  .replace("{count}", String(unlockedModules.length))
+                  .replace("{total}", String(academyModules.length))}
+              </p>
+            </div>
+            <div className="grid h-10 w-10 place-items-center rounded-lg bg-ink text-white">
+              <GraduationCap className="h-5 w-5" />
+            </div>
+          </div>
+          <div className="mt-4 h-3 overflow-hidden rounded-full bg-white">
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-tide via-glass to-signal"
+              style={{ width: `${progressPercent}%` }}
+            />
+          </div>
+          <a
+            href="/academy"
+            className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-tide"
+          >
+            {t("dashboard.academy.button")}
+            <ChevronRight className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
   );
 }
 

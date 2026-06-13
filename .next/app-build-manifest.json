@@ -6,50 +6,30 @@
       "static/css/app/layout.css",
       "static/chunks/app/layout.js"
     ],
-    "/dashboard/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/dashboard/page.js"
-    ],
     "/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/page.js"
     ],
-    "/missions/cargo-match/page": [
+    "/dashboard/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/missions/cargo-match/page.js"
+      "static/chunks/app/dashboard/page.js"
     ],
-    "/missions/fix-the-ship-log/page": [
+    "/voyage-log/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/missions/fix-the-ship-log/page.js"
-    ],
-    "/career/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/career/page.js"
-    ],
-    "/missions/radio-check/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/missions/radio-check/page.js"
-    ],
-    "/missions/ship-log-repair/page": [
-      "static/chunks/webpack.js",
-      "static/chunks/main-app.js",
-      "static/chunks/app/missions/ship-log-repair/page.js"
+      "static/chunks/app/voyage-log/page.js"
     ],
     "/daily-voyage/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
       "static/chunks/app/daily-voyage/page.js"
     ],
-    "/voyage-log/page": [
+    "/missions/radio-check/page": [
       "static/chunks/webpack.js",
       "static/chunks/main-app.js",
-      "static/chunks/app/voyage-log/page.js"
+      "static/chunks/app/missions/radio-check/page.js"
     ]
   }
 }

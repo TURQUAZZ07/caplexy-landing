@@ -129,6 +129,7 @@
       "missions": "Görevler",
       "dailyVoyage": "Günlük Sefer",
       "voyageLog": "Sefer Günlüğü",
+      "academy": "Gemi Akademisi",
       "career": "Kariyer",
       "careerPath": "Kariyer Yolu",
       "backHome": "Ana Sayfa"
@@ -165,7 +166,15 @@
       "longest": "En Uzun Sefer",
       "nextMilestone": "Sonraki Kilometre Taşı",
       "days": "{days} Gün",
-      "viewLog": "Sefer Günlüğünü Aç"
+      "viewLog": "Sefer Günlüğünü Gör"
+    },
+    "academy": {
+      "title": "Gemi Akademisi",
+      "headline": "Eğitimine devam et.",
+      "description": "Bir sonraki seferinden önce eğitimine devam et.",
+      "unlocked": "Akademi erişimi",
+      "moduleCount": "{count}/{total} modül açık",
+      "button": "Gemi Akademisine Gir"
     },
     "watchDuty": {
       "title": "Günlük Nöbet",
@@ -310,8 +319,8 @@
     "rankBody": "Tamamlanan her görev seni bir sonraki mikro rütbeye yaklaştırır.",
     "bonusLockedTitle": "Bonus XP onay bekliyor",
     "bonusLockedBody": "Günlük sefer bonusunu kazanmak için üç görevi de tamamla.",
-    "completedTitle": "Sefer tamamlandı!",
-    "completedBody": "Bugünün tüm görevlerini bitirdin.",
+    "completedTitle": "Sefer Tamamlandı",
+    "completedBody": "Bugünkü tüm görevler tamamlandı.",
     "completedReward": "+25 bonus XP kazandın.",
     "tomorrow": "Yarın yeni bir sefer seni bekliyor."
   },
@@ -329,9 +338,14 @@
     "dailyOpen": "Bugünkü sefer hala açık. Canlı tutmak için tüm görevleri tamamla.",
     "dailyProgress": "{completed}/{total} görev tamamlandı",
     "keepAlive": "Sonraki kilometre taşına ilerlemek için bugünkü seferi tamamla.",
+    "daysRemaining": "Sonraki kilometre taşına {days} gün kaldı.",
+    "currentBadgeProgress": "Mevcut rozet ilerlemesi: {current}/{target} gün",
     "milestoneTitle": "Kilometre taşı ödülleri",
     "milestoneBody": "Kilometre taşları uzun seferleri XP ve unvan rozetleriyle ödüllendirir. Rozet görselleri sonra eklenebilir.",
+    "historyCalendar": "Sefer Geçmişi Takvimi",
+    "historyCalendarBody": "Tamamlanan sefer günleri denizcilik günlüğünde işaretlenir.",
     "completedDates": "Tamamlanan tarihler",
+    "completedVoyageDays": "Tamamlanan Sefer Günleri",
     "completedDatesBody": "Tamamlanan her Günlük Sefer, gemi günlüğüne kaydedilir.",
     "noCompletedDates": "Henüz tamamlanmış sefer tarihi yok.",
     "milestones": {
@@ -341,6 +355,127 @@
       "oceanRegular": "Rozet: Ocean Regular",
       "longVoyage": "Rozet: Long Voyage",
       "legendaryVoyage": "Rozet: Legendary Voyage"
+    }
+  },
+  "academy": {
+    "eyebrow": "Denizcilik akademisi eğitimi",
+    "title": "Gemi Akademisi",
+    "subtitle": "Rütbenle açılan denizcilik akademisi modüllerinde ilerle; İngilizce gramer ve iletişim sistemi arka planda çalışır.",
+    "backDashboard": "Dashboard'a Dön",
+    "backAcademy": "Akademiye Dön",
+    "trainingDeck": "Eğitim güvertesi",
+    "currentRank": "Mevcut Rütbe",
+    "unlockedModules": "Açık Modüller",
+    "moduleCount": "{count}/{total}",
+    "moduleLabel": "Modül {number}",
+    "requiredRank": "Gerekli rütbe",
+    "rankRequired": "Rütbe {rank}",
+    "hiddenTopic": "Gizli konu",
+    "trainingFocus": "Eğitim odağı",
+    "trainingProgress": "Eğitim ilerlemesi",
+    "enterTraining": "Eğitime Gir",
+    "viewLocked": "Kilitli Eğitimi Gör",
+    "statusLabel": "Eğitim durumu",
+    "moduleOverview": "Modül özeti",
+    "moduleOverviewBody": "Bu akademi hedefleri ileride derslere, görevlere ve denizcilik iletişimi çalışmalarına dönüşecek.",
+    "comingSoonTitle": "Eğitim bölümü yakında",
+    "comingSoonBody": "Tam dersler buraya eklenecek. Şimdilik bu sayfa akademi yapısını ve modül yönünü tanımlar.",
+    "lockedTrainingBody": "Bu eğitim bölümü planlama için görülebilir, ancak gerekli rütbeye ulaştığında açılır.",
+    "returnDashboard": "Dashboard'a Dön",
+    "status": {
+      "locked": "Kilitli",
+      "available": "Açık",
+      "completed": "Tamamlandı"
+    },
+    "summary": {
+      "route": "Akademi rotası",
+      "routeValue": "8 yapılandırılmış eğitim modülü",
+      "training": "Eğitim tarzı",
+      "trainingValue": "Görevler, kayıtlar, raporlar ve emirler",
+      "identity": "Öğrenci kimliği",
+      "identityValue": "Gramer öğrencisi değil, denizcilik kadeti"
+    },
+    "modules": {
+      "harborBasics": {
+        "title": "Harbor Basics",
+        "description": "Liman masasına rapor ver, kendini tanıt ve her yeni mürettebat üyesinin bilmesi gereken ilk sinyalleri öğren.",
+        "focus": "Liman tanışmaları",
+        "objectives": [
+          "Akademi masasında kendini tanıt",
+          "Kişileri, yerleri ve basit rolleri ayırt et",
+          "Temel gemi içi tanışmaları anla"
+        ]
+      },
+      "dailyDeckRoutine": {
+        "title": "Daily Deck Routine",
+        "description": "Günlük güverte planını takip et ve bir gemiyi sefere hazır tutan rutinleri anlat.",
+        "focus": "Günlük görev raporları",
+        "objectives": [
+          "Düzenli gemi rutinlerini anlat",
+          "Basit nöbet çizelgelerini oku",
+          "Mürettebatın genelde ne yaptığını raporla"
+        ]
+      },
+      "weatherWatch": {
+        "title": "Weather Watch",
+        "description": "Nöbet ekibine katıl ve geminin çevresinde şu anda neler olduğunu raporla.",
+        "focus": "Canlı nöbet güncellemeleri",
+        "objectives": [
+          "Anlık hava ve güverte hareketlerini anlat",
+          "Canlı durum raporlarını anla",
+          "Aktif bir durum için doğru mesajı seç"
+        ]
+      },
+      "voyageRecords": {
+        "title": "Voyage Records",
+        "description": "Tamamlanan seferleri incele ve önceki rotalardan kısa kayıtları onar.",
+        "focus": "Tamamlanan sefer notları",
+        "objectives": [
+          "Kısa geçmiş sefer notlarını oku",
+          "Tamamlanan eylemleri raporla",
+          "Temel kayıt girişlerini onar"
+        ]
+      },
+      "stormReports": {
+        "title": "Storm Reports",
+        "description": "Fırtına raporlarını incele ve denizde koşullar değişirken neler olduğunu açıkla.",
+        "focus": "Olay raporları",
+        "objectives": [
+          "Geçmiş olayları devam eden hareketlerle bağla",
+          "Hava olayı raporlarını anla",
+          "Kesintiye uğrayan gemi operasyonlarını anlat"
+        ]
+      },
+      "captainsOrders": {
+        "title": "Captain's Orders",
+        "description": "Kaptanın köprüsünden gelen emirleri, izinleri ve güvenlik talimatlarını yorumla.",
+        "focus": "Köprü komutları",
+        "objectives": [
+          "Görev talimatlarını anla",
+          "İzin ve zorunluluk dilini kullan",
+          "Gemi komutlarına güvenli yanıtları seç"
+        ]
+      },
+      "futureRoutes": {
+        "title": "Future Routes",
+        "description": "Navigasyon ekibiyle yaklaşan rotaları, programları ve liman varışlarını planla.",
+        "focus": "Rota planlama",
+        "objectives": [
+          "Planlanan rotalardan bahset",
+          "Yaklaşan sefer programlarını oku",
+          "Doğru gelecek rota mesajlarını seç"
+        ]
+      },
+      "missionConditions": {
+        "title": "Mission Conditions",
+        "description": "Her kararın hava, kargo ve mürettebat hazırlığına bağlı olduğu görev brifinglerini yönet.",
+        "focus": "Koşullu görev brifingleri",
+        "objectives": [
+          "Eğer-ise görev brifinglerini anla",
+          "Koşullara göre eylem seç",
+          "Koşullu güvenlik talimatlarını oku"
+        ]
+      }
     }
   },
   "fixShipLog": {
