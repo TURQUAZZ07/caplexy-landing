@@ -8,7 +8,11 @@
     "ranks": "Rütbeler",
     "teachers": "Öğretmenler",
     "dashboard": "Dashboard",
-    "start": "Başla"
+    "start": "Başla",
+    "login": "Giriş",
+    "register": "Kayıt Ol",
+    "profile": "Kariyer Kartım",
+    "logout": "Çıkış"
   },
   "language": {
     "label": "Arayüz dili",
@@ -20,21 +24,46 @@
     "subheadline": "Caplexy günlük İngilizce pratiğini görevler, rütbeler, seferler ve ödüllerle denizcilik kariyeri yolculuğuna dönüştürür.",
     "primaryCta": "İlk Seferine Başla",
     "secondaryCta": "Nasıl Çalıştığını Gör",
-    "badges": ["Günlük seferler", "250 mikro rütbe", "Flashcard değil"],
+    "badges": [
+      "Günlük seferler",
+      "250 mikro rütbe",
+      "Flashcard değil"
+    ],
     "stats": [
-      ["Mevcut rütbe", "Deck Cadet 08"],
-      ["Aktif rota", "Limandan Açık Denize"],
-      ["Bugün", "Watch Duty hazır"],
-      ["Sıradaki kilit", "Radio Check"]
+      [
+        "Mevcut rütbe",
+        "Deck Cadet 08"
+      ],
+      [
+        "Aktif rota",
+        "Limandan Açık Denize"
+      ],
+      [
+        "Bugün",
+        "Watch Duty hazır"
+      ],
+      [
+        "Sıradaki kilit",
+        "Radio Check"
+      ]
     ]
   },
   "problem": {
     "label": "Problem",
     "headline": "Çoğu öğrenci bırakır çünkü İngilizce uygulamaları ödev gibi hissettirir.",
     "cards": [
-      ["Önce gramer", "Öğrenciler ilerleme hissetmeden önce üniteler, kurallar ve testler görür."],
-      ["Zayıf alışkanlık döngüsü", "Tek başına seri sayacı, pratiği anlamlı hissettirmeye yetmez."],
-      ["Düz kimlik", "Bir egzersizi daha bitirmek çoğu zaman gelişen bir karakter gibi hissettirmez."]
+      [
+        "Önce gramer",
+        "Öğrenciler ilerleme hissetmeden önce üniteler, kurallar ve testler görür."
+      ],
+      [
+        "Zayıf alışkanlık döngüsü",
+        "Tek başına seri sayacı, pratiği anlamlı hissettirmeye yetmez."
+      ],
+      [
+        "Düz kimlik",
+        "Bir egzersizi daha bitirmek çoğu zaman gelişen bir karakter gibi hissettirmez."
+      ]
     ]
   },
   "solution": {
@@ -42,11 +71,26 @@
     "headline": "Alışkanlığı seferler, görevler, rütbeler ve terfilerle kur.",
     "body": "Caplexy öğrenme motorunu altta tutar, öğrenciye yüzeyde bir kariyer yolculuğu verir. İngilizce pratiği rapor verilecek, tamamlanacak, açılacak ve hatırlanacak bir şeye dönüşür.",
     "features": [
-      ["Daily Watch Duty", "Öğrenciyi ödev hissi vermeden ilerleten kısa günlük rutin."],
-      ["Voyage Log", "Günlük baskı yerine görünür kariyer ivmesi sağlayan motive edici kayıt."],
-      ["Rütbe terfileri", "Öğrenciler Cadet'ten Admiral'a 250 mikro rütbe ve 10 ana rütbe boyunca yükselir."],
-      ["Görevler", "Kelime, gramer, dinleme, okuma ve konuşma; kargo kontrollerine, telsiz çağrılarına ve gemi kayıtlarına dönüşür."],
-      ["Gemiler ve limanlar", "Yeni rotalar, limanlar ve gemiler ilerlemeyi ders listesi değil kariyer yolculuğu gibi hissettirir."]
+      [
+        "Daily Watch Duty",
+        "Öğrenciyi ödev hissi vermeden ilerleten kısa günlük rutin."
+      ],
+      [
+        "Voyage Log",
+        "Günlük baskı yerine görünür kariyer ivmesi sağlayan motive edici kayıt."
+      ],
+      [
+        "Rütbe terfileri",
+        "Öğrenciler Cadet'ten Admiral'a 250 mikro rütbe ve 10 ana rütbe boyunca yükselir."
+      ],
+      [
+        "Görevler",
+        "Kelime, gramer, dinleme, okuma ve konuşma; kargo kontrollerine, telsiz çağrılarına ve gemi kayıtlarına dönüşür."
+      ],
+      [
+        "Gemiler ve limanlar",
+        "Yeni rotalar, limanlar ve gemiler ilerlemeyi ders listesi değil kariyer yolculuğu gibi hissettirir."
+      ]
     ]
   },
   "how": {
@@ -56,7 +100,7 @@
     "progressValue": "Sıradaki terfiye %68",
     "steps": [
       "Günlük görevleri tamamla",
-      "XP kazan ve ilerle",
+      "NM kazan ve ilerle",
       "Yeni rütbelerin kilidini aç",
       "Gramer çalışıyormuş gibi hissetmeden İngilizce öğren"
     ]
@@ -67,7 +111,10 @@
     "body": "İlk ürün ekranları platform geliştirilirken Bridge panelini, Voyage Mode'u, rütbe ilerlemesini ve öğretmen görünümünü gösterebilir.",
     "dashboard": "Bridge Paneli",
     "badge": "Önizleme",
-    "cards": ["Voyage Mode", "Öğretmen Paneli"]
+    "cards": [
+      "Voyage Mode",
+      "Öğretmen Paneli"
+    ]
   },
   "ranks": {
     "label": "Rütbe sistemi",
@@ -92,14 +139,35 @@
     "headline": "Öğrenci yolculuğu görür. Müfredatı Caplexy yönetir.",
     "userSees": "Kullanıcı görür",
     "systemTeaches": "Sistem öğretir",
-    "visible": ["Seferler", "Görevler", "Rütbeler", "Gemiler", "Limanlar"],
-    "hidden": ["İngilizce kelime", "İngilizce gramer", "İngilizce dinleme", "İngilizce okuma", "İngilizce konuşma"],
+    "visible": [
+      "Seferler",
+      "Görevler",
+      "Rütbeler",
+      "Gemiler",
+      "Limanlar"
+    ],
+    "hidden": [
+      "İngilizce kelime",
+      "İngilizce gramer",
+      "İngilizce dinleme",
+      "İngilizce okuma",
+      "İngilizce konuşma"
+    ],
     "philosophyTitle": "Arayüz dili ve öğrenme dili ayrı kavramlardır.",
     "philosophyBody": "Türkçe konuşan bir öğrenci Görevler, Rütbeler ve Seferler gibi arayüz etiketleri görürken öğrenme içeriği İngilizce kelime, gramer, dinleme, okuma ve konuşma olarak kalır.",
     "games": [
-      ["Cargo Match", "Kelimeler kargo, etiket, manifesto ve liman talepleri olarak görünür."],
-      ["Fix The Ship Log", "Gramer düzeltme, kalkıştan önce gemi kaydını onarmaya dönüşür."],
-      ["Radio Check", "Dinleme ve konuşma gerçekçi denizcilik iletişimine dönüşür."]
+      [
+        "Cargo Match",
+        "Kelimeler kargo, etiket, manifesto ve liman talepleri olarak görünür."
+      ],
+      [
+        "Fix The Ship Log",
+        "Gramer düzeltme, kalkıştan önce gemi kaydını onarmaya dönüşür."
+      ],
+      [
+        "Radio Check",
+        "Dinleme ve konuşma gerçekçi denizcilik iletişimine dönüşür."
+      ]
     ]
   },
   "teacher": {
@@ -109,9 +177,18 @@
     "panelTitle": "Sınıf Görev Kontrolü",
     "badge": "Yakında",
     "cards": [
-      ["Sınıf oluştur", "Öğrencileri davet et ve grupları düzenle."],
-      ["Görev ata", "Temalı aktivitelerin altında beceri hedefleri seç."],
-      ["İlerlemeyi takip et", "Kelime, gramer, dinleme, okuma ve konuşma gelişimini gör."]
+      [
+        "Sınıf oluştur",
+        "Öğrencileri davet et ve grupları düzenle."
+      ],
+      [
+        "Görev ata",
+        "Temalı aktivitelerin altında beceri hedefleri seç."
+      ],
+      [
+        "İlerlemeyi takip et",
+        "Kelime, gramer, dinleme, okuma ve konuşma gelişimini gör."
+      ]
     ]
   },
   "finalCta": {
@@ -121,7 +198,12 @@
   },
   "footer": {
     "tagline": "Arayüz dili öğrenciye uyum sağlarken İngilizceyi öğrenme hedefi olarak koruyan global bir İngilizce öğrenme platformu.",
-    "links": ["Görevler", "Seferler", "Rütbeler", "Öğretmen Modu"]
+    "links": [
+      "Görevler",
+      "Seferler",
+      "Rütbeler",
+      "Öğretmen Modu"
+    ]
   },
   "dashboard": {
     "nav": {
@@ -132,7 +214,11 @@
       "academy": "Gemi Akademisi",
       "career": "Kariyer",
       "careerPath": "Kariyer Yolu",
-      "backHome": "Ana Sayfa"
+      "backHome": "Ana Sayfa",
+      "profile": "Kariyer Kartım",
+      "login": "Giriş",
+      "register": "Kayıt Ol",
+      "logout": "Çıkış"
     },
     "welcome": {
       "eyebrow": "Öğrenci Köprüsü",
@@ -142,7 +228,7 @@
       "currentRankValue": "Cadet I",
       "nextRank": "Sıradaki rütbe",
       "nextRankValue": "Cadet II",
-      "xp": "XP",
+      "xp": "NM",
       "xpValue": "1250",
       "progress": "65%",
       "progressLabel": "Mikro rütbe ilerlemesi",
@@ -154,7 +240,7 @@
       "title": "Günlük Sefer",
       "description": "Bugünün görevlerini tamamla ve seferini canlı tut.",
       "button": "Sefere Başla",
-      "reward": "100 XP mümkün",
+      "reward": "100 NM mümkün",
       "progress": "{completed}/{total} tamamlandı",
       "completed": "Bugünkü sefer tamamlandı."
     },
@@ -179,10 +265,15 @@
     "watchDuty": {
       "title": "Günlük Nöbet",
       "subtitle": "Kalkıştan önce her kontrol noktasını tamamla.",
-      "tasks": ["Kelime Görevi", "Dil Bilgisi Görevi", "Dinleme Görevi", "Hızlı Tekrar"]
+      "tasks": [
+        "Kelime Görevi",
+        "Dil Bilgisi Görevi",
+        "Dinleme Görevi",
+        "Hızlı Tekrar"
+      ]
     },
     "stats": {
-      "totalXp": "Toplam XP",
+      "totalXp": "Toplam NM",
       "voyageLog": "Sefer Günlüğü",
       "missionsCompleted": "Tamamlanan Görev",
       "currentCrew": "Mürettebat",
@@ -194,12 +285,32 @@
       "start": "Başla",
       "completedToday": "Bugün tamamlandı",
       "difficulty": "Zorluk",
-      "xp": "XP",
+      "xp": "NM",
       "items": [
-        ["Cargo Match", "İngilizce kelime dağarcığını geliştirmek için kargo etiketlerini eşleştir.", "Kolay", "+20 XP"],
-        ["Ship Log Repair", "Sefer devam etmeden önce resmi gemi kayıtlarını onar.", "Kolay", "+25 XP"],
-        ["Radio Check", "Telsiz mesajını dinle ve bir mürettebat üyesi gibi cevap ver.", "Orta", "+25 XP"],
-        ["Harbor Quiz", "Kısa karma bir görevle liman talimatlarını tekrar et.", "Kolay", "+15 XP"]
+        [
+          "Cargo Match",
+          "İngilizce kelime dağarcığını geliştirmek için kargo etiketlerini eşleştir.",
+          "Kolay",
+          "+20 NM"
+        ],
+        [
+          "Ship Log Repair",
+          "Sefer devam etmeden önce resmi gemi kayıtlarını onar.",
+          "Kolay",
+          "+25 NM"
+        ],
+        [
+          "Radio Check",
+          "Telsiz mesajını dinle ve bir mürettebat üyesi gibi cevap ver.",
+          "Orta",
+          "+25 NM"
+        ],
+        [
+          "Harbor Quiz",
+          "Kısa karma bir görevle liman talimatlarını tekrar et.",
+          "Kolay",
+          "+15 NM"
+        ]
       ]
     },
     "rankPath": {
@@ -219,15 +330,15 @@
     "subtitle": "Kargoları doğru anlamlarla eşleştir.",
     "englishColumn": "İngilizce kargo",
     "turkishColumn": "Türkçe anlamlar",
-    "progress": "Eşleşen kargo: {matched}/{total}",
-    "reward": "+25 XP",
+    "progress": "{matched} / {total} kargo eşleşti",
+    "reward": "+25 NM",
     "reset": "Görevi sıfırla",
     "feedbackCorrect": "Kargo eşleşti.",
     "feedbackWrong": "Tam olmadı. Başka bir anlam dene.",
     "selectPrompt": "Bir İngilizce kelime ve bir Türkçe anlam seç.",
     "completedTitle": "Sefer tamamlandı!",
     "completedMission": "Cargo Match görevini başarıyla bitirdin.",
-    "completedReward": "+25 XP kazandın.",
+    "completedReward": "+25 NM kazandın.",
     "rankProgress": "Cadet II rütbesine biraz daha yaklaştın.",
     "rankProgressLabel": "Cadet I'den Cadet II'ye",
     "rankProgressBefore": "65%",
@@ -242,7 +353,7 @@
     },
     "title": "Radio Check",
     "subtitle": "Radyo mesajını dikkatle dinle.",
-    "reward": "+25 XP",
+    "reward": "+25 NM",
     "progress": "Soru {current}/{total}",
     "panelTitle": "Radyo Alıcısı",
     "incoming": "Gelen mesaj",
@@ -258,7 +369,7 @@
     },
     "completedTitle": "Görev Tamamlandı",
     "completedBody": "Radio Check görevi başarıyla tamamlandı.",
-    "completedReward": "+25 XP Kazandın",
+    "completedReward": "+25 NM Kazandın",
     "returnDashboard": "Dashboard'a Dön",
     "playAgain": "Tekrar Oyna"
   },
@@ -268,7 +379,7 @@
     },
     "title": "Ship Log Repair",
     "subtitle": "Gemi günlüğündeki kayıtları düzelt.",
-    "reward": "+25 XP",
+    "reward": "+25 NM",
     "progress": "Kayıt {current}/{total}",
     "percentage": "%{percent} tamamlandı",
     "logEntry": "Günlük Kaydı",
@@ -290,19 +401,19 @@
     },
     "completedTitle": "Gemi Günlüğü Onarıldı",
     "completedBody": "Tüm kayıtlar başarıyla düzeltildi.",
-    "completedReward": "+25 XP kazandın.",
+    "completedReward": "+25 NM kazandın.",
     "returnDashboard": "Dashboard'a Dön",
     "playAgain": "Tekrar Onar"
   },
   "dailyVoyagePage": {
     "title": "Günlük Sefer",
     "subtitle": "Bugünkü görevlerini tamamla ve rütbene yaklaş.",
-    "reward": "Bugün 100 XP mümkün",
+    "reward": "Bugün 100 NM mümkün",
     "backDashboard": "Dashboard'a Dön",
     "progress": "{completed}/{total} tamamlandı",
-    "totalXp": "Toplam XP",
+    "totalXp": "Toplam NM",
     "earnedToday": "Bugün kazanılan",
-    "xpToday": "{xp} XP",
+    "xpToday": "{xp} NM",
     "voyageLog": "Sefer Günlüğü",
     "missionListTitle": "Bugünün rotası",
     "missionListSubtitle": "Seferi tamamlamak ve bonusu almak için tüm görevleri bitir.",
@@ -317,11 +428,11 @@
     "rankTitle": "Rütbe ilerlemesi",
     "rankRoute": "{current} -> {next}",
     "rankBody": "Tamamlanan her görev seni bir sonraki mikro rütbeye yaklaştırır.",
-    "bonusLockedTitle": "Bonus XP onay bekliyor",
+    "bonusLockedTitle": "Bonus NM onay bekliyor",
     "bonusLockedBody": "Günlük sefer bonusunu kazanmak için üç görevi de tamamla.",
     "completedTitle": "Sefer Tamamlandı",
     "completedBody": "Bugünkü tüm görevler tamamlandı.",
-    "completedReward": "+25 bonus XP kazandın.",
+    "completedReward": "+25 bonus NM kazandın.",
     "tomorrow": "Yarın yeni bir sefer seni bekliyor."
   },
   "voyageLog": {
@@ -341,7 +452,7 @@
     "daysRemaining": "Sonraki kilometre taşına {days} gün kaldı.",
     "currentBadgeProgress": "Mevcut rozet ilerlemesi: {current}/{target} gün",
     "milestoneTitle": "Kilometre taşı ödülleri",
-    "milestoneBody": "Kilometre taşları uzun seferleri XP ve unvan rozetleriyle ödüllendirir. Rozet görselleri sonra eklenebilir.",
+    "milestoneBody": "Kilometre taşları uzun seferleri NM ve unvan rozetleriyle ödüllendirir. Rozet görselleri sonra eklenebilir.",
     "historyCalendar": "Sefer Geçmişi Takvimi",
     "historyCalendarBody": "Tamamlanan sefer günleri denizcilik günlüğünde işaretlenir.",
     "completedDates": "Tamamlanan tarihler",
@@ -349,7 +460,7 @@
     "completedDatesBody": "Tamamlanan her Günlük Sefer, gemi günlüğüne kaydedilir.",
     "noCompletedDates": "Henüz tamamlanmış sefer tarihi yok.",
     "milestones": {
-      "xp50": "+50 XP",
+      "xp50": "+50 NM",
       "steadySailor": "Rozet: Steady Sailor",
       "reliableCrewmate": "Rozet: Reliable Crewmate",
       "oceanRegular": "Rozet: Ocean Regular",
@@ -370,7 +481,6 @@
     "moduleLabel": "Modül {number}",
     "requiredRank": "Gerekli rütbe",
     "rankRequired": "Rütbe {rank}",
-    "hiddenTopic": "Gizli konu",
     "trainingFocus": "Eğitim odağı",
     "trainingProgress": "Eğitim ilerlemesi",
     "enterTraining": "Eğitime Gir",
@@ -389,7 +499,7 @@
     },
     "summary": {
       "route": "Akademi rotası",
-      "routeValue": "8 yapılandırılmış eğitim modülü",
+      "routeValue": "45 rütbe odaklı eğitim modülü",
       "training": "Eğitim tarzı",
       "trainingValue": "Görevler, kayıtlar, raporlar ve emirler",
       "identity": "Öğrenci kimliği",
@@ -398,83 +508,790 @@
     "modules": {
       "harborBasics": {
         "title": "Harbor Basics",
-        "description": "Liman masasına rapor ver, kendini tanıt ve her yeni mürettebat üyesinin bilmesi gereken ilk sinyalleri öğren.",
+        "description": "Harbor Basics içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
         "focus": "Liman tanışmaları",
         "objectives": [
-          "Akademi masasında kendini tanıt",
-          "Kişileri, yerleri ve basit rolleri ayırt et",
-          "Temel gemi içi tanışmaları anla"
+          "Harbor Basics brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "crewOrientation": {
+        "title": "Crew Orientation",
+        "description": "Crew Orientation içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Mürettebat kimlik kontrolleri",
+        "objectives": [
+          "Crew Orientation brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "cabinReadiness": {
+        "title": "Cabin Readiness",
+        "description": "Cabin Readiness içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Kabin ve oda raporları",
+        "objectives": [
+          "Cabin Readiness brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
         ]
       },
       "dailyDeckRoutine": {
         "title": "Daily Deck Routine",
-        "description": "Günlük güverte planını takip et ve bir gemiyi sefere hazır tutan rutinleri anlat.",
+        "description": "Daily Deck Routine içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
         "focus": "Günlük görev raporları",
         "objectives": [
-          "Düzenli gemi rutinlerini anlat",
-          "Basit nöbet çizelgelerini oku",
-          "Mürettebatın genelde ne yaptığını raporla"
+          "Daily Deck Routine brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "watchDuty": {
+        "title": "Watch Duty",
+        "description": "Watch Duty içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Nöbet rotasyonu alışkanlıkları",
+        "objectives": [
+          "Watch Duty brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "cargoInspection": {
+        "title": "Cargo Inspection",
+        "description": "Cargo Inspection içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Kargo etiketleri ve miktarlar",
+        "objectives": [
+          "Cargo Inspection brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "galleyService": {
+        "title": "Galley Service",
+        "description": "Galley Service içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Servis talepleri",
+        "objectives": [
+          "Galley Service brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
         ]
       },
       "weatherWatch": {
         "title": "Weather Watch",
-        "description": "Nöbet ekibine katıl ve geminin çevresinde şu anda neler olduğunu raporla.",
+        "description": "Weather Watch içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
         "focus": "Canlı nöbet güncellemeleri",
         "objectives": [
-          "Anlık hava ve güverte hareketlerini anlat",
-          "Canlı durum raporlarını anla",
-          "Aktif bir durum için doğru mesajı seç"
+          "Weather Watch brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "deckOperations": {
+        "title": "Deck Operations",
+        "description": "Deck Operations içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Güverte komutları",
+        "objectives": [
+          "Deck Operations brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "portArrival": {
+        "title": "Port Arrival",
+        "description": "Port Arrival içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Liman konum raporları",
+        "objectives": [
+          "Port Arrival brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "passengerAssistance": {
+        "title": "Passenger Assistance",
+        "description": "Passenger Assistance içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Yolcu destek masası",
+        "objectives": [
+          "Passenger Assistance brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "safetyDrill": {
+        "title": "Safety Drill",
+        "description": "Safety Drill içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Güvenlik kuralları ve görevler",
+        "objectives": [
+          "Safety Drill brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "radioCommunication": {
+        "title": "Radio Communication",
+        "description": "Radio Communication içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Radyo mesaj alışverişi",
+        "objectives": [
+          "Radio Communication brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "emergencySignals": {
+        "title": "Emergency Signals",
+        "description": "Emergency Signals içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Uyarılar ve alarmlar",
+        "objectives": [
+          "Emergency Signals brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "navigationBriefing": {
+        "title": "Navigation Briefing",
+        "description": "Navigation Briefing içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Rota sırası brifingleri",
+        "objectives": [
+          "Navigation Briefing brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
         ]
       },
       "voyageRecords": {
         "title": "Voyage Records",
-        "description": "Tamamlanan seferleri incele ve önceki rotalardan kısa kayıtları onar.",
+        "description": "Voyage Records içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
         "focus": "Tamamlanan sefer notları",
         "objectives": [
-          "Kısa geçmiş sefer notlarını oku",
-          "Tamamlanan eylemleri raporla",
-          "Temel kayıt girişlerini onar"
+          "Voyage Records brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "maintenanceBay": {
+        "title": "Maintenance Bay",
+        "description": "Maintenance Bay içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Onarım talepleri",
+        "objectives": [
+          "Maintenance Bay brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "engineRoomUpdate": {
+        "title": "Engine Room Update",
+        "description": "Engine Room Update içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Sistem durumu güncellemeleri",
+        "objectives": [
+          "Engine Room Update brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
         ]
       },
       "stormReports": {
         "title": "Storm Reports",
-        "description": "Fırtına raporlarını incele ve denizde koşullar değişirken neler olduğunu açıkla.",
+        "description": "Storm Reports içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
         "focus": "Olay raporları",
         "objectives": [
-          "Geçmiş olayları devam eden hareketlerle bağla",
-          "Hava olayı raporlarını anla",
-          "Kesintiye uğrayan gemi operasyonlarını anlat"
+          "Storm Reports brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "medicalBay": {
+        "title": "Medical Bay",
+        "description": "Medical Bay içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Bakım tavsiyeleri",
+        "objectives": [
+          "Medical Bay brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "supplyRequest": {
+        "title": "Supply Request",
+        "description": "Supply Request içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Malzeme miktarları",
+        "objectives": [
+          "Supply Request brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "customsClearance": {
+        "title": "Customs Clearance",
+        "description": "Customs Clearance içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Resmi denetim yanıtları",
+        "objectives": [
+          "Customs Clearance brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "crewCoordination": {
+        "title": "Crew Coordination",
+        "description": "Crew Coordination içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Görev devirleri",
+        "objectives": [
+          "Crew Coordination brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
         ]
       },
       "captainsOrders": {
         "title": "Captain's Orders",
-        "description": "Kaptanın köprüsünden gelen emirleri, izinleri ve güvenlik talimatlarını yorumla.",
+        "description": "Captain's Orders içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
         "focus": "Köprü komutları",
         "objectives": [
-          "Görev talimatlarını anla",
-          "İzin ve zorunluluk dilini kullan",
-          "Gemi komutlarına güvenli yanıtları seç"
+          "Captain's Orders brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "routePlanning": {
+        "title": "Route Planning",
+        "description": "Route Planning içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Rota planlama",
+        "objectives": [
+          "Route Planning brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
         ]
       },
       "futureRoutes": {
         "title": "Future Routes",
-        "description": "Navigasyon ekibiyle yaklaşan rotaları, programları ve liman varışlarını planla.",
-        "focus": "Rota planlama",
+        "description": "Future Routes içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Gelecek programlar",
         "objectives": [
-          "Planlanan rotalardan bahset",
-          "Yaklaşan sefer programlarını oku",
-          "Doğru gelecek rota mesajlarını seç"
+          "Future Routes brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "harborNegotiation": {
+        "title": "Harbor Negotiation",
+        "description": "Harbor Negotiation içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Liman hizmet seçimleri",
+        "objectives": [
+          "Harbor Negotiation brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "fleetComparison": {
+        "title": "Fleet Comparison",
+        "description": "Fleet Comparison içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Gemi ve filo karşılaştırmaları",
+        "objectives": [
+          "Fleet Comparison brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
         ]
       },
       "missionConditions": {
         "title": "Mission Conditions",
-        "description": "Her kararın hava, kargo ve mürettebat hazırlığına bağlı olduğu görev brifinglerini yönet.",
+        "description": "Mission Conditions içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
         "focus": "Koşullu görev brifingleri",
         "objectives": [
-          "Eğer-ise görev brifinglerini anla",
-          "Koşullara göre eylem seç",
-          "Koşullu güvenlik talimatlarını oku"
+          "Mission Conditions brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
         ]
+      },
+      "shoreLeave": {
+        "title": "Shore Leave",
+        "description": "Shore Leave içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Davetler ve planlar",
+        "objectives": [
+          "Shore Leave brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "incidentInvestigation": {
+        "title": "Incident Investigation",
+        "description": "Incident Investigation içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Zaman çizelgesi raporları",
+        "objectives": [
+          "Incident Investigation brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "rescueCoordination": {
+        "title": "Rescue Coordination",
+        "description": "Rescue Coordination içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Kurtarma talimatları",
+        "objectives": [
+          "Rescue Coordination brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "diplomaticPortCall": {
+        "title": "Diplomatic Port Call",
+        "description": "Diplomatic Port Call içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Resmi liman protokolü",
+        "objectives": [
+          "Diplomatic Port Call brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "advancedRadioRelay": {
+        "title": "Advanced Radio Relay",
+        "description": "Advanced Radio Relay içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Aktarılan mesajlar",
+        "objectives": [
+          "Advanced Radio Relay brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "environmentalWatch": {
+        "title": "Environmental Watch",
+        "description": "Environmental Watch içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Neden ve önleme raporları",
+        "objectives": [
+          "Environmental Watch brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "securityPatrol": {
+        "title": "Security Patrol",
+        "description": "Security Patrol içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Güvenlik tanımları",
+        "objectives": [
+          "Security Patrol brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "internationalCrew": {
+        "title": "International Crew",
+        "description": "International Crew içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Kültürler arası ekip çalışması",
+        "objectives": [
+          "International Crew brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "technicalManuals": {
+        "title": "Technical Manuals",
+        "description": "Technical Manuals içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Teknik süreç okuma",
+        "objectives": [
+          "Technical Manuals brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "leadershipBriefing": {
+        "title": "Leadership Briefing",
+        "description": "Leadership Briefing içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Öneriler ve strateji",
+        "objectives": [
+          "Leadership Briefing brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "crisisCommand": {
+        "title": "Crisis Command",
+        "description": "Crisis Command içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Kriz güncellemeleri",
+        "objectives": [
+          "Crisis Command brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "fleetLogistics": {
+        "title": "Fleet Logistics",
+        "description": "Fleet Logistics içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Filo programları ve malzemeler",
+        "objectives": [
+          "Fleet Logistics brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "oceanDiplomacy": {
+        "title": "Ocean Diplomacy",
+        "description": "Ocean Diplomacy içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Denizde müzakere",
+        "objectives": [
+          "Ocean Diplomacy brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "admiralStrategy": {
+        "title": "Admiral Strategy",
+        "description": "Admiral Strategy içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Stratejik akıl yürütme",
+        "objectives": [
+          "Admiral Strategy brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "masterCommand": {
+        "title": "Master Command",
+        "description": "Master Command içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Bütünleşik komuta",
+        "objectives": [
+          "Master Command brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      },
+      "caplexyAdmiralty": {
+        "title": "Caplexy Admiralty",
+        "description": "Caplexy Admiralty içinde gemi görevleri, brifingler ve operasyon iletişimiyle eğitim al.",
+        "focus": "Final admiralty brifingi",
+        "objectives": [
+          "Caplexy Admiralty brifingini tamamla",
+          "Duruma uygun denizcilik iletişimini kullan",
+          "Bir sonraki akademi eğitim rütbesine hazırlan"
+        ]
+      }
+    },
+    "vocabularyThemes": "Kelime temaları",
+    "listeningActivities": "Dinleme",
+    "speakingActivities": "Konuşma",
+    "assessment": "Değerlendirme",
+    "badge": "Akademi rozeti",
+    "vocabularyThemeLabels": {
+      "identity": "Kimlik",
+      "harbor": "Liman",
+      "roles": "Roller",
+      "crew": "Mürettebat",
+      "documents": "Belgeler",
+      "cabins": "Kabinler",
+      "objects": "Nesneler",
+      "locations": "Konumlar",
+      "routine": "Rutin",
+      "deck": "Güverte",
+      "time": "Zaman",
+      "watch": "Nöbet",
+      "frequency": "Sıklık",
+      "duties": "Görevler",
+      "cargo": "Kargo",
+      "quantities": "Miktarlar",
+      "labels": "Etiketler",
+      "food": "Yemek",
+      "service": "Servis",
+      "requests": "Talepler",
+      "weather": "Hava durumu",
+      "sea": "Deniz koşulları",
+      "actions": "Eylemler",
+      "equipment": "Ekipman",
+      "movement": "Hareket",
+      "safety": "Güvenlik",
+      "port": "Liman",
+      "directions": "Yönler",
+      "passengers": "Yolcular",
+      "help": "Yardım",
+      "questions": "Sorular",
+      "rules": "Kurallar",
+      "radio": "Radyo",
+      "signals": "Sinyaller",
+      "messages": "Mesajlar",
+      "emergency": "Acil durum",
+      "hazards": "Tehlikeler",
+      "navigation": "Navigasyon",
+      "routes": "Rotalar",
+      "sequence": "Sıra",
+      "records": "Kayıtlar",
+      "voyage": "Sefer",
+      "events": "Olaylar",
+      "maintenance": "Bakım",
+      "tools": "Araçlar",
+      "problems": "Sorunlar",
+      "engine": "Makine",
+      "systems": "Sistemler",
+      "status": "Durum",
+      "storm": "Fırtına",
+      "incidents": "Olaylar",
+      "health": "Sağlık",
+      "injury": "Yaralanma",
+      "advice": "Tavsiye",
+      "supplies": "Malzemeler",
+      "customs": "Gümrük",
+      "inspection": "Denetim",
+      "teamwork": "Ekip çalışması",
+      "tasks": "Görevler",
+      "people": "İnsanlar",
+      "orders": "Emirler",
+      "permission": "İzin",
+      "obligation": "Zorunluluk",
+      "plans": "Planlar",
+      "future": "Gelecek rotalar",
+      "schedule": "Program",
+      "arrival": "Varış",
+      "prices": "Fiyatlar",
+      "choices": "Seçimler",
+      "fleet": "Filo",
+      "ships": "Gemiler",
+      "features": "Özellikler",
+      "conditions": "Koşullar",
+      "mission": "Görev",
+      "decisions": "Kararlar",
+      "city": "Şehir",
+      "freeTime": "Serbest zaman",
+      "invitations": "Davetler",
+      "evidence": "Kanıt",
+      "timeline": "Zaman çizelgesi",
+      "rescue": "Kurtarma",
+      "coordination": "Koordinasyon",
+      "urgency": "Aciliyet",
+      "diplomacy": "Diplomasi",
+      "welcome": "Karşılama",
+      "protocol": "Protokol",
+      "relay": "Aktarım",
+      "reports": "Raporlar",
+      "environment": "Çevre",
+      "pollution": "Kirlilik",
+      "prevention": "Önleme",
+      "security": "Güvenlik",
+      "areas": "Alanlar",
+      "culture": "Kültür",
+      "communication": "İletişim",
+      "manuals": "Kılavuzlar",
+      "process": "Süreç",
+      "leadership": "Liderlik",
+      "strategy": "Strateji",
+      "recommendations": "Öneriler",
+      "crisis": "Kriz",
+      "updates": "Güncellemeler",
+      "logistics": "Lojistik",
+      "negotiation": "Müzakere",
+      "agreement": "Anlaşma",
+      "risk": "Risk",
+      "planning": "Planlama",
+      "command": "Komuta",
+      "admiralty": "Amirallik",
+      "career": "Kariyer",
+      "legacy": "Miras"
+    },
+    "listeningActivityLabels": {
+      "arrivalCall": "Arrival call",
+      "crewBriefing": "Crew briefing",
+      "cabinInspection": "Cabin inspection",
+      "dutySchedule": "Duty schedule",
+      "watchRotation": "Watch rotation",
+      "cargoManifest": "Cargo manifest",
+      "serviceOrder": "Service order",
+      "weatherUpdate": "Weather update",
+      "deckCommand": "Deck command",
+      "arrivalInstructions": "Arrival instructions",
+      "helpDeskCall": "Help desk call",
+      "safetyAnnouncement": "Safety announcement",
+      "radioTransmission": "Radio transmission",
+      "alarmMessage": "Alarm message",
+      "routeBriefing": "Route briefing",
+      "logReview": "Log review",
+      "repairRequest": "Repair request",
+      "engineUpdate": "Engine update",
+      "stormReport": "Storm report",
+      "medicalCall": "Medical call",
+      "supplyList": "Supply list",
+      "customsInterview": "Customs interview",
+      "teamBriefing": "Team briefing",
+      "captainBriefing": "Captain briefing",
+      "planningMeeting": "Planning meeting",
+      "futureSchedule": "Future schedule",
+      "harborOffer": "Harbor offer",
+      "fleetBrief": "Fleet brief",
+      "missionBriefing": "Mission briefing",
+      "shorePlan": "Shore plan",
+      "incidentInterview": "Incident interview",
+      "rescueCall": "Rescue call",
+      "welcomeMessage": "Welcome message",
+      "relayMessage": "Relay message",
+      "environmentReport": "Environment report",
+      "patrolBrief": "Patrol brief",
+      "cultureBrief": "Culture brief",
+      "manualInstruction": "Manual instruction",
+      "leadershipBrief": "Leadership brief",
+      "crisisUpdate": "Crisis update",
+      "logisticsReport": "Logistics report",
+      "agreementCall": "Agreement call",
+      "strategyBrief": "Strategy brief",
+      "commandScenario": "Command scenario",
+      "admiraltyReview": "Admiralty review"
+    },
+    "speakingActivityLabels": {
+      "selfIntroduction": "Self introduction",
+      "crewCheckIn": "Crew check-in",
+      "roomReport": "Room report",
+      "dailyReport": "Daily report",
+      "watchHandover": "Watch handover",
+      "cargoReport": "Cargo report",
+      "politeRequest": "Polite request",
+      "liveStatus": "Live status",
+      "commandResponse": "Command response",
+      "locationReport": "Location report",
+      "assistanceDialogue": "Assistance dialogue",
+      "safetyInstruction": "Safety instruction",
+      "radioReply": "Radio reply",
+      "warningCall": "Warning call",
+      "routeSummary": "Route summary",
+      "pastReport": "Past report",
+      "maintenanceReport": "Maintenance report",
+      "systemStatus": "System status",
+      "incidentSummary": "Incident summary",
+      "careAdvice": "Care advice",
+      "supplyRequest": "Supply request",
+      "formalAnswer": "Formal answer",
+      "taskAssignment": "Task assignment",
+      "orderResponse": "Order response",
+      "routePlan": "Route plan",
+      "arrivalPlan": "Arrival plan",
+      "compareOptions": "Compare options",
+      "shipComparison": "Ship comparison",
+      "conditionalPlan": "Conditional plan",
+      "invitationReply": "Invitation reply",
+      "timelineReport": "Timeline report",
+      "rescueInstruction": "Rescue instruction",
+      "formalGreeting": "Formal greeting",
+      "messageRelay": "Message relay",
+      "causeReport": "Cause report",
+      "securityDescription": "Security description",
+      "teamConversation": "Team conversation",
+      "processExplanation": "Process explanation",
+      "recommendation": "Recommendation",
+      "commandBrief": "Command brief",
+      "scheduleBrief": "Schedule brief",
+      "negotiateTerms": "Negotiate terms",
+      "strategicReport": "Strategic report",
+      "missionCommand": "Mission command",
+      "finalBriefing": "Final briefing"
+    },
+    "assessments": {
+      "harborCheck": "Harbor check",
+      "orientationReport": "Orientation report",
+      "cabinChecklist": "Cabin checklist",
+      "routineLog": "Routine log",
+      "watchRecord": "Watch record",
+      "cargoAudit": "Cargo audit",
+      "serviceBrief": "Service brief",
+      "weatherReport": "Weather report",
+      "operationCheck": "Operation check",
+      "arrivalMap": "Arrival map",
+      "assistanceReview": "Assistance review",
+      "safetyClearance": "Safety clearance",
+      "radioCheck": "Radio check",
+      "signalTest": "Signal test",
+      "navigationQuiz": "Navigation quiz",
+      "recordRepair": "Record repair",
+      "maintenanceTicket": "Maintenance ticket",
+      "engineStatus": "Engine status",
+      "stormLog": "Storm log",
+      "medicalNote": "Medical note",
+      "supplyForm": "Supply form",
+      "clearanceForm": "Clearance form",
+      "coordinationCheck": "Coordination check",
+      "ordersReview": "Orders review",
+      "routePlanReview": "Route plan review",
+      "futureRouteBrief": "Future route brief",
+      "offerReview": "Offer review",
+      "fleetReview": "Fleet review",
+      "missionDecision": "Mission decision",
+      "shorePlanCheck": "Shore plan check",
+      "investigationFile": "Investigation file",
+      "rescueProtocol": "Rescue protocol",
+      "protocolReview": "Protocol review",
+      "relayAccuracy": "Relay accuracy",
+      "environmentChecklist": "Environment checklist",
+      "patrolReport": "Patrol report",
+      "crewCultureCheck": "Crew culture check",
+      "manualReview": "Manual review",
+      "leadershipReview": "Leadership review",
+      "crisisSimulation": "Crisis simulation",
+      "logisticsPlan": "Logistics plan",
+      "agreementDraft": "Agreement draft",
+      "strategyReview": "Strategy review",
+      "commandAssessment": "Command assessment",
+      "admiraltyBoard": "Admiralty board"
+    },
+    "badges": {
+      "harborCadet": "Harbor Cadet",
+      "newCrew": "New Crew",
+      "cabinReady": "Cabin Ready",
+      "deckRoutine": "Deck Routine",
+      "watchKeeper": "Watch Keeper",
+      "cargoInspector": "Cargo Inspector",
+      "galleyCrew": "Galley Crew",
+      "weatherWatcher": "Weather Watcher",
+      "deckOperator": "Deck Operator",
+      "portGuide": "Port Guide",
+      "guestSupport": "Guest Support",
+      "safetyReady": "Safety Ready",
+      "radioOperator": "Radio Operator",
+      "signalOfficer": "Signal Officer",
+      "juniorNavigator": "Junior Navigator",
+      "logOfficer": "Log Officer",
+      "repairCrew": "Repair Crew",
+      "engineRunner": "Engine Runner",
+      "stormReporter": "Storm Reporter",
+      "medicalAssistant": "Medical Assistant",
+      "supplyOfficer": "Supply Officer",
+      "clearanceReady": "Clearance Ready",
+      "crewCoordinator": "Crew Coordinator",
+      "ordersOfficer": "Orders Officer",
+      "routePlanner": "Route Planner",
+      "futureNavigator": "Future Navigator",
+      "harborNegotiator": "Harbor Negotiator",
+      "fleetAnalyst": "Fleet Analyst",
+      "missionPlanner": "Mission Planner",
+      "shoreCoordinator": "Shore Coordinator",
+      "incidentAnalyst": "Incident Analyst",
+      "rescueCoordinator": "Rescue Coordinator",
+      "portDiplomat": "Port Diplomat",
+      "relayOfficer": "Relay Officer",
+      "ecoWatch": "Eco Watch",
+      "securityPatrol": "Security Patrol",
+      "globalCrew": "Global Crew",
+      "manualReader": "Manual Reader",
+      "teamLead": "Team Lead",
+      "crisisCommander": "Crisis Commander",
+      "fleetLogistician": "Fleet Logistician",
+      "oceanDiplomat": "Ocean Diplomat",
+      "strategist": "Strategist",
+      "masterCommander": "Master Commander",
+      "admiraltyGraduate": "Admiralty Graduate"
+    },
+    "trainingFlow": {
+      "stepLabel": "Adım {number}",
+      "title": "Eğitim rotası",
+      "body": "Akademi sırasını denizcilik eğitimi görevi gibi tamamla. Öğrenme sistemi arka planda kalır; yüzeyde kariyer hazırlığı hissi olur.",
+      "startAction": "Başla",
+      "lockedAction": "Kilitli",
+      "overview": {
+        "title": "Genel Bakış",
+        "body": "Brifingi oku ve bu akademi modülünün seni denizde hangi göreve hazırladığını anla."
+      },
+      "vocabulary": {
+        "title": "Kelime bölümü",
+        "body": "Bu modülde ihtiyaç duyacağın operasyon kelimeleriyle çalış."
+      },
+      "listening": {
+        "title": "Dinleme görevi",
+        "body": "Bir denizcilik mesajı al ve doğru bilgiyi ayırt et."
+      },
+      "speaking": {
+        "title": "Konuşma görevi",
+        "body": "Bir mürettebat üyesi gibi net ve işe yarar bir yanıt ver."
+      },
+      "miniGame": {
+        "title": "Mini oyun görevi",
+        "body": "Modülü hızlı ve görev tarzı bir meydan okumayla pekiştir."
+      },
+      "assessment": {
+        "title": "Terfi Değerlendirmesi",
+        "body": "Bu eğitimin terfi ilerlemesine sayılması için son akademi kontrolünü tamamla."
       }
     }
   },
@@ -486,14 +1303,41 @@
   "career": {
     "title": "Caplexy Kariyer Yolu",
     "subtitle": "50 denizcilik kariyer grubunda 250 mikro rütbe.",
-    "currentXp": "Mevcut XP",
+    "currentXp": "Mevcut NM",
     "currentRank": "Mevcut rütbe",
     "progress": "Sıradaki mikro rütbeye ilerleme",
     "backDashboard": "Dashboard'a Dön",
-    "xpRequired": "{xp} XP",
+    "xpRequired": "{xp} NM",
     "rankNumber": "Rütbe {rank} / 250",
     "completed": "Tamamlandı",
     "current": "Mevcut",
     "locked": "Kilitli"
+  },
+  "auth": {
+    "login": {
+      "eyebrow": "Köprüye geri dön",
+      "title": "Giriş",
+      "description": "Denizcilik İngilizcesi kariyerine devam etmek için giriş yap."
+    },
+    "register": {
+      "eyebrow": "Mürettebat kaydını oluştur",
+      "title": "Hesap Oluştur",
+      "description": "Caplexy rütbeni, akademi ilerlemeni ve görev kaydını saklamaya başla."
+    },
+    "fields": {
+      "username": "Kullanıcı adı",
+      "email": "E-posta",
+      "password": "Şifre"
+    },
+    "actions": {
+      "login": "Giriş",
+      "register": "Kayıt Ol",
+      "createAccount": "Hesap Oluştur",
+      "pleaseWait": "Lütfen bekle..."
+    },
+    "links": {
+      "hasAccount": "Zaten hesabın var mı?",
+      "noAccount": "Henüz hesabın yok mu?"
+    }
   }
 }

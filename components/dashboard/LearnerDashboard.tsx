@@ -1,109 +1,117 @@
 "use client";
 
+import { useEffect, useState } from "react";
 import {
   Anchor,
-  BookOpenCheck,
+  Archive,
   Boxes,
   CalendarDays,
   Check,
   ChevronRight,
+  Clock3,
   ClipboardCheck,
+  Compass,
+  Gauge,
   GraduationCap,
   HelpCircle,
   Map,
   Medal,
   Milestone,
+  PackagePlus,
   Radio,
   Route,
   Ship,
   Sparkles,
   Star,
   Trophy,
-  UsersRound,
+  UserRound,
   Waves
 } from "lucide-react";
+import { ensureUserProfile } from "@/lib/auth/ensureUserProfile";
+import { AuthHeaderActions } from "@/components/auth/AuthHeaderActions";
+import { RecentCareerLogCard } from "@/components/career-log/CareerLog";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { academyModules, getUnlockedAcademyModules } from "@/lib/academy";
+import {
+  dailyVoyageRewardNm,
+  getDailyVoyageStatus,
+  getNextVoyageCountdown,
+  type DailyVoyageStatus
+} from "@/lib/daily-voyage";
+import {
+  getContinueVoyageAssignment,
+  type ContinueVoyageAssignment
+} from "@/lib/continue-voyage";
+import {
+  cargoStudyRewardNm,
+  getCargoStorageOverview,
+  type CargoHold
+} from "@/lib/cargo-storage";
 import { useI18n } from "@/lib/i18n";
 import { usePlayerProgress } from "@/lib/progress";
-import { getNearbyRanks } from "@/lib/ranks";
+import { getNearbyRanksByIndex, TOTAL_MICRO_RANKS } from "@/lib/ranks";
+import { getSupabaseClient, getSupabaseConfigStatus } from "@/lib/supabase/client";
 
 const missionIcons = [Boxes, ClipboardCheck, Radio, HelpCircle];
-const statIcons = [Star, BookOpenCheck, Trophy, UsersRound];
 
 export function LearnerDashboard() {
-  const { t, list } = useI18n();
-  const progress = usePlayerProgress();
+  const { list } = useI18n();
   const tasks = list<string[]>("dashboard.watchDuty.tasks");
   const missions = list<string[][]>("dashboard.missions.items");
-  const statCards = [
-    [t("dashboard.stats.totalXp"), String(progress.xp)],
-    [t("dashboard.stats.voyageLog"), t("dashboard.stats.days").replace("{days}", String(progress.voyageLog.currentVoyage))],
-    [
-      t("dashboard.stats.missionsCompleted"),
-      `${progress.dailyVoyage.completedCount}/${progress.dailyVoyage.totalCount}`
-    ],
-    [t("dashboard.stats.currentCrew"), "12"]
-  ];
 
   return (
     <main className="min-h-screen bg-[#f3f6f1] text-ink">
       <DashboardHeader />
 
-      <section className="relative overflow-hidden bg-ink pb-12 pt-8 text-white sm:pb-16 lg:pb-20">
+      <section className="relative overflow-hidden bg-ink pb-16 pt-8 text-white sm:pb-20 lg:pb-24">
         <div className="absolute inset-0 bg-chart-grid bg-[size:44px_44px] opacity-10" />
         <div className="absolute left-1/2 top-0 h-72 w-[46rem] -translate-x-1/2 rounded-full bg-tide/24 blur-3xl" />
+        <div className="absolute bottom-0 left-0 right-0 h-28 bg-gradient-to-t from-[#f3f6f1] to-transparent" />
 
         <div className="section-shell relative">
           <WelcomePanel />
         </div>
       </section>
 
-      <section className="section-shell py-8 sm:py-10 lg:py-12">
-        <div className="grid gap-6 lg:grid-cols-[1.05fr_0.95fr]">
+      <section className="section-shell -mt-10 pb-8 sm:-mt-12 sm:pb-10 lg:-mt-14 lg:pb-12">
+        <ContinueVoyageCard />
+
+        <div className="mt-6">
+          <BridgeOverviewCards />
+        </div>
+
+        <div className="mt-6">
+          <CargoStorageDashboardCard />
+        </div>
+
+        <div className="mt-6 grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
           <DailyVoyageCard />
+          <PromotionLadderCard />
+        </div>
+
+        <div className="mt-6 grid gap-6 xl:grid-cols-[0.92fr_1.08fr]">
+          <ShipAcademyCard />
+          <RecentCareerLogCard />
+        </div>
+
+        <div className="mt-6 grid gap-6 xl:grid-cols-[1.08fr_0.92fr]">
+          <VoyageLogCard />
           <WatchDutyCard tasks={tasks} />
         </div>
 
-        <div className="mt-6 grid gap-4 sm:grid-cols-2 lg:mt-8 lg:grid-cols-4">
-          {statCards.map(([label, value], index) => {
-            const Icon = statIcons[index] ?? Star;
-
-            return (
-              <article key={label} className="rounded-lg border border-ink/8 bg-white p-5 shadow-soft">
-                <div className="flex items-start justify-between gap-4">
-                  <div>
-                    <p className="text-sm font-semibold text-steel">{label}</p>
-                    <p className="mt-2 text-3xl font-semibold text-ink">{value}</p>
-                  </div>
-                  <div className="grid h-11 w-11 place-items-center rounded-lg bg-tide/10 text-tide">
-                    <Icon className="h-5 w-5" />
-                  </div>
-                </div>
-              </article>
-            );
-          })}
-        </div>
-
-        <div className="mt-6 lg:mt-8">
-          <VoyageLogCard />
-        </div>
-
-        <div className="mt-6 lg:mt-8">
-          <ShipAcademyCard />
-        </div>
-
-        <div className="mt-6 grid gap-6 lg:mt-8 xl:grid-cols-[1.35fr_0.65fr]">
+        <div className="mt-6 grid gap-6 xl:grid-cols-[1.35fr_0.65fr]">
           <MissionDeck missions={missions} />
           <RankPath />
         </div>
+
+        <CareerActions />
       </section>
     </main>
   );
 }
 
 function DashboardHeader() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
 
   return (
     <header className="bg-ink text-white">
@@ -125,12 +133,29 @@ function DashboardHeader() {
           <a className="rounded-lg px-3 py-2 hover:bg-white/10" href="/daily-voyage">
             {t("dashboard.nav.dailyVoyage")}
           </a>
+          <a className="rounded-lg px-3 py-2 hover:bg-white/10" href="/cargo-storage">
+            Cargo Storage
+          </a>
           <a className="rounded-lg px-3 py-2 hover:bg-white/10" href="/voyage-log">
             {t("dashboard.nav.voyageLog")}
+          </a>
+          <a className="rounded-lg px-3 py-2 hover:bg-white/10" href="/career-log">
+            {locale === "tr" ? "Seyir Defteri" : "Career Log"}
+          </a>
+          <a className="rounded-lg px-3 py-2 hover:bg-white/10" href="/promotion-ladder">
+            {locale === "tr" ? "Terfi Merdiveni" : "Promotion Ladder"}
           </a>
           <a className="rounded-lg px-3 py-2 hover:bg-white/10" href="/academy">
             {t("dashboard.nav.academy")}
           </a>
+          <AuthHeaderActions
+            dashboardLabel={t("dashboard.nav.bridge")}
+            loginLabel={t("dashboard.nav.login")}
+            registerLabel={t("dashboard.nav.register")}
+            profileLabel={t("dashboard.nav.profile")}
+            logoutLabel={t("dashboard.nav.logout")}
+            compact
+          />
           <a className="rounded-lg px-3 py-2 hover:bg-white/10" href="#career">
             {t("dashboard.nav.career")}
           </a>
@@ -149,7 +174,8 @@ function DashboardHeader() {
 }
 
 function WelcomePanel() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
+  const displayName = useDashboardUserName();
   const {
     xp,
     currentRank,
@@ -162,19 +188,30 @@ function WelcomePanel() {
     "{rank}",
     String(rankIndex)
   );
+  const careerCompletion = Math.min(
+    100,
+    Number(((rankIndex / TOTAL_MICRO_RANKS) * 100).toFixed(1))
+  );
 
   return (
     <div className="grid gap-6 lg:grid-cols-[1.25fr_0.75fr] lg:items-stretch">
       <article className="dark-glass-panel rounded-lg p-6 sm:p-8">
-        <div className="inline-flex items-center gap-2 rounded-lg border border-white/14 bg-white/10 px-3 py-2 text-sm font-semibold text-white/78">
-          <Anchor className="h-4 w-4 text-signal" />
-          {t("dashboard.welcome.eyebrow")}
+        <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
+          <div className="inline-flex w-fit items-center gap-2 rounded-lg border border-white/14 bg-white/10 px-3 py-2 text-sm font-semibold text-white/78">
+            <Anchor className="h-4 w-4 text-signal" />
+            {t("dashboard.welcome.eyebrow")}
+          </div>
+          <DashboardUserBadge displayName={displayName} />
         </div>
         <h1 className="mt-5 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
-          {t("dashboard.welcome.title").replace("{rank}", currentRank.name)}
+          {locale === "tr"
+            ? `Tekrar hos geldin, ${displayName}`
+            : `Welcome back, ${displayName}`}
         </h1>
         <p className="mt-4 max-w-2xl text-lg leading-8 text-white/68">
-          {t("dashboard.welcome.subtitle")}
+          {locale === "tr"
+            ? "Kariyer Koprun hazir. Bugunku sefer, terfi rotan ve akademi ilerlemen burada."
+            : "Your Career Bridge is ready. Today's voyage, promotion route and academy progress are lined up."}
         </p>
         <div className="mt-7 grid gap-3 sm:grid-cols-3">
           <RankMetric
@@ -185,10 +222,29 @@ function WelcomePanel() {
             label={t("dashboard.welcome.nextRank")}
             value={nextRank.name}
           />
-          <RankMetric
-            label={t("dashboard.welcome.xp")}
-            value={String(xp)}
-          />
+          <div className="rounded-lg border border-white/12 bg-white/8 p-4">
+            <div className="flex items-center gap-2">
+              <p className="text-xs uppercase tracking-[0.16em] text-white/42">
+                {t("dashboard.welcome.xp")}
+              </p>
+              <div className="group relative">
+                <button
+                  type="button"
+                  aria-label="NM = Nautical Miles"
+                  className="grid h-5 w-5 place-items-center rounded-full border border-white/14 bg-white/10 text-white/58 transition hover:text-white"
+                >
+                  <HelpCircle className="h-3.5 w-3.5" />
+                </button>
+                <div className="pointer-events-none absolute left-1/2 top-7 z-20 w-64 -translate-x-1/2 rounded-lg border border-white/14 bg-ink p-3 text-left text-xs font-semibold leading-5 text-white opacity-0 shadow-glow transition group-hover:opacity-100 group-focus-within:opacity-100">
+                  <p className="text-signal">NM = Nautical Miles</p>
+                  <p className="mt-1 text-white/70">
+                    Earn NM by completing missions, academy lessons and promotions.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <p className="mt-2 text-xl font-semibold text-white">{xp}</p>
+          </div>
         </div>
         <div className="mt-3 grid gap-3 sm:grid-cols-2">
           <RankMetric
@@ -196,6 +252,22 @@ function WelcomePanel() {
             value={currentRank.groupName}
           />
           <RankMetric label={rankNumber} value={currentRank.level} />
+        </div>
+        <div className="mt-7 flex flex-col gap-3 sm:flex-row">
+          <a
+            href="/daily-voyage"
+            className="inline-flex items-center justify-center gap-2 rounded-lg bg-signal px-5 py-3 text-sm font-bold text-ink transition hover:-translate-y-0.5 hover:bg-white"
+          >
+            {t("dashboard.dailyVoyage.button")}
+            <ChevronRight className="h-4 w-4" />
+          </a>
+          <a
+            href="/promotion-ladder"
+            className="inline-flex items-center justify-center gap-2 rounded-lg border border-white/16 bg-white/10 px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-white/16"
+          >
+            {locale === "tr" ? "Terfi Merdiveni" : "Promotion Ladder"}
+            <Medal className="h-4 w-4" />
+          </a>
         </div>
       </article>
 
@@ -221,6 +293,24 @@ function WelcomePanel() {
           <span>{currentRank.name}</span>
           <span>{nextRank.name}</span>
         </div>
+        <div className="mt-5 grid gap-3 sm:grid-cols-2 lg:grid-cols-1">
+          <div className="rounded-lg border border-ink/8 bg-[#f6f8f3] p-4">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-steel">
+              {locale === "tr" ? "Kariyer Tamamlama" : "Career Completion"}
+            </p>
+            <p className="mt-2 text-2xl font-semibold text-ink">
+              {careerCompletion}%
+            </p>
+          </div>
+          <div className="rounded-lg border border-ink/8 bg-[#f6f8f3] p-4">
+            <p className="text-xs font-bold uppercase tracking-[0.14em] text-steel">
+              {locale === "tr" ? "Terfiye Kalan" : "NM Remaining"}
+            </p>
+            <p className="mt-2 text-2xl font-semibold text-ink">
+              {Math.max(0, nextRank.xpRequired - xp)} NM
+            </p>
+          </div>
+        </div>
         <button
           type="button"
           onClick={resetProgress}
@@ -230,6 +320,634 @@ function WelcomePanel() {
         </button>
       </article>
     </div>
+  );
+}
+
+function useDashboardUserName() {
+  const fallbackName = "Cadet";
+  const [displayName, setDisplayName] = useState(fallbackName);
+
+  useEffect(() => {
+    let isActive = true;
+
+    async function loadDashboardUser() {
+      const config = getSupabaseConfigStatus();
+
+      if (!config.isConfigured) {
+        if (isActive) {
+          setDisplayName(fallbackName);
+        }
+        return;
+      }
+
+      try {
+        const supabase = getSupabaseClient();
+        const { data: sessionData } = await supabase.auth.getSession();
+        const user = sessionData.session?.user;
+
+        if (!user) {
+          if (isActive) {
+            setDisplayName(fallbackName);
+          }
+          return;
+        }
+
+        await ensureUserProfile();
+
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("username")
+          .eq("id", user.id)
+          .maybeSingle();
+        const username =
+          typeof profile?.username === "string" ? profile.username.trim() : "";
+        const email = typeof user.email === "string" ? user.email : "";
+
+        if (isActive) {
+          setDisplayName(username || email || fallbackName);
+        }
+      } catch {
+        if (isActive) {
+          setDisplayName(fallbackName);
+        }
+      }
+    }
+
+    void loadDashboardUser();
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  return displayName;
+}
+
+function DashboardUserBadge({ displayName }: { displayName: string }) {
+  const { locale } = useI18n();
+
+  return (
+    <div className="inline-flex w-fit items-center gap-3 rounded-lg border border-white/14 bg-white/10 px-3 py-2 text-sm font-semibold text-white">
+      <span className="grid h-8 w-8 place-items-center rounded-lg bg-signal text-ink">
+        <UserRound className="h-4 w-4" />
+      </span>
+      <span>
+        <span className="block text-xs font-bold uppercase tracking-[0.14em] text-white/44">
+          {locale === "tr" ? "Kariyer Koprusu" : "Career Bridge"}
+        </span>
+        <span className="block max-w-48 truncate">{displayName}</span>
+      </span>
+    </div>
+  );
+}
+
+function BridgeOverviewCards() {
+  const { t, locale } = useI18n();
+  const {
+    xp,
+    currentRank,
+    nextRank,
+    rankIndex,
+    rankProgress,
+    dailyVoyage
+  } = usePlayerProgress();
+  const nmRemaining = Math.max(0, nextRank.xpRequired - xp);
+  const careerCompletion = Math.min(
+    100,
+    Number(((rankIndex / TOTAL_MICRO_RANKS) * 100).toFixed(1))
+  );
+  const missionProgress = `${dailyVoyage.completedCount}/${dailyVoyage.totalCount}`;
+
+  return (
+    <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-4">
+      <BridgeMetricCard
+        Icon={Gauge}
+        label={t("dashboard.welcome.xp")}
+        value={`${xp} NM`}
+        detail={
+          locale === "tr"
+            ? `${rankProgress.percent}% sonraki terfiye`
+            : `${rankProgress.percent}% to next promotion`
+        }
+        percent={rankProgress.percent}
+        tone="tide"
+      />
+      <BridgeMetricCard
+        Icon={Medal}
+        label={t("dashboard.welcome.currentRank")}
+        value={currentRank.name}
+        detail={`Rank ${rankIndex} / ${TOTAL_MICRO_RANKS}`}
+        tone="ink"
+      />
+      <BridgeMetricCard
+        Icon={Compass}
+        label={locale === "tr" ? "Sonraki Terfi" : "Next Promotion"}
+        value={nextRank.name}
+        detail={
+          locale === "tr"
+            ? `${nmRemaining} NM kaldi`
+            : `${nmRemaining} NM remaining`
+        }
+        tone="signal"
+      />
+      <BridgeMetricCard
+        Icon={Trophy}
+        label={locale === "tr" ? "Kariyer Tamamlama" : "Career Completion"}
+        value={`${careerCompletion}%`}
+        detail={
+          locale === "tr"
+            ? `Bugunku sefer: ${missionProgress}`
+            : `Today's voyage: ${missionProgress}`
+        }
+        percent={careerCompletion}
+        tone="glass"
+      />
+    </div>
+  );
+}
+
+function BridgeMetricCard({
+  Icon,
+  label,
+  value,
+  detail,
+  percent,
+  tone
+}: {
+  Icon: typeof Ship;
+  label: string;
+  value: string;
+  detail: string;
+  percent?: number;
+  tone: "tide" | "ink" | "signal" | "glass";
+}) {
+  const iconClasses = {
+    tide: "bg-tide/10 text-tide",
+    ink: "bg-ink text-white",
+    signal: "bg-signal/28 text-ink",
+    glass: "bg-glass/14 text-tide"
+  }[tone];
+  const progressClasses = {
+    tide: "from-tide via-glass to-signal",
+    ink: "from-ink via-harbor to-tide",
+    signal: "from-signal via-glass to-tide",
+    glass: "from-glass via-tide to-signal"
+  }[tone];
+
+  return (
+    <article className="rounded-lg border border-ink/8 bg-white p-5 shadow-soft">
+      <div className="flex items-start justify-between gap-4">
+        <div className="min-w-0">
+          <p className="text-xs font-bold uppercase tracking-[0.16em] text-steel">
+            {label}
+          </p>
+          <p className="mt-2 truncate text-2xl font-semibold text-ink">
+            {value}
+          </p>
+        </div>
+        <div className={`grid h-11 w-11 shrink-0 place-items-center rounded-lg ${iconClasses}`}>
+          <Icon className="h-5 w-5" />
+        </div>
+      </div>
+      <p className="mt-3 text-sm font-semibold text-steel">{detail}</p>
+      {typeof percent === "number" ? (
+        <div className="mt-4 h-2.5 overflow-hidden rounded-full bg-[#e5ece8]">
+          <div
+            className={`h-full rounded-full bg-gradient-to-r ${progressClasses}`}
+            style={{ width: `${Math.min(100, Math.max(0, percent))}%` }}
+          />
+        </div>
+      ) : null}
+    </article>
+  );
+}
+
+function CargoStorageDashboardCard() {
+  const { locale } = useI18n();
+  const [holds, setHolds] = useState<CargoHold[]>([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const latestHold = holds[0] ?? null;
+  const totalItems = holds.reduce((total, hold) => total + hold.itemCount, 0);
+
+  useEffect(() => {
+    let isActive = true;
+
+    async function loadCargoHolds() {
+      const overview = await getCargoStorageOverview();
+
+      if (isActive) {
+        setHolds(overview.holds);
+        setIsLoading(false);
+      }
+    }
+
+    void loadCargoHolds();
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  return (
+    <section className="rounded-lg border border-ink/8 bg-white p-6 shadow-soft">
+      <div className="grid gap-6 lg:grid-cols-[0.86fr_1.14fr] lg:items-center">
+        <div>
+          <div className="inline-flex items-center gap-2 rounded-lg bg-tide/10 px-3 py-2 text-sm font-bold text-tide">
+            <Archive className="h-4 w-4" />
+            Cargo Storage
+          </div>
+          <h2 className="mt-4 text-2xl font-semibold text-ink">
+            {locale === "tr" ? "Recent Cargo Holds" : "Recent Cargo Holds"}
+          </h2>
+          <p className="mt-2 text-sm leading-6 text-steel">
+            {locale === "tr"
+              ? "Kelime manifestonu duzenle, Cargo Item ekle ve tamamlanan calisma oturumlarindan NM kazan."
+              : "Organize your vocabulary manifest, load Cargo Items and earn NM from completed study sessions."}
+          </p>
+          <div className="mt-4 flex flex-wrap gap-2 text-xs font-bold">
+            <span className="rounded-lg bg-signal/24 px-2.5 py-1 text-ink">
+              +{cargoStudyRewardNm} NM per session
+            </span>
+            <span className="rounded-lg bg-ink/5 px-2.5 py-1 text-steel">
+              {totalItems} Cargo Items
+            </span>
+          </div>
+        </div>
+
+        <div className="rounded-lg border border-ink/8 bg-[#f6f8f3] p-4">
+          <div className="flex items-start justify-between gap-4">
+            <div>
+              <p className="text-sm font-semibold text-steel">
+                {locale === "tr" ? "Continue Studying" : "Continue Studying"}
+              </p>
+              <p className="mt-2 text-2xl font-semibold text-ink">
+                {isLoading
+                  ? "Loading manifest..."
+                  : latestHold?.title ?? "Load your first Cargo Hold"}
+              </p>
+            </div>
+            <div className="grid h-10 w-10 shrink-0 place-items-center rounded-lg bg-ink text-white">
+              <PackagePlus className="h-5 w-5" />
+            </div>
+          </div>
+
+          <div className="mt-4 grid gap-2">
+            {holds.slice(0, 3).map((hold) => (
+              <a
+                key={hold.id}
+                href={`/cargo-storage/${hold.id}`}
+                className="flex items-center justify-between gap-3 rounded-lg border border-ink/8 bg-white px-3 py-2 text-sm font-bold text-ink transition hover:border-tide/30"
+              >
+                <span className="truncate">{hold.title}</span>
+                <span className="shrink-0 text-xs text-steel">
+                  {hold.itemCount} cargo
+                </span>
+              </a>
+            ))}
+            {!isLoading && holds.length === 0 ? (
+              <div className="rounded-lg border border-ink/8 bg-white p-3 text-sm font-semibold text-steel">
+                {locale === "tr"
+                  ? "Henuz Cargo Hold yok. Ilk manifestonu olustur."
+                  : "No Cargo Holds yet. Create your first manifest."}
+              </div>
+            ) : null}
+          </div>
+
+          <a
+            href={latestHold ? `/cargo-storage/${latestHold.id}` : "/cargo-storage"}
+            className="mt-4 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-ink px-4 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-harbor"
+          >
+            {latestHold
+              ? locale === "tr"
+                ? "Review Cargo"
+                : "Review Cargo"
+              : locale === "tr"
+                ? "Load Cargo"
+                : "Load Cargo"}
+            <ChevronRight className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContinueVoyageCard() {
+  const { locale } = useI18n();
+  const [assignment, setAssignment] = useState<ContinueVoyageAssignment | null>(
+    null
+  );
+
+  useEffect(() => {
+    let isActive = true;
+
+    async function loadAssignment() {
+      const nextAssignment = await getContinueVoyageAssignment();
+
+      if (isActive) {
+        setAssignment(nextAssignment);
+      }
+    }
+
+    void loadAssignment();
+
+    return () => {
+      isActive = false;
+    };
+  }, []);
+
+  const progressPercent = assignment?.progressPercent ?? 0;
+  const isAssessment = assignment?.kind === "promotion-assessment";
+  const title =
+    assignment?.missionTitle ??
+    (locale === "tr" ? "Siradaki gorev hazirlaniyor" : "Preparing next assignment");
+  const moduleTitle = assignment?.moduleTitle ?? "Harbor Basics";
+  const stepLabel =
+    assignment?.stepLabel ?? (locale === "tr" ? "Next Assignment" : "Next Assignment");
+  const buttonLabel = assignment
+    ? localizeButtonLabel(assignment.buttonLabel, locale)
+    : locale === "tr"
+      ? "Yukleniyor"
+      : "Loading";
+
+  return (
+    <section className="relative overflow-hidden rounded-lg border border-ink/8 bg-gradient-to-br from-ink via-harbor to-[#123d4a] p-6 text-white shadow-soft sm:p-8">
+      <div className="absolute inset-0 bg-chart-grid bg-[size:42px_42px] opacity-10" />
+      <div className="absolute -right-24 -top-24 h-64 w-64 rounded-full bg-tide/24 blur-3xl" />
+      <div className="absolute -bottom-28 left-10 h-56 w-56 rounded-full bg-signal/12 blur-3xl" />
+
+      <div className="relative grid gap-6 xl:grid-cols-[1.08fr_0.92fr] xl:items-end">
+        <div>
+          <div className="inline-flex items-center gap-2 rounded-lg border border-white/14 bg-white/10 px-3 py-2 text-sm font-bold text-white/82">
+            <Compass className="h-4 w-4 text-signal" />
+            {locale === "tr" ? "Continue Voyage" : "Continue Voyage"}
+          </div>
+          <h2 className="mt-5 text-balance text-4xl font-semibold leading-tight sm:text-5xl">
+            {isAssessment
+              ? locale === "tr"
+                ? "Ready for Promotion Assessment"
+                : "Ready for Promotion Assessment"
+              : title}
+          </h2>
+          <p className="mt-4 max-w-2xl text-base leading-7 text-white/68 sm:text-lg">
+            {assignment?.body ??
+              (locale === "tr"
+                ? "Kariyer rotan hesaplaniyor. Bir sonraki en iyi adim birazdan hazir olacak."
+                : "Your career route is being calculated. The next best action will be ready shortly.")}
+          </p>
+
+          {assignment?.error ? (
+            <p className="mt-4 max-w-2xl rounded-lg border border-white/14 bg-white/10 p-3 text-sm font-semibold text-white/66">
+              {assignment.isAuthenticated
+                ? assignment.error
+                : locale === "tr"
+                  ? "Giris yapinca ilerlemen Supabase ile senkronlanir."
+                  : "Sign in to sync this assignment with Supabase."}
+            </p>
+          ) : null}
+        </div>
+
+        <div className="rounded-lg border border-white/14 bg-white p-5 text-ink shadow-glow sm:p-6">
+          <div className="grid gap-3 sm:grid-cols-3">
+            <ContinueMetric
+              Icon={GraduationCap}
+              label={locale === "tr" ? "Current Academy Module" : "Current Academy Module"}
+              value={moduleTitle}
+            />
+            <ContinueMetric
+              Icon={Route}
+              label={locale === "tr" ? "Current Mission" : "Current Mission"}
+              value={stepLabel}
+            />
+            <ContinueMetric
+              Icon={Clock3}
+              label={locale === "tr" ? "Estimated Time" : "Estimated Time"}
+              value={`${assignment?.estimatedMinutes ?? 3} minutes`}
+            />
+          </div>
+
+          <div className="mt-5">
+            <div className="flex items-center justify-between text-sm font-bold text-steel">
+              <span>{locale === "tr" ? "Progress" : "Progress"}</span>
+              <span>{progressPercent}%</span>
+            </div>
+            <div className="mt-2 h-4 overflow-hidden rounded-full bg-[#e5ece8]">
+              <div
+                className="h-full rounded-full bg-gradient-to-r from-tide via-glass to-signal transition-all"
+                style={{ width: `${progressPercent}%` }}
+              />
+            </div>
+          </div>
+
+          <a
+            href={assignment?.href ?? "/academy/harbor-basics"}
+            className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-ink px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-harbor"
+          >
+            {buttonLabel}
+            <ChevronRight className="h-4 w-4" />
+          </a>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+function ContinueMetric({
+  Icon,
+  label,
+  value
+}: {
+  Icon: typeof Ship;
+  label: string;
+  value: string;
+}) {
+  return (
+    <div className="rounded-lg border border-ink/8 bg-[#f6f8f3] p-4">
+      <div className="grid h-9 w-9 place-items-center rounded-lg bg-tide/10 text-tide">
+        <Icon className="h-4 w-4" />
+      </div>
+      <p className="mt-3 text-xs font-bold uppercase tracking-[0.14em] text-steel">
+        {label}
+      </p>
+      <p className="mt-2 truncate text-lg font-semibold text-ink">{value}</p>
+    </div>
+  );
+}
+
+function localizeButtonLabel(label: string, locale: "en" | "tr") {
+  if (locale === "en") {
+    return label;
+  }
+
+  const labels: Record<string, string> = {
+    Continue: "Devam Et",
+    "Resume Training": "Egitime Devam Et",
+    "Start Assessment": "Assessment Baslat"
+  };
+
+  return labels[label] ?? label;
+}
+
+function PromotionLadderCard() {
+  const { locale } = useI18n();
+  const { xp, currentRank, nextRank, rankIndex, rankProgress } =
+    usePlayerProgress();
+  const nmRemaining = Math.max(0, nextRank.xpRequired - xp);
+  const careerCompletion = Math.min(
+    100,
+    Number(((rankIndex / TOTAL_MICRO_RANKS) * 100).toFixed(1))
+  );
+
+  return (
+    <article className="relative overflow-hidden rounded-lg border border-ink/8 bg-gradient-to-br from-ink via-harbor to-[#123d4a] p-6 text-white shadow-soft">
+      <div className="absolute inset-0 bg-chart-grid bg-[size:38px_38px] opacity-10" />
+      <div className="absolute -right-16 -top-16 h-48 w-48 rounded-full bg-tide/24 blur-3xl" />
+
+      <div className="relative">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <div className="inline-flex items-center gap-2 rounded-lg border border-white/14 bg-white/10 px-3 py-2 text-sm font-bold text-white/82">
+              <Compass className="h-4 w-4 text-signal" />
+              {locale === "tr" ? "Terfi Rotasi" : "Promotion Route"}
+            </div>
+            <h2 className="mt-4 text-2xl font-semibold">
+              {locale === "tr" ? "Bir sonraki rütbeye tirman" : "Climb toward your next rank"}
+            </h2>
+            <p className="mt-2 max-w-xl text-sm leading-6 text-white/68">
+              {locale === "tr"
+                ? "Kariyer merdiveninde konumunu, kalan NM miktarini ve toplam ilerlemeyi takip et."
+                : "Track your position, remaining NM and total career progress on the maritime ladder."}
+            </p>
+          </div>
+          <div className="grid h-14 w-14 shrink-0 place-items-center rounded-lg bg-signal text-ink">
+            <Medal className="h-7 w-7" />
+          </div>
+        </div>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-3">
+          <DarkMetric
+            label={locale === "tr" ? "Mevcut Rütbe" : "Current Rank"}
+            value={currentRank.name}
+          />
+          <DarkMetric
+            label={locale === "tr" ? "Sonraki Rütbe" : "Next Rank"}
+            value={nextRank.name}
+          />
+          <DarkMetric
+            label={locale === "tr" ? "Kalan NM" : "NM Remaining"}
+            value={`${nmRemaining}`}
+          />
+        </div>
+
+        <div className="mt-6 rounded-lg border border-white/14 bg-white/10 p-4">
+          <div className="flex flex-wrap items-center justify-between gap-3 text-sm font-bold text-white/74">
+            <span>
+              {locale === "tr" ? "Terfi Ilerlemesi" : "Promotion Progress"}
+            </span>
+            <span>{rankProgress.percent}%</span>
+          </div>
+          <div className="mt-3 h-3 overflow-hidden rounded-full bg-white/14">
+            <div
+              className="h-full rounded-full bg-gradient-to-r from-tide via-glass to-signal"
+              style={{ width: `${rankProgress.percent}%` }}
+            />
+          </div>
+          <div className="mt-4 flex flex-wrap items-center justify-between gap-3 text-sm font-semibold text-white/62">
+            <span>
+              {locale === "tr" ? "Kariyer" : "Career"} {rankIndex} / {TOTAL_MICRO_RANKS}
+            </span>
+            <span>{careerCompletion}%</span>
+          </div>
+        </div>
+
+        <a
+          href="/promotion-ladder"
+          className="mt-6 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-signal px-5 py-3 text-sm font-bold text-ink transition hover:-translate-y-0.5 hover:bg-white"
+        >
+          {locale === "tr" ? "Terfi Merdivenini Gor" : "View Promotion Ladder"}
+          <ChevronRight className="h-4 w-4" />
+        </a>
+      </div>
+    </article>
+  );
+}
+
+function DarkMetric({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="rounded-lg border border-white/12 bg-white/8 p-4">
+      <p className="text-xs font-bold uppercase tracking-[0.14em] text-white/42">
+        {label}
+      </p>
+      <p className="mt-2 truncate text-lg font-semibold text-white">{value}</p>
+    </div>
+  );
+}
+
+function CareerActions() {
+  const { locale } = useI18n();
+
+  return (
+    <section className="mt-6 grid gap-6 md:grid-cols-2">
+      <CareerActionCard
+        Icon={Medal}
+        title={locale === "tr" ? "Terfi Merdiveni" : "Promotion Ladder"}
+        body={
+          locale === "tr"
+            ? "250 rutbelik kariyer yolunda nerede oldugunu ve yukariya nasil tirmandigini gor."
+            : "See where you stand across the 250-rank career path and how you climb upward."
+        }
+        href="/promotion-ladder"
+        buttonLabel={
+          locale === "tr" ? "Terfi Merdivenini Gor" : "View Promotion Ladder"
+        }
+      />
+      <CareerActionCard
+        Icon={UserRound}
+        title="Captain Profile"
+        body={
+          locale === "tr"
+            ? "Rank rozetini, kariyer zaman cizelgeni ve ogrenen denizci kimligini incele."
+            : "Review your rank badge, career timeline and learning captain identity."
+        }
+        href="/profile"
+        buttonLabel={locale === "tr" ? "Captain Profile'a Git" : "Open Captain Profile"}
+      />
+    </section>
+  );
+}
+
+function CareerActionCard({
+  Icon,
+  title,
+  body,
+  href,
+  buttonLabel
+}: {
+  Icon: typeof Ship;
+  title: string;
+  body: string;
+  href: string;
+  buttonLabel: string;
+}) {
+  return (
+    <article className="rounded-lg border border-ink/8 bg-white p-6 shadow-soft">
+      <div className="flex items-start gap-4">
+        <div className="grid h-12 w-12 shrink-0 place-items-center rounded-lg bg-ink text-white">
+          <Icon className="h-6 w-6" />
+        </div>
+        <div>
+          <h2 className="text-2xl font-semibold text-ink">{title}</h2>
+          <p className="mt-2 text-sm leading-6 text-steel">{body}</p>
+        </div>
+      </div>
+      <a
+        href={href}
+        className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-tide px-4 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-harbor"
+      >
+        {buttonLabel}
+        <ChevronRight className="h-4 w-4" />
+      </a>
+    </article>
   );
 }
 
@@ -243,11 +961,41 @@ function RankMetric({ label, value }: { label: string; value: string }) {
 }
 
 function DailyVoyageCard() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const { dailyVoyage } = usePlayerProgress();
+  const [voyageStatus, setVoyageStatus] = useState<DailyVoyageStatus | null>(null);
+  const [countdown, setCountdown] = useState(getNextVoyageCountdown().label);
+  const completedCount = voyageStatus?.completedCount ?? dailyVoyage.completedCount;
+  const totalCount = voyageStatus?.totalCount ?? 3;
+  const progressPercent = voyageStatus?.progressPercent ?? dailyVoyage.progressPercent;
+  const isComplete = voyageStatus?.isComplete ?? dailyVoyage.isComplete;
+  const rewardClaimed = voyageStatus?.rewardClaimed === true;
   const progressLabel = t("dashboard.dailyVoyage.progress")
-    .replace("{completed}", String(dailyVoyage.completedCount))
-    .replace("{total}", String(dailyVoyage.totalCount));
+    .replace("{completed}", String(completedCount))
+    .replace("{total}", String(totalCount));
+
+  useEffect(() => {
+    let isActive = true;
+
+    async function loadVoyageStatus() {
+      const nextStatus = await getDailyVoyageStatus();
+
+      if (isActive) {
+        setVoyageStatus(nextStatus);
+      }
+    }
+
+    void loadVoyageStatus();
+
+    const intervalId = window.setInterval(() => {
+      setCountdown(getNextVoyageCountdown().label);
+    }, 1000);
+
+    return () => {
+      isActive = false;
+      window.clearInterval(intervalId);
+    };
+  }, []);
 
   return (
     <article className="rounded-lg border border-ink/8 bg-white p-6 shadow-soft">
@@ -258,30 +1006,45 @@ function DailyVoyageCard() {
           </div>
           <div>
             <div className="flex flex-wrap items-center gap-2">
-              <h2 className="text-2xl font-semibold text-ink">{t("dashboard.dailyVoyage.title")}</h2>
+              <h2 className="text-2xl font-semibold text-ink">
+                {locale === "tr" ? "Bugunun Seferi" : "Today's Voyage"}
+              </h2>
               <span className="rounded-lg bg-signal/22 px-2.5 py-1 text-xs font-bold text-ink">
-                {t("dashboard.dailyVoyage.reward")}
+                +{dailyVoyageRewardNm} Bonus NM
               </span>
             </div>
             <p className="mt-3 max-w-xl text-sm leading-6 text-steel">
-              {t("dashboard.dailyVoyage.description")}
+              {locale === "tr"
+                ? "Gunluk kontrolleri tamamla, bonus NM kazan ve yarin yeni rota icin geri don."
+                : "Complete the daily operating checks, earn bonus NM, and return tomorrow for a new route."}
             </p>
             <div className="mt-4 max-w-xl">
               <div className="flex items-center justify-between text-sm font-bold text-steel">
                 <span>{progressLabel}</span>
-                <span>{dailyVoyage.progressPercent}%</span>
+                <span>{progressPercent}%</span>
               </div>
               <div className="mt-2 h-3 overflow-hidden rounded-full bg-[#e5ece8]">
                 <div
                   className="h-full rounded-full bg-gradient-to-r from-tide via-glass to-signal transition-all"
-                  style={{ width: `${dailyVoyage.progressPercent}%` }}
+                  style={{ width: `${progressPercent}%` }}
                 />
               </div>
-              {dailyVoyage.isComplete ? (
-                <p className="mt-3 text-sm font-bold text-tide">
-                  {t("dashboard.dailyVoyage.completed")}
-                </p>
-              ) : null}
+              <div className="mt-3 flex flex-wrap gap-2 text-xs font-bold">
+                <span className="rounded-lg bg-ink/5 px-2.5 py-1 text-steel">
+                  {locale === "tr" ? "Sonraki sefer" : "Next voyage"}: {countdown}
+                </span>
+                {isComplete ? (
+                  <span className="rounded-lg bg-tide/12 px-2.5 py-1 text-tide">
+                    {rewardClaimed
+                      ? locale === "tr"
+                        ? "Odul alindi"
+                        : "Reward claimed"
+                      : locale === "tr"
+                        ? "Odul hazir"
+                        : "Reward ready"}
+                  </span>
+                ) : null}
+              </div>
             </div>
           </div>
         </div>
@@ -289,7 +1052,7 @@ function DailyVoyageCard() {
           href="/daily-voyage"
           className="inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-5 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-harbor"
         >
-          {t("dashboard.dailyVoyage.button")} <ChevronRight className="h-4 w-4" />
+          {locale === "tr" ? "Devam Et" : "Continue"} <ChevronRight className="h-4 w-4" />
         </a>
       </div>
     </article>
@@ -297,7 +1060,7 @@ function DailyVoyageCard() {
 }
 
 function ShipAcademyCard() {
-  const { t } = useI18n();
+  const { t, locale } = useI18n();
   const { rankIndex } = usePlayerProgress();
   const unlockedModules = getUnlockedAcademyModules(rankIndex);
   const progressPercent = Math.floor(
@@ -342,13 +1105,24 @@ function ShipAcademyCard() {
               style={{ width: `${progressPercent}%` }}
             />
           </div>
-          <a
-            href="/academy"
-            className="mt-4 inline-flex items-center gap-2 text-sm font-bold text-tide"
-          >
-            {t("dashboard.academy.button")}
-            <ChevronRight className="h-4 w-4" />
-          </a>
+          <div className="mt-4 flex flex-col gap-3 sm:flex-row">
+            <a
+              href="/academy/harbor-basics"
+              className="inline-flex items-center justify-center gap-2 rounded-lg bg-ink px-4 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-harbor"
+            >
+              {locale === "tr"
+                ? "Harbor Basics'e Devam Et"
+                : "Continue Harbor Basics"}
+              <ChevronRight className="h-4 w-4" />
+            </a>
+            <a
+              href="/academy"
+              className="inline-flex items-center justify-center gap-2 rounded-lg border border-ink/10 bg-white px-4 py-3 text-sm font-bold text-tide transition hover:-translate-y-0.5 hover:border-tide/30"
+            >
+              {t("dashboard.academy.button")}
+              <ChevronRight className="h-4 w-4" />
+            </a>
+          </div>
         </div>
       </div>
     </section>
@@ -575,9 +1349,9 @@ function MissionDeck({ missions }: { missions: string[][] }) {
 }
 
 function RankPath() {
-  const { t } = useI18n();
-  const { xp, rankIndex } = usePlayerProgress();
-  const ranks = getNearbyRanks(xp);
+  const { t, locale } = useI18n();
+  const { rankIndex } = usePlayerProgress();
+  const ranks = getNearbyRanksByIndex(rankIndex);
 
   return (
     <section id="career" className="rounded-lg border border-ink/8 bg-white p-6 shadow-soft">
@@ -618,7 +1392,7 @@ function RankPath() {
                 <div>
                   <span className="font-semibold text-ink">{rank.name}</span>
                   <p className="mt-1 text-xs font-semibold text-steel">
-                    {rank.xpRequired} XP
+                    {rank.xpRequired} NM
                   </p>
                 </div>
               </div>
@@ -646,6 +1420,13 @@ function RankPath() {
         className="mt-5 inline-flex w-full items-center justify-center rounded-lg bg-ink px-4 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-harbor"
       >
         {t("dashboard.rankPath.viewFull")}
+      </a>
+      <a
+        href="/promotion-ladder"
+        className="mt-3 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-tide px-4 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-harbor"
+      >
+        {locale === "tr" ? "Terfi Merdivenini Gor" : "View Promotion Ladder"}
+        <ChevronRight className="h-4 w-4" />
       </a>
     </section>
   );

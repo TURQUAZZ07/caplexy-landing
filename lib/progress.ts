@@ -2,11 +2,12 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import {
-  getNextRankByXP,
-  getRankByXP,
+  getNextRankByIndex,
+  getRankByIndex,
   getRankIndex,
-  getRankProgress
+  getRankProgressForRankIndex
 } from "@/lib/ranks";
+import { getSupabaseClient, getSupabaseConfigStatus } from "@/lib/supabase/client";
 
 export const playerXpStorageKey = "caplexy.playerXp";
 export const cargoMatchCompletedStorageKey = "caplexy.cargoMatch.completedToday";
@@ -444,6 +445,7 @@ export function markShipLogRepairCompleted() {
 
 export function usePlayerProgress() {
   const [xp, setXpState] = useState(defaultPlayerXp);
+  const [grantedRankIndex, setGrantedRankIndex] = useState<number | null>(null);
   const [dailyVoyage, setDailyVoyage] = useState<DailyVoyageState>(() =>
     readDailyVoyageState()
   );
@@ -455,6 +457,48 @@ export function usePlayerProgress() {
   const [radioCheckCompleted, setRadioCheckCompleted] = useState(false);
 
   useEffect(() => {
+    async function refreshSupabaseProgress() {
+      const config = getSupabaseConfigStatus();
+
+      if (!config.isConfigured) {
+        setGrantedRankIndex(null);
+        return;
+      }
+
+      try {
+        const supabase = getSupabaseClient();
+        const { data: sessionData } = await supabase.auth.getSession();
+        const user = sessionData.session?.user;
+
+        if (!user) {
+          setGrantedRankIndex(null);
+          return;
+        }
+
+        const { data: profile } = await supabase
+          .from("profiles")
+          .select("current_xp,current_rank")
+          .eq("id", user.id)
+          .maybeSingle();
+        const profileNm =
+          typeof profile?.current_xp === "number" && Number.isFinite(profile.current_xp)
+            ? Math.max(0, Math.floor(profile.current_xp))
+            : null;
+        const profileRank =
+          typeof profile?.current_rank === "number" && Number.isFinite(profile.current_rank)
+            ? Math.max(1, Math.floor(profile.current_rank))
+            : null;
+
+        if (profileNm !== null) {
+          setXpState(profileNm);
+        }
+
+        setGrantedRankIndex(profileRank);
+      } catch {
+        setGrantedRankIndex(null);
+      }
+    }
+
     function refreshProgress() {
       const nextDailyVoyage = readDailyVoyageState();
 
@@ -470,6 +514,7 @@ export function usePlayerProgress() {
       setRadioCheckCompleted(
         nextDailyVoyage.completedMissionIds.includes("radio-check")
       );
+      void refreshSupabaseProgress();
     }
 
     refreshProgress();
@@ -545,7 +590,8 @@ export function usePlayerProgress() {
   }, []);
 
   return useMemo(() => {
-    const rankProgress = getRankProgress(xp);
+    const visibleRankIndex = grantedRankIndex ?? getRankIndex(xp);
+    const rankProgress = getRankProgressForRankIndex(xp, visibleRankIndex);
 
     return {
       xp,
@@ -560,9 +606,9 @@ export function usePlayerProgress() {
       completeCargoMatch,
       completeShipLogRepair,
       completeRadioCheck,
-      currentRank: getRankByXP(xp),
-      nextRank: getNextRankByXP(xp),
-      rankIndex: getRankIndex(xp),
+      currentRank: getRankByIndex(visibleRankIndex),
+      nextRank: getNextRankByIndex(visibleRankIndex),
+      rankIndex: visibleRankIndex,
       rankProgress
     };
   }, [
@@ -577,6 +623,7 @@ export function usePlayerProgress() {
     setXp,
     dailyVoyage,
     voyageLog,
+    grantedRankIndex,
     xp
   ]);
 }

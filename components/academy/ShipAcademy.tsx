@@ -12,8 +12,10 @@ import {
   Ship,
   ShieldCheck
 } from "lucide-react";
+import { AuthHeaderActions } from "@/components/auth/AuthHeaderActions";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import {
+  AcademyModule,
   academyModules,
   getAcademyModuleProgress,
   getAcademyModuleStatus
@@ -24,8 +26,9 @@ import { usePlayerProgress } from "@/lib/progress";
 export function ShipAcademy() {
   const { t } = useI18n();
   const { rankIndex, currentRank } = usePlayerProgress();
-  const unlockedCount = academyModules.filter(
-    (module) => rankIndex >= module.unlockRank
+  const safeModules = academyModules.filter(isRenderableAcademyModule);
+  const unlockedCount = safeModules.filter(
+    (academyModule) => rankIndex >= academyModule.unlockRank
   ).length;
 
   return (
@@ -58,7 +61,7 @@ export function ShipAcademy() {
                   label={t("academy.unlockedModules")}
                   value={t("academy.moduleCount")
                     .replace("{count}", String(unlockedCount))
-                    .replace("{total}", String(academyModules.length))}
+                    .replace("{total}", String(safeModules.length))}
                 />
               </div>
             </div>
@@ -86,15 +89,20 @@ export function ShipAcademy() {
         </div>
 
         <div className="grid gap-5 lg:grid-cols-2">
-          {academyModules.map((module, index) => {
-            const status = getAcademyModuleStatus(module, rankIndex);
-            const progress = getAcademyModuleProgress(module, rankIndex);
+          {safeModules.map((academyModule, index) => {
+            const status = getAcademyModuleStatus(academyModule, rankIndex);
+            const progress = getAcademyModuleProgress(academyModule, rankIndex);
             const isLocked = status === "locked";
             const Icon = status === "completed" ? Check : isLocked ? Lock : BookOpenCheck;
+            const moduleTitle = t(`academy.modules.${academyModule.key}.title`);
+            const moduleDescription = t(
+              `academy.modules.${academyModule.key}.description`
+            );
+            const moduleFocus = t(`academy.modules.${academyModule.key}.focus`);
 
             return (
               <article
-                key={module.slug}
+                key={academyModule.slug}
                 className={`rounded-lg border p-5 shadow-soft transition ${
                   status === "completed"
                     ? "border-tide/20 bg-tide/8"
@@ -121,10 +129,10 @@ export function ShipAcademy() {
                         {t("academy.moduleLabel").replace("{number}", String(index + 1))}
                       </p>
                       <h2 className="mt-2 text-xl font-semibold text-ink">
-                        {t(`academy.modules.${module.key}.title`)}
+                        {moduleTitle || academyModule.key}
                       </h2>
                       <p className="mt-2 text-sm leading-6 text-steel">
-                        {t(`academy.modules.${module.key}.description`)}
+                        {moduleDescription}
                       </p>
                     </div>
                   </div>
@@ -147,12 +155,61 @@ export function ShipAcademy() {
                     label={t("academy.requiredRank")}
                     value={t("academy.rankRequired").replace(
                       "{rank}",
-                      String(module.unlockRank)
+                      String(academyModule.unlockRank)
                     )}
                   />
                   <InfoPill
                     label={t("academy.trainingFocus")}
-                    value={t(`academy.modules.${module.key}.focus`)}
+                    value={moduleFocus}
+                  />
+                  <InfoPill
+                    label={t("academy.assessment")}
+                    value={readTranslatedToken(
+                      t,
+                      `academy.assessments.${academyModule.assessment}`,
+                      academyModule.assessment
+                    )}
+                  />
+                  <InfoPill
+                    label={t("academy.badge")}
+                    value={readTranslatedToken(
+                      t,
+                      `academy.badges.${academyModule.badge}`,
+                      academyModule.badge
+                    )}
+                  />
+                </div>
+
+                <div className="mt-5 grid gap-3">
+                  <TrainingList
+                    label={t("academy.vocabularyThemes")}
+                    items={(academyModule.vocabularyThemes ?? []).map((theme) =>
+                      readTranslatedToken(
+                        t,
+                        `academy.vocabularyThemeLabels.${theme}`,
+                        theme
+                      )
+                    )}
+                  />
+                  <TrainingList
+                    label={t("academy.listeningActivities")}
+                    items={(academyModule.listeningActivities ?? []).map((activity) =>
+                      readTranslatedToken(
+                        t,
+                        `academy.listeningActivityLabels.${activity}`,
+                        activity
+                      )
+                    )}
+                  />
+                  <TrainingList
+                    label={t("academy.speakingActivities")}
+                    items={(academyModule.speakingActivities ?? []).map((activity) =>
+                      readTranslatedToken(
+                        t,
+                        `academy.speakingActivityLabels.${activity}`,
+                        activity
+                      )
+                    )}
                   />
                 </div>
 
@@ -170,7 +227,7 @@ export function ShipAcademy() {
                 </div>
 
                 <a
-                  href={`/academy/${module.slug}`}
+                  href={`/academy/${academyModule.slug}`}
                   className={`mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg px-4 py-3 text-sm font-bold transition ${
                     isLocked
                       ? "border border-ink/10 bg-[#f6f8f3] text-steel"
@@ -187,6 +244,25 @@ export function ShipAcademy() {
       </section>
     </main>
   );
+}
+
+function isRenderableAcademyModule(
+  academyModule: AcademyModule | undefined
+): academyModule is AcademyModule {
+  return Boolean(
+    academyModule &&
+      academyModule.key &&
+      academyModule.slug &&
+      Number.isFinite(academyModule.unlockRank)
+  );
+}
+
+function readTranslatedToken(
+  t: (key: string) => string,
+  translationKey: string,
+  fallback: string
+) {
+  return t(translationKey) || fallback;
 }
 
 function AcademyHeader() {
@@ -210,10 +286,38 @@ function AcademyHeader() {
             <ArrowLeft className="h-4 w-4" />
             {t("academy.backDashboard")}
           </a>
+          <AuthHeaderActions
+            dashboardLabel={t("nav.dashboard")}
+            loginLabel={t("nav.login")}
+            registerLabel={t("nav.register")}
+            profileLabel={t("nav.profile")}
+            logoutLabel={t("nav.logout")}
+            compact
+          />
           <LanguageSwitcher />
         </div>
       </div>
     </header>
+  );
+}
+
+function TrainingList({ label, items }: { label: string; items: string[] }) {
+  return (
+    <div className="rounded-lg border border-ink/8 bg-[#f6f8f3] p-3">
+      <p className="text-xs font-bold uppercase tracking-[0.12em] text-steel">
+        {label}
+      </p>
+      <div className="mt-2 flex flex-wrap gap-2">
+        {items.map((item) => (
+          <span
+            key={item}
+            className="rounded-lg bg-white px-2.5 py-1 text-xs font-bold text-ink"
+          >
+            {item}
+          </span>
+        ))}
+      </div>
+    </div>
   );
 }
 

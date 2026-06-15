@@ -1,7 +1,0 @@
-{
-  "/page": "app/page.js",
-  "/dashboard/page": "app/dashboard/page.js",
-  "/voyage-log/page": "app/voyage-log/page.js",
-  "/daily-voyage/page": "app/daily-voyage/page.js",
-  "/missions/radio-check/page": "app/missions/radio-check/page.js"
-}

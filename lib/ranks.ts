@@ -92,6 +92,19 @@ export function getRankIndex(xp: number) {
   );
 }
 
+export function getRankByIndex(rankIndex: number) {
+  const index = Math.min(
+    TOTAL_MICRO_RANKS,
+    Math.max(1, Math.floor(rankIndex))
+  );
+
+  return allMicroRanks[index - 1];
+}
+
+export function getNextRankByIndex(rankIndex: number) {
+  return getRankByIndex(Math.min(TOTAL_MICRO_RANKS, rankIndex + 1));
+}
+
 export function getRankByXP(xp: number) {
   return allMicroRanks[getRankIndex(xp) - 1];
 }
@@ -130,8 +143,43 @@ export function getRankProgress(xp: number) {
   };
 }
 
+export function getRankProgressForRankIndex(xp: number, rankIndex: number) {
+  const currentRank = getRankByIndex(rankIndex);
+  const nextRank = getNextRankByIndex(rankIndex);
+
+  if (currentRank.index === TOTAL_MICRO_RANKS) {
+    return {
+      currentRank,
+      nextRank,
+      xpIntoRank: XP_PER_MICRO_RANK,
+      xpForNextRank: XP_PER_MICRO_RANK,
+      percent: 100
+    };
+  }
+
+  const xpIntoRank = Math.max(0, Math.max(0, xp) - currentRank.xpRequired);
+  const percent =
+    Math.max(0, xp) >= nextRank.xpRequired
+      ? 100
+      : Math.max(0, Math.floor((xpIntoRank / XP_PER_MICRO_RANK) * 100));
+
+  return {
+    currentRank,
+    nextRank,
+    xpIntoRank,
+    xpForNextRank: XP_PER_MICRO_RANK,
+    percent: Math.min(100, percent)
+  };
+}
+
 export function getNearbyRanks(xp: number) {
   const currentIndex = getRankIndex(xp);
+
+  return getNearbyRanksByIndex(currentIndex);
+}
+
+export function getNearbyRanksByIndex(rankIndex: number) {
+  const currentIndex = getRankByIndex(rankIndex).index;
   const start = Math.max(1, currentIndex - 1);
   const end = Math.min(TOTAL_MICRO_RANKS, currentIndex + 3);
 

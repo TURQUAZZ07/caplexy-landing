@@ -21,6 +21,7 @@ import {
   Waves
 } from "lucide-react";
 import Image from "next/image";
+import { AuthHeaderActions } from "@/components/auth/AuthHeaderActions";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { I18nProvider, useI18n } from "@/lib/i18n";
 
@@ -68,17 +69,27 @@ function Header() {
           <a href="#how">{t("nav.howItWorks")}</a>
           <a href="#ranks">{t("nav.ranks")}</a>
           <a href="#teachers">{t("nav.teachers")}</a>
-          <a href="/dashboard">{t("nav.dashboard")}</a>
+          <AuthHeaderActions
+            dashboardLabel={t("nav.dashboard")}
+            loginLabel={t("nav.login")}
+            registerLabel={t("nav.register")}
+            profileLabel={t("nav.profile")}
+            logoutLabel={t("nav.logout")}
+          />
         </nav>
 
         <div className="flex items-center gap-2">
           <LanguageSwitcher />
-          <a
-            href="/dashboard"
-            className="inline-flex items-center gap-2 rounded-lg border border-white/18 bg-white/12 px-4 py-2.5 text-sm font-semibold text-white shadow-soft backdrop-blur transition hover:-translate-y-0.5 hover:bg-white/18 md:hidden"
-          >
-            {t("nav.dashboard")}
-          </a>
+          <div className="flex items-center gap-2 md:hidden">
+            <AuthHeaderActions
+              dashboardLabel={t("nav.dashboard")}
+              loginLabel={t("nav.login")}
+              registerLabel={t("nav.register")}
+              profileLabel={t("nav.profile")}
+              logoutLabel={t("nav.logout")}
+              compact
+            />
+          </div>
           <a
             href="#start"
             className="hidden items-center gap-2 rounded-lg bg-white px-4 py-2.5 text-sm font-semibold text-ink shadow-soft transition hover:-translate-y-0.5 hover:bg-foam md:inline-flex"

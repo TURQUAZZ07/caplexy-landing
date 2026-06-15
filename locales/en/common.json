@@ -8,7 +8,11 @@
     "ranks": "Ranks",
     "teachers": "Teachers",
     "dashboard": "Dashboard",
-    "start": "Start"
+    "start": "Start",
+    "login": "Login",
+    "register": "Register",
+    "profile": "Profile",
+    "logout": "Logout"
   },
   "language": {
     "label": "Interface language",
@@ -20,21 +24,46 @@
     "subheadline": "Caplexy turns daily English practice into a naval career journey with missions, ranks, voyages, and rewards.",
     "primaryCta": "Start Your Voyage",
     "secondaryCta": "See How It Works",
-    "badges": ["Daily voyages", "250 micro-ranks", "No flashcards"],
+    "badges": [
+      "Daily voyages",
+      "250 micro-ranks",
+      "No flashcards"
+    ],
     "stats": [
-      ["Current rank", "Deck Cadet 08"],
-      ["Active route", "Harbor to Open Sea"],
-      ["Today", "Watch Duty ready"],
-      ["Next unlock", "Radio Check"]
+      [
+        "Current rank",
+        "Deck Cadet 08"
+      ],
+      [
+        "Active route",
+        "Harbor to Open Sea"
+      ],
+      [
+        "Today",
+        "Watch Duty ready"
+      ],
+      [
+        "Next unlock",
+        "Radio Check"
+      ]
     ]
   },
   "problem": {
     "label": "The problem",
     "headline": "Most learners quit because English apps feel like homework.",
     "cards": [
-      ["Grammar first", "Learners see units, rules, and tests before they feel progress."],
-      ["Weak habit loop", "A simple counter alone is not enough to make practice feel meaningful."],
-      ["Flat identity", "Finishing another exercise rarely feels like becoming someone better."]
+      [
+        "Grammar first",
+        "Learners see units, rules, and tests before they feel progress."
+      ],
+      [
+        "Weak habit loop",
+        "A simple counter alone is not enough to make practice feel meaningful."
+      ],
+      [
+        "Flat identity",
+        "Finishing another exercise rarely feels like becoming someone better."
+      ]
     ]
   },
   "solution": {
@@ -42,11 +71,26 @@
     "headline": "Build the habit through voyages, missions, ranks, and promotions.",
     "body": "Caplexy keeps the learning engine underneath and gives learners a career journey on the surface. English practice becomes something to report for, complete, unlock, and remember.",
     "features": [
-      ["Daily Watch Duty", "A short daily routine that keeps learners moving without making the app feel like homework."],
-      ["Voyage Log", "A motivating record of progress that replaces daily pressure with visible career momentum."],
-      ["Rank Promotions", "Learners rise through 250 micro-ranks and 10 major ranks from Cadet to Admiral."],
-      ["Missions", "Vocabulary, grammar, listening, reading, and speaking become cargo checks, radio calls, and ship logs."],
-      ["Ships and Ports", "New routes, ports, and ships make progress feel like a career journey, not a lesson list."]
+      [
+        "Daily Watch Duty",
+        "A short daily routine that keeps learners moving without making the app feel like homework."
+      ],
+      [
+        "Voyage Log",
+        "A motivating record of progress that replaces daily pressure with visible career momentum."
+      ],
+      [
+        "Rank Promotions",
+        "Learners rise through 250 micro-ranks and 10 major ranks from Cadet to Admiral."
+      ],
+      [
+        "Missions",
+        "Vocabulary, grammar, listening, reading, and speaking become cargo checks, radio calls, and ship logs."
+      ],
+      [
+        "Ships and Ports",
+        "New routes, ports, and ships make progress feel like a career journey, not a lesson list."
+      ]
     ]
   },
   "how": {
@@ -56,7 +100,7 @@
     "progressValue": "68% to next promotion",
     "steps": [
       "Complete daily missions",
-      "Earn XP and progress",
+      "Earn NM and progress",
       "Unlock new ranks",
       "Learn English without feeling like grammar study"
     ]
@@ -67,7 +111,10 @@
     "body": "The first product screens can showcase the Bridge dashboard, Voyage Mode, rank progress, and teacher view while the platform is still in development.",
     "dashboard": "Bridge Dashboard",
     "badge": "Preview",
-    "cards": ["Voyage Mode", "Teacher Panel"]
+    "cards": [
+      "Voyage Mode",
+      "Teacher Panel"
+    ]
   },
   "ranks": {
     "label": "Rank system",
@@ -92,14 +139,35 @@
     "headline": "Learners see the journey. Caplexy handles the curriculum.",
     "userSees": "User sees",
     "systemTeaches": "System teaches",
-    "visible": ["Voyages", "Missions", "Ranks", "Ships", "Ports"],
-    "hidden": ["English vocabulary", "English grammar", "English listening", "English reading", "English speaking"],
+    "visible": [
+      "Voyages",
+      "Missions",
+      "Ranks",
+      "Ships",
+      "Ports"
+    ],
+    "hidden": [
+      "English vocabulary",
+      "English grammar",
+      "English listening",
+      "English reading",
+      "English speaking"
+    ],
     "philosophyTitle": "Interface language and learning language are separate.",
     "philosophyBody": "A Turkish learner can use interface labels like Görevler, Rütbeler, and Seferler while the learning content remains English vocabulary, grammar, listening, reading, and speaking.",
     "games": [
-      ["Cargo Match", "Vocabulary appears as cargo, labels, manifests, and port requests."],
-      ["Fix The Ship Log", "Grammar correction becomes a log repair before departure."],
-      ["Radio Check", "Listening and speaking become realistic maritime communication."]
+      [
+        "Cargo Match",
+        "Vocabulary appears as cargo, labels, manifests, and port requests."
+      ],
+      [
+        "Fix The Ship Log",
+        "Grammar correction becomes a log repair before departure."
+      ],
+      [
+        "Radio Check",
+        "Listening and speaking become realistic maritime communication."
+      ]
     ]
   },
   "teacher": {
@@ -109,9 +177,18 @@
     "panelTitle": "Class Mission Control",
     "badge": "Future",
     "cards": [
-      ["Create classes", "Invite learners and organize cohorts."],
-      ["Assign missions", "Choose skill targets under themed activities."],
-      ["Track progress", "View vocabulary, grammar, listening, reading, and speaking growth."]
+      [
+        "Create classes",
+        "Invite learners and organize cohorts."
+      ],
+      [
+        "Assign missions",
+        "Choose skill targets under themed activities."
+      ],
+      [
+        "Track progress",
+        "View vocabulary, grammar, listening, reading, and speaking growth."
+      ]
     ]
   },
   "finalCta": {
@@ -121,7 +198,12 @@
   },
   "footer": {
     "tagline": "A global English learning platform where interface language adapts to the learner while English remains the learning destination.",
-    "links": ["Missions", "Voyages", "Ranks", "Teacher Mode"]
+    "links": [
+      "Missions",
+      "Voyages",
+      "Ranks",
+      "Teacher Mode"
+    ]
   },
   "dashboard": {
     "nav": {
@@ -132,7 +214,11 @@
       "academy": "Ship Academy",
       "career": "Career",
       "careerPath": "Career Path",
-      "backHome": "Home"
+      "backHome": "Home",
+      "profile": "Profile",
+      "login": "Login",
+      "register": "Register",
+      "logout": "Logout"
     },
     "welcome": {
       "eyebrow": "Learner Bridge",
@@ -142,7 +228,7 @@
       "currentRankValue": "Cadet I",
       "nextRank": "Next rank",
       "nextRankValue": "Cadet II",
-      "xp": "XP",
+      "xp": "NM",
       "xpValue": "1250",
       "progress": "65%",
       "progressLabel": "Micro-rank progress",
@@ -154,7 +240,7 @@
       "title": "Daily Voyage",
       "description": "Complete today's missions and keep your voyage alive.",
       "button": "Start Voyage",
-      "reward": "100 XP possible",
+      "reward": "100 NM possible",
       "progress": "{completed}/{total} completed",
       "completed": "Today's voyage completed."
     },
@@ -179,10 +265,15 @@
     "watchDuty": {
       "title": "Daily Watch Duty",
       "subtitle": "Complete each checkpoint before departure.",
-      "tasks": ["Vocabulary Mission", "Grammar Mission", "Listening Mission", "Quick Review"]
+      "tasks": [
+        "Vocabulary Mission",
+        "Grammar Mission",
+        "Listening Mission",
+        "Quick Review"
+      ]
     },
     "stats": {
-      "totalXp": "Total XP",
+      "totalXp": "Total NM",
       "voyageLog": "Voyage Log",
       "missionsCompleted": "Missions Completed",
       "currentCrew": "Crew Members",
@@ -194,12 +285,32 @@
       "start": "Start",
       "completedToday": "Completed today",
       "difficulty": "Difficulty",
-      "xp": "XP",
+      "xp": "NM",
       "items": [
-        ["Cargo Match", "Match cargo labels to build English vocabulary.", "Easy", "+20 XP"],
-        ["Ship Log Repair", "Repair official ship records before the voyage continues.", "Easy", "+25 XP"],
-        ["Radio Check", "Listen to the transmission and answer like a crew member.", "Medium", "+25 XP"],
-        ["Harbor Quiz", "Review port instructions with a quick mixed challenge.", "Easy", "+15 XP"]
+        [
+          "Cargo Match",
+          "Match cargo labels to build English vocabulary.",
+          "Easy",
+          "+20 NM"
+        ],
+        [
+          "Ship Log Repair",
+          "Repair official ship records before the voyage continues.",
+          "Easy",
+          "+25 NM"
+        ],
+        [
+          "Radio Check",
+          "Listen to the transmission and answer like a crew member.",
+          "Medium",
+          "+25 NM"
+        ],
+        [
+          "Harbor Quiz",
+          "Review port instructions with a quick mixed challenge.",
+          "Easy",
+          "+15 NM"
+        ]
       ]
     },
     "rankPath": {
@@ -219,15 +330,15 @@
     "subtitle": "Match the cargo with the correct meanings.",
     "englishColumn": "English cargo",
     "turkishColumn": "Turkish meanings",
-    "progress": "Matched cargo: {matched}/{total}",
-    "reward": "+25 XP",
+    "progress": "{matched} / {total} cargo matched",
+    "reward": "+25 NM",
     "reset": "Reset mission",
     "feedbackCorrect": "Cargo matched.",
     "feedbackWrong": "Not quite. Try another meaning.",
     "selectPrompt": "Select one English word and one Turkish meaning.",
     "completedTitle": "Voyage completed!",
     "completedMission": "You successfully completed the Cargo Match mission.",
-    "completedReward": "You earned +25 XP.",
+    "completedReward": "You earned +25 NM.",
     "rankProgress": "You are closer to Cadet II.",
     "rankProgressLabel": "Cadet I to Cadet II",
     "rankProgressBefore": "65%",
@@ -242,7 +353,7 @@
     },
     "title": "Radio Check",
     "subtitle": "Listen carefully to the radio transmission.",
-    "reward": "+25 XP",
+    "reward": "+25 NM",
     "progress": "Question {current}/{total}",
     "panelTitle": "Radio Receiver",
     "incoming": "Incoming transmission",
@@ -258,7 +369,7 @@
     },
     "completedTitle": "Mission Completed",
     "completedBody": "Radio Check mission completed successfully.",
-    "completedReward": "You Earned +25 XP",
+    "completedReward": "You Earned +25 NM",
     "returnDashboard": "Return to Dashboard",
     "playAgain": "Play Again"
   },
@@ -268,7 +379,7 @@
     },
     "title": "Ship Log Repair",
     "subtitle": "Repair the records in the ship's log.",
-    "reward": "+25 XP",
+    "reward": "+25 NM",
     "progress": "Record {current}/{total}",
     "percentage": "{percent}% complete",
     "logEntry": "Log Entry",
@@ -290,19 +401,19 @@
     },
     "completedTitle": "Ship Log Repaired",
     "completedBody": "All records have been repaired successfully.",
-    "completedReward": "You earned +25 XP.",
+    "completedReward": "You earned +25 NM.",
     "returnDashboard": "Return to Dashboard",
     "playAgain": "Repair Again"
   },
   "dailyVoyagePage": {
     "title": "Daily Voyage",
     "subtitle": "Complete today's missions and move closer to your next rank.",
-    "reward": "100 XP possible today",
+    "reward": "100 NM possible today",
     "backDashboard": "Back to Dashboard",
     "progress": "{completed}/{total} completed",
-    "totalXp": "Total XP",
+    "totalXp": "Total NM",
     "earnedToday": "Earned today",
-    "xpToday": "{xp} XP",
+    "xpToday": "{xp} NM",
     "voyageLog": "Voyage Log",
     "missionListTitle": "Today's route",
     "missionListSubtitle": "Complete every mission to finish the voyage and claim the bonus.",
@@ -317,11 +428,11 @@
     "rankTitle": "Rank progress",
     "rankRoute": "{current} to {next}",
     "rankBody": "Every completed mission moves you closer to your next micro-rank.",
-    "bonusLockedTitle": "Bonus XP awaiting clearance",
+    "bonusLockedTitle": "Bonus NM awaiting clearance",
     "bonusLockedBody": "Complete all three missions to earn the daily voyage bonus.",
     "completedTitle": "Voyage Completed",
     "completedBody": "All daily missions completed.",
-    "completedReward": "You earned +25 bonus XP.",
+    "completedReward": "You earned +25 bonus NM.",
     "tomorrow": "A new voyage awaits you tomorrow."
   },
   "voyageLog": {
@@ -341,7 +452,7 @@
     "daysRemaining": "{days} days remaining until the next milestone.",
     "currentBadgeProgress": "Current badge progress: {current}/{target} days",
     "milestoneTitle": "Milestone rewards",
-    "milestoneBody": "Milestones reward long voyages with XP and title badges. Badge artwork can be added later.",
+    "milestoneBody": "Milestones reward long voyages with NM and title badges. Badge artwork can be added later.",
     "historyCalendar": "Voyage History Calendar",
     "historyCalendarBody": "Completed voyage days are marked in your maritime logbook.",
     "completedDates": "Completed dates",
@@ -349,7 +460,7 @@
     "completedDatesBody": "Every completed Daily Voyage is recorded in your logbook.",
     "noCompletedDates": "No completed voyage dates yet.",
     "milestones": {
-      "xp50": "+50 XP",
+      "xp50": "+50 NM",
       "steadySailor": "Badge: Steady Sailor",
       "reliableCrewmate": "Badge: Reliable Crewmate",
       "oceanRegular": "Badge: Ocean Regular",
@@ -370,7 +481,6 @@
     "moduleLabel": "Module {number}",
     "requiredRank": "Required rank",
     "rankRequired": "Rank {rank}",
-    "hiddenTopic": "Hidden topic",
     "trainingFocus": "Training focus",
     "trainingProgress": "Training progress",
     "enterTraining": "Enter Training",
@@ -389,7 +499,7 @@
     },
     "summary": {
       "route": "Academy route",
-      "routeValue": "8 structured training modules",
+      "routeValue": "45 rank-based training modules",
       "training": "Training style",
       "trainingValue": "Missions, records, reports, and orders",
       "identity": "Learner identity",
@@ -398,83 +508,790 @@
     "modules": {
       "harborBasics": {
         "title": "Harbor Basics",
-        "description": "Report to the harbor desk, introduce yourself, and learn the first signals every new crew member needs.",
+        "description": "Train in Harbor Basics through shipboard missions, briefings, and operational communication.",
         "focus": "Harbor introductions",
         "objectives": [
-          "Introduce yourself at the academy desk",
-          "Identify people, places, and simple roles",
-          "Understand basic shipboard introductions"
+          "Complete a Harbor Basics briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "crewOrientation": {
+        "title": "Crew Orientation",
+        "description": "Train in Crew Orientation through shipboard missions, briefings, and operational communication.",
+        "focus": "Crew identity checks",
+        "objectives": [
+          "Complete a Crew Orientation briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "cabinReadiness": {
+        "title": "Cabin Readiness",
+        "description": "Train in Cabin Readiness through shipboard missions, briefings, and operational communication.",
+        "focus": "Cabin and room reports",
+        "objectives": [
+          "Complete a Cabin Readiness briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
         ]
       },
       "dailyDeckRoutine": {
         "title": "Daily Deck Routine",
-        "description": "Follow the daily deck schedule and describe the routines that keep a vessel ready for departure.",
+        "description": "Train in Daily Deck Routine through shipboard missions, briefings, and operational communication.",
         "focus": "Daily duty reports",
         "objectives": [
-          "Describe regular ship routines",
-          "Read simple duty schedules",
-          "Report what crew members usually do"
+          "Complete a Daily Deck Routine briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "watchDuty": {
+        "title": "Watch Duty",
+        "description": "Train in Watch Duty through shipboard missions, briefings, and operational communication.",
+        "focus": "Watch rotation habits",
+        "objectives": [
+          "Complete a Watch Duty briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "cargoInspection": {
+        "title": "Cargo Inspection",
+        "description": "Train in Cargo Inspection through shipboard missions, briefings, and operational communication.",
+        "focus": "Cargo labels and quantities",
+        "objectives": [
+          "Complete a Cargo Inspection briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "galleyService": {
+        "title": "Galley Service",
+        "description": "Train in Galley Service through shipboard missions, briefings, and operational communication.",
+        "focus": "Service requests",
+        "objectives": [
+          "Complete a Galley Service briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
         ]
       },
       "weatherWatch": {
         "title": "Weather Watch",
-        "description": "Join the watch team and report what is happening around the ship right now.",
+        "description": "Train in Weather Watch through shipboard missions, briefings, and operational communication.",
         "focus": "Live watch updates",
         "objectives": [
-          "Describe current weather and deck actions",
-          "Understand live status reports",
-          "Choose the right message for an active situation"
+          "Complete a Weather Watch briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "deckOperations": {
+        "title": "Deck Operations",
+        "description": "Train in Deck Operations through shipboard missions, briefings, and operational communication.",
+        "focus": "Deck commands",
+        "objectives": [
+          "Complete a Deck Operations briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "portArrival": {
+        "title": "Port Arrival",
+        "description": "Train in Port Arrival through shipboard missions, briefings, and operational communication.",
+        "focus": "Port location reports",
+        "objectives": [
+          "Complete a Port Arrival briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "passengerAssistance": {
+        "title": "Passenger Assistance",
+        "description": "Train in Passenger Assistance through shipboard missions, briefings, and operational communication.",
+        "focus": "Passenger help desk",
+        "objectives": [
+          "Complete a Passenger Assistance briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "safetyDrill": {
+        "title": "Safety Drill",
+        "description": "Train in Safety Drill through shipboard missions, briefings, and operational communication.",
+        "focus": "Safety rules and duties",
+        "objectives": [
+          "Complete a Safety Drill briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "radioCommunication": {
+        "title": "Radio Communication",
+        "description": "Train in Radio Communication through shipboard missions, briefings, and operational communication.",
+        "focus": "Radio message exchange",
+        "objectives": [
+          "Complete a Radio Communication briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "emergencySignals": {
+        "title": "Emergency Signals",
+        "description": "Train in Emergency Signals through shipboard missions, briefings, and operational communication.",
+        "focus": "Warnings and alarms",
+        "objectives": [
+          "Complete a Emergency Signals briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "navigationBriefing": {
+        "title": "Navigation Briefing",
+        "description": "Train in Navigation Briefing through shipboard missions, briefings, and operational communication.",
+        "focus": "Route sequence briefings",
+        "objectives": [
+          "Complete a Navigation Briefing briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
         ]
       },
       "voyageRecords": {
         "title": "Voyage Records",
-        "description": "Review completed voyages and repair short records from earlier routes.",
+        "description": "Train in Voyage Records through shipboard missions, briefings, and operational communication.",
         "focus": "Completed voyage notes",
         "objectives": [
-          "Read short past voyage notes",
-          "Report completed actions",
-          "Repair basic record entries"
+          "Complete a Voyage Records briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "maintenanceBay": {
+        "title": "Maintenance Bay",
+        "description": "Train in Maintenance Bay through shipboard missions, briefings, and operational communication.",
+        "focus": "Repair requests",
+        "objectives": [
+          "Complete a Maintenance Bay briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "engineRoomUpdate": {
+        "title": "Engine Room Update",
+        "description": "Train in Engine Room Update through shipboard missions, briefings, and operational communication.",
+        "focus": "System status updates",
+        "objectives": [
+          "Complete a Engine Room Update briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
         ]
       },
       "stormReports": {
         "title": "Storm Reports",
-        "description": "Study storm reports and explain what was happening when conditions changed at sea.",
+        "description": "Train in Storm Reports through shipboard missions, briefings, and operational communication.",
         "focus": "Incident reports",
         "objectives": [
-          "Connect past events to ongoing actions",
-          "Understand weather incident reports",
-          "Describe interrupted ship operations"
+          "Complete a Storm Reports briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "medicalBay": {
+        "title": "Medical Bay",
+        "description": "Train in Medical Bay through shipboard missions, briefings, and operational communication.",
+        "focus": "Care advice",
+        "objectives": [
+          "Complete a Medical Bay briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "supplyRequest": {
+        "title": "Supply Request",
+        "description": "Train in Supply Request through shipboard missions, briefings, and operational communication.",
+        "focus": "Supply quantities",
+        "objectives": [
+          "Complete a Supply Request briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "customsClearance": {
+        "title": "Customs Clearance",
+        "description": "Train in Customs Clearance through shipboard missions, briefings, and operational communication.",
+        "focus": "Formal inspection answers",
+        "objectives": [
+          "Complete a Customs Clearance briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "crewCoordination": {
+        "title": "Crew Coordination",
+        "description": "Train in Crew Coordination through shipboard missions, briefings, and operational communication.",
+        "focus": "Task handovers",
+        "objectives": [
+          "Complete a Crew Coordination briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
         ]
       },
       "captainsOrders": {
         "title": "Captain's Orders",
-        "description": "Interpret orders, permissions, and safety instructions from the captain's bridge.",
+        "description": "Train in Captain's Orders through shipboard missions, briefings, and operational communication.",
         "focus": "Bridge commands",
         "objectives": [
-          "Understand duty instructions",
-          "Use permission and obligation language",
-          "Choose safe responses to ship commands"
+          "Complete a Captain's Orders briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "routePlanning": {
+        "title": "Route Planning",
+        "description": "Train in Route Planning through shipboard missions, briefings, and operational communication.",
+        "focus": "Route planning",
+        "objectives": [
+          "Complete a Route Planning briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
         ]
       },
       "futureRoutes": {
         "title": "Future Routes",
-        "description": "Plan upcoming routes, schedules, and port arrivals with the navigation team.",
-        "focus": "Route planning",
+        "description": "Train in Future Routes through shipboard missions, briefings, and operational communication.",
+        "focus": "Future schedules",
         "objectives": [
-          "Talk about planned routes",
-          "Read upcoming voyage schedules",
-          "Choose accurate future route messages"
+          "Complete a Future Routes briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "harborNegotiation": {
+        "title": "Harbor Negotiation",
+        "description": "Train in Harbor Negotiation through shipboard missions, briefings, and operational communication.",
+        "focus": "Harbor service choices",
+        "objectives": [
+          "Complete a Harbor Negotiation briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "fleetComparison": {
+        "title": "Fleet Comparison",
+        "description": "Train in Fleet Comparison through shipboard missions, briefings, and operational communication.",
+        "focus": "Ship and fleet comparisons",
+        "objectives": [
+          "Complete a Fleet Comparison briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
         ]
       },
       "missionConditions": {
         "title": "Mission Conditions",
-        "description": "Handle mission briefings where each decision depends on weather, cargo, and crew readiness.",
+        "description": "Train in Mission Conditions through shipboard missions, briefings, and operational communication.",
         "focus": "Conditional mission briefings",
         "objectives": [
-          "Understand if-then mission briefings",
-          "Choose actions based on conditions",
-          "Read conditional safety instructions"
+          "Complete a Mission Conditions briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
         ]
+      },
+      "shoreLeave": {
+        "title": "Shore Leave",
+        "description": "Train in Shore Leave through shipboard missions, briefings, and operational communication.",
+        "focus": "Invitations and plans",
+        "objectives": [
+          "Complete a Shore Leave briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "incidentInvestigation": {
+        "title": "Incident Investigation",
+        "description": "Train in Incident Investigation through shipboard missions, briefings, and operational communication.",
+        "focus": "Timeline reports",
+        "objectives": [
+          "Complete a Incident Investigation briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "rescueCoordination": {
+        "title": "Rescue Coordination",
+        "description": "Train in Rescue Coordination through shipboard missions, briefings, and operational communication.",
+        "focus": "Rescue instructions",
+        "objectives": [
+          "Complete a Rescue Coordination briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "diplomaticPortCall": {
+        "title": "Diplomatic Port Call",
+        "description": "Train in Diplomatic Port Call through shipboard missions, briefings, and operational communication.",
+        "focus": "Formal port protocol",
+        "objectives": [
+          "Complete a Diplomatic Port Call briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "advancedRadioRelay": {
+        "title": "Advanced Radio Relay",
+        "description": "Train in Advanced Radio Relay through shipboard missions, briefings, and operational communication.",
+        "focus": "Relayed messages",
+        "objectives": [
+          "Complete a Advanced Radio Relay briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "environmentalWatch": {
+        "title": "Environmental Watch",
+        "description": "Train in Environmental Watch through shipboard missions, briefings, and operational communication.",
+        "focus": "Cause and prevention reports",
+        "objectives": [
+          "Complete a Environmental Watch briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "securityPatrol": {
+        "title": "Security Patrol",
+        "description": "Train in Security Patrol through shipboard missions, briefings, and operational communication.",
+        "focus": "Security descriptions",
+        "objectives": [
+          "Complete a Security Patrol briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "internationalCrew": {
+        "title": "International Crew",
+        "description": "Train in International Crew through shipboard missions, briefings, and operational communication.",
+        "focus": "Cross-cultural teamwork",
+        "objectives": [
+          "Complete a International Crew briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "technicalManuals": {
+        "title": "Technical Manuals",
+        "description": "Train in Technical Manuals through shipboard missions, briefings, and operational communication.",
+        "focus": "Technical process reading",
+        "objectives": [
+          "Complete a Technical Manuals briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "leadershipBriefing": {
+        "title": "Leadership Briefing",
+        "description": "Train in Leadership Briefing through shipboard missions, briefings, and operational communication.",
+        "focus": "Recommendations and strategy",
+        "objectives": [
+          "Complete a Leadership Briefing briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "crisisCommand": {
+        "title": "Crisis Command",
+        "description": "Train in Crisis Command through shipboard missions, briefings, and operational communication.",
+        "focus": "Crisis updates",
+        "objectives": [
+          "Complete a Crisis Command briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "fleetLogistics": {
+        "title": "Fleet Logistics",
+        "description": "Train in Fleet Logistics through shipboard missions, briefings, and operational communication.",
+        "focus": "Fleet schedules and supplies",
+        "objectives": [
+          "Complete a Fleet Logistics briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "oceanDiplomacy": {
+        "title": "Ocean Diplomacy",
+        "description": "Train in Ocean Diplomacy through shipboard missions, briefings, and operational communication.",
+        "focus": "Negotiation at sea",
+        "objectives": [
+          "Complete a Ocean Diplomacy briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "admiralStrategy": {
+        "title": "Admiral Strategy",
+        "description": "Train in Admiral Strategy through shipboard missions, briefings, and operational communication.",
+        "focus": "Strategic reasoning",
+        "objectives": [
+          "Complete a Admiral Strategy briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "masterCommand": {
+        "title": "Master Command",
+        "description": "Train in Master Command through shipboard missions, briefings, and operational communication.",
+        "focus": "Integrated command",
+        "objectives": [
+          "Complete a Master Command briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      },
+      "caplexyAdmiralty": {
+        "title": "Caplexy Admiralty",
+        "description": "Train in Caplexy Admiralty through shipboard missions, briefings, and operational communication.",
+        "focus": "Final admiralty briefing",
+        "objectives": [
+          "Complete a Caplexy Admiralty briefing",
+          "Use the right maritime communication for the situation",
+          "Prepare for the next academy training rank"
+        ]
+      }
+    },
+    "vocabularyThemes": "Vocabulary themes",
+    "listeningActivities": "Listening",
+    "speakingActivities": "Speaking",
+    "assessment": "Assessment",
+    "badge": "Academy badge",
+    "vocabularyThemeLabels": {
+      "identity": "Identity",
+      "harbor": "Harbor",
+      "roles": "Roles",
+      "crew": "Crew",
+      "documents": "Documents",
+      "cabins": "Cabins",
+      "objects": "Objects",
+      "locations": "Locations",
+      "routine": "Routine",
+      "deck": "Deck",
+      "time": "Time",
+      "watch": "Watch duty",
+      "frequency": "Frequency",
+      "duties": "Duties",
+      "cargo": "Cargo",
+      "quantities": "Quantities",
+      "labels": "Labels",
+      "food": "Food",
+      "service": "Service",
+      "requests": "Requests",
+      "weather": "Weather",
+      "sea": "Sea conditions",
+      "actions": "Actions",
+      "equipment": "Equipment",
+      "movement": "Movement",
+      "safety": "Safety",
+      "port": "Port",
+      "directions": "Directions",
+      "passengers": "Passengers",
+      "help": "Help",
+      "questions": "Questions",
+      "rules": "Rules",
+      "radio": "Radio",
+      "signals": "Signals",
+      "messages": "Messages",
+      "emergency": "Emergency",
+      "hazards": "Hazards",
+      "navigation": "Navigation",
+      "routes": "Routes",
+      "sequence": "Sequence",
+      "records": "Records",
+      "voyage": "Voyage",
+      "events": "Events",
+      "maintenance": "Maintenance",
+      "tools": "Tools",
+      "problems": "Problems",
+      "engine": "Engine",
+      "systems": "Systems",
+      "status": "Status",
+      "storm": "Storm",
+      "incidents": "Incidents",
+      "health": "Health",
+      "injury": "Injury",
+      "advice": "Advice",
+      "supplies": "Supplies",
+      "customs": "Customs",
+      "inspection": "Inspection",
+      "teamwork": "Teamwork",
+      "tasks": "Tasks",
+      "people": "People",
+      "orders": "Orders",
+      "permission": "Permission",
+      "obligation": "Obligation",
+      "plans": "Plans",
+      "future": "Future routes",
+      "schedule": "Schedule",
+      "arrival": "Arrival",
+      "prices": "Prices",
+      "choices": "Choices",
+      "fleet": "Fleet",
+      "ships": "Ships",
+      "features": "Features",
+      "conditions": "Conditions",
+      "mission": "Mission",
+      "decisions": "Decisions",
+      "city": "City",
+      "freeTime": "Free time",
+      "invitations": "Invitations",
+      "evidence": "Evidence",
+      "timeline": "Timeline",
+      "rescue": "Rescue",
+      "coordination": "Coordination",
+      "urgency": "Urgency",
+      "diplomacy": "Diplomacy",
+      "welcome": "Welcome",
+      "protocol": "Protocol",
+      "relay": "Relay",
+      "reports": "Reports",
+      "environment": "Environment",
+      "pollution": "Pollution",
+      "prevention": "Prevention",
+      "security": "Security",
+      "areas": "Areas",
+      "culture": "Culture",
+      "communication": "Communication",
+      "manuals": "Manuals",
+      "process": "Process",
+      "leadership": "Leadership",
+      "strategy": "Strategy",
+      "recommendations": "Recommendations",
+      "crisis": "Crisis",
+      "updates": "Updates",
+      "logistics": "Logistics",
+      "negotiation": "Negotiation",
+      "agreement": "Agreement",
+      "risk": "Risk",
+      "planning": "Planning",
+      "command": "Command",
+      "admiralty": "Admiralty",
+      "career": "Career",
+      "legacy": "Legacy"
+    },
+    "listeningActivityLabels": {
+      "arrivalCall": "Arrival call",
+      "crewBriefing": "Crew briefing",
+      "cabinInspection": "Cabin inspection",
+      "dutySchedule": "Duty schedule",
+      "watchRotation": "Watch rotation",
+      "cargoManifest": "Cargo manifest",
+      "serviceOrder": "Service order",
+      "weatherUpdate": "Weather update",
+      "deckCommand": "Deck command",
+      "arrivalInstructions": "Arrival instructions",
+      "helpDeskCall": "Help desk call",
+      "safetyAnnouncement": "Safety announcement",
+      "radioTransmission": "Radio transmission",
+      "alarmMessage": "Alarm message",
+      "routeBriefing": "Route briefing",
+      "logReview": "Log review",
+      "repairRequest": "Repair request",
+      "engineUpdate": "Engine update",
+      "stormReport": "Storm report",
+      "medicalCall": "Medical call",
+      "supplyList": "Supply list",
+      "customsInterview": "Customs interview",
+      "teamBriefing": "Team briefing",
+      "captainBriefing": "Captain briefing",
+      "planningMeeting": "Planning meeting",
+      "futureSchedule": "Future schedule",
+      "harborOffer": "Harbor offer",
+      "fleetBrief": "Fleet brief",
+      "missionBriefing": "Mission briefing",
+      "shorePlan": "Shore plan",
+      "incidentInterview": "Incident interview",
+      "rescueCall": "Rescue call",
+      "welcomeMessage": "Welcome message",
+      "relayMessage": "Relay message",
+      "environmentReport": "Environment report",
+      "patrolBrief": "Patrol brief",
+      "cultureBrief": "Culture brief",
+      "manualInstruction": "Manual instruction",
+      "leadershipBrief": "Leadership brief",
+      "crisisUpdate": "Crisis update",
+      "logisticsReport": "Logistics report",
+      "agreementCall": "Agreement call",
+      "strategyBrief": "Strategy brief",
+      "commandScenario": "Command scenario",
+      "admiraltyReview": "Admiralty review"
+    },
+    "speakingActivityLabels": {
+      "selfIntroduction": "Self introduction",
+      "crewCheckIn": "Crew check-in",
+      "roomReport": "Room report",
+      "dailyReport": "Daily report",
+      "watchHandover": "Watch handover",
+      "cargoReport": "Cargo report",
+      "politeRequest": "Polite request",
+      "liveStatus": "Live status",
+      "commandResponse": "Command response",
+      "locationReport": "Location report",
+      "assistanceDialogue": "Assistance dialogue",
+      "safetyInstruction": "Safety instruction",
+      "radioReply": "Radio reply",
+      "warningCall": "Warning call",
+      "routeSummary": "Route summary",
+      "pastReport": "Past report",
+      "maintenanceReport": "Maintenance report",
+      "systemStatus": "System status",
+      "incidentSummary": "Incident summary",
+      "careAdvice": "Care advice",
+      "supplyRequest": "Supply request",
+      "formalAnswer": "Formal answer",
+      "taskAssignment": "Task assignment",
+      "orderResponse": "Order response",
+      "routePlan": "Route plan",
+      "arrivalPlan": "Arrival plan",
+      "compareOptions": "Compare options",
+      "shipComparison": "Ship comparison",
+      "conditionalPlan": "Conditional plan",
+      "invitationReply": "Invitation reply",
+      "timelineReport": "Timeline report",
+      "rescueInstruction": "Rescue instruction",
+      "formalGreeting": "Formal greeting",
+      "messageRelay": "Message relay",
+      "causeReport": "Cause report",
+      "securityDescription": "Security description",
+      "teamConversation": "Team conversation",
+      "processExplanation": "Process explanation",
+      "recommendation": "Recommendation",
+      "commandBrief": "Command brief",
+      "scheduleBrief": "Schedule brief",
+      "negotiateTerms": "Negotiate terms",
+      "strategicReport": "Strategic report",
+      "missionCommand": "Mission command",
+      "finalBriefing": "Final briefing"
+    },
+    "assessments": {
+      "harborCheck": "Harbor check",
+      "orientationReport": "Orientation report",
+      "cabinChecklist": "Cabin checklist",
+      "routineLog": "Routine log",
+      "watchRecord": "Watch record",
+      "cargoAudit": "Cargo audit",
+      "serviceBrief": "Service brief",
+      "weatherReport": "Weather report",
+      "operationCheck": "Operation check",
+      "arrivalMap": "Arrival map",
+      "assistanceReview": "Assistance review",
+      "safetyClearance": "Safety clearance",
+      "radioCheck": "Radio check",
+      "signalTest": "Signal test",
+      "navigationQuiz": "Navigation quiz",
+      "recordRepair": "Record repair",
+      "maintenanceTicket": "Maintenance ticket",
+      "engineStatus": "Engine status",
+      "stormLog": "Storm log",
+      "medicalNote": "Medical note",
+      "supplyForm": "Supply form",
+      "clearanceForm": "Clearance form",
+      "coordinationCheck": "Coordination check",
+      "ordersReview": "Orders review",
+      "routePlanReview": "Route plan review",
+      "futureRouteBrief": "Future route brief",
+      "offerReview": "Offer review",
+      "fleetReview": "Fleet review",
+      "missionDecision": "Mission decision",
+      "shorePlanCheck": "Shore plan check",
+      "investigationFile": "Investigation file",
+      "rescueProtocol": "Rescue protocol",
+      "protocolReview": "Protocol review",
+      "relayAccuracy": "Relay accuracy",
+      "environmentChecklist": "Environment checklist",
+      "patrolReport": "Patrol report",
+      "crewCultureCheck": "Crew culture check",
+      "manualReview": "Manual review",
+      "leadershipReview": "Leadership review",
+      "crisisSimulation": "Crisis simulation",
+      "logisticsPlan": "Logistics plan",
+      "agreementDraft": "Agreement draft",
+      "strategyReview": "Strategy review",
+      "commandAssessment": "Command assessment",
+      "admiraltyBoard": "Admiralty board"
+    },
+    "badges": {
+      "harborCadet": "Harbor Cadet",
+      "newCrew": "New Crew",
+      "cabinReady": "Cabin Ready",
+      "deckRoutine": "Deck Routine",
+      "watchKeeper": "Watch Keeper",
+      "cargoInspector": "Cargo Inspector",
+      "galleyCrew": "Galley Crew",
+      "weatherWatcher": "Weather Watcher",
+      "deckOperator": "Deck Operator",
+      "portGuide": "Port Guide",
+      "guestSupport": "Guest Support",
+      "safetyReady": "Safety Ready",
+      "radioOperator": "Radio Operator",
+      "signalOfficer": "Signal Officer",
+      "juniorNavigator": "Junior Navigator",
+      "logOfficer": "Log Officer",
+      "repairCrew": "Repair Crew",
+      "engineRunner": "Engine Runner",
+      "stormReporter": "Storm Reporter",
+      "medicalAssistant": "Medical Assistant",
+      "supplyOfficer": "Supply Officer",
+      "clearanceReady": "Clearance Ready",
+      "crewCoordinator": "Crew Coordinator",
+      "ordersOfficer": "Orders Officer",
+      "routePlanner": "Route Planner",
+      "futureNavigator": "Future Navigator",
+      "harborNegotiator": "Harbor Negotiator",
+      "fleetAnalyst": "Fleet Analyst",
+      "missionPlanner": "Mission Planner",
+      "shoreCoordinator": "Shore Coordinator",
+      "incidentAnalyst": "Incident Analyst",
+      "rescueCoordinator": "Rescue Coordinator",
+      "portDiplomat": "Port Diplomat",
+      "relayOfficer": "Relay Officer",
+      "ecoWatch": "Eco Watch",
+      "securityPatrol": "Security Patrol",
+      "globalCrew": "Global Crew",
+      "manualReader": "Manual Reader",
+      "teamLead": "Team Lead",
+      "crisisCommander": "Crisis Commander",
+      "fleetLogistician": "Fleet Logistician",
+      "oceanDiplomat": "Ocean Diplomat",
+      "strategist": "Strategist",
+      "masterCommander": "Master Commander",
+      "admiraltyGraduate": "Admiralty Graduate"
+    },
+    "trainingFlow": {
+      "stepLabel": "Step {number}",
+      "title": "Training route",
+      "body": "Complete the academy sequence as a maritime training mission. The learning system stays underneath while the surface feels like career preparation.",
+      "startAction": "Start",
+      "lockedAction": "Locked",
+      "overview": {
+        "title": "Overview",
+        "body": "Read the briefing and understand what this academy module prepares you to do at sea."
+      },
+      "vocabulary": {
+        "title": "Vocabulary section",
+        "body": "Train with the operational words you will need during this module."
+      },
+      "listening": {
+        "title": "Listening mission",
+        "body": "Receive a maritime transmission and identify the correct information."
+      },
+      "speaking": {
+        "title": "Speaking mission",
+        "body": "Respond like a crew member with clear, useful communication."
+      },
+      "miniGame": {
+        "title": "Mini-game mission",
+        "body": "Practice the module through a fast mission-style challenge."
+      },
+      "assessment": {
+        "title": "Promotion Assessment",
+        "body": "Complete the final academy check before this training counts toward promotion."
       }
     }
   },
@@ -486,14 +1303,41 @@
   "career": {
     "title": "Caplexy Career Path",
     "subtitle": "250 micro-ranks across 50 maritime career groups.",
-    "currentXp": "Current XP",
+    "currentXp": "Current NM",
     "currentRank": "Current rank",
     "progress": "Progress to next micro-rank",
     "backDashboard": "Return to Dashboard",
-    "xpRequired": "{xp} XP",
+    "xpRequired": "{xp} NM",
     "rankNumber": "Rank {rank} / 250",
     "completed": "Completed",
     "current": "Current",
     "locked": "Locked"
+  },
+  "auth": {
+    "login": {
+      "eyebrow": "Return to the bridge",
+      "title": "Login",
+      "description": "Sign in to continue your maritime English career."
+    },
+    "register": {
+      "eyebrow": "Create your crew record",
+      "title": "Create Account",
+      "description": "Start saving your Caplexy rank, academy progress, and mission record."
+    },
+    "fields": {
+      "username": "Username",
+      "email": "Email",
+      "password": "Password"
+    },
+    "actions": {
+      "login": "Login",
+      "register": "Register",
+      "createAccount": "Create Account",
+      "pleaseWait": "Please wait..."
+    },
+    "links": {
+      "hasAccount": "Already have an account?",
+      "noAccount": "No account yet?"
+    }
   }
 }

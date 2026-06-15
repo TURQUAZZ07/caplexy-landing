@@ -9,15 +9,15 @@ export default async function AcademyModulePage({
   params: Promise<{ slug: string }>;
 }) {
   const { slug } = await params;
-  const module = getAcademyModuleBySlug(slug);
+  const academyModule = getAcademyModuleBySlug(slug);
 
-  if (!module) {
+  if (!academyModule) {
     notFound();
   }
 
   return (
     <I18nProvider>
-      <AcademyModuleOverview module={module} />
+      <AcademyModuleOverview academyModule={academyModule} />
     </I18nProvider>
   );
 }

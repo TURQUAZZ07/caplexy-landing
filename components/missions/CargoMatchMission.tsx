@@ -14,6 +14,8 @@ import {
 import { useMemo, useState } from "react";
 import { LanguageSwitcher } from "@/components/i18n/LanguageSwitcher";
 import { useI18n } from "@/lib/i18n";
+import { completeSupabaseMission } from "@/lib/missions/completeSupabaseMission";
+import type { MissionPromotion } from "@/lib/missions/completeSupabaseMission";
 import { usePlayerProgress } from "@/lib/progress";
 
 type CargoPair = {
@@ -34,6 +36,7 @@ const cargoPairs: CargoPair[] = [
 ];
 
 const meaningOrder = ["harbor", "ship", "storm", "captain", "crew", "voyage"];
+const cargoMatchReward = 25;
 
 export function CargoMatchMission() {
   const { t } = useI18n();
@@ -41,8 +44,12 @@ export function CargoMatchMission() {
   const [selectedEnglish, setSelectedEnglish] = useState<string | null>(null);
   const [selectedTurkish, setSelectedTurkish] = useState<string | null>(null);
   const [matchedIds, setMatchedIds] = useState<string[]>([]);
+  const [removingIds, setRemovingIds] = useState<string[]>([]);
+  const [removedIds, setRemovedIds] = useState<string[]>([]);
   const [feedbackKey, setFeedbackKey] = useState<FeedbackKey>("selectPrompt");
   const [hasAwardedXp, setHasAwardedXp] = useState(false);
+  const [syncMessage, setSyncMessage] = useState("");
+  const [promotion, setPromotion] = useState<MissionPromotion | null>(null);
 
   const meaningCards = useMemo(
     () =>
@@ -54,12 +61,13 @@ export function CargoMatchMission() {
 
   const matchedCount = matchedIds.length;
   const isComplete = matchedCount === cargoPairs.length;
+  const shouldShowCompletion = isComplete && removingIds.length === 0;
   const progressText = t("cargoMatch.progress")
     .replace("{matched}", String(matchedCount))
     .replace("{total}", String(cargoPairs.length));
 
   function selectEnglish(id: string) {
-    if (matchedIds.includes(id) || isComplete) {
+    if (matchedIds.includes(id) || removingIds.includes(id) || isComplete) {
       return;
     }
 
@@ -72,7 +80,7 @@ export function CargoMatchMission() {
   }
 
   function selectTurkish(id: string) {
-    if (matchedIds.includes(id) || isComplete) {
+    if (matchedIds.includes(id) || removingIds.includes(id) || isComplete) {
       return;
     }
 
@@ -91,10 +99,21 @@ export function CargoMatchMission() {
         : [...matchedIds, englishId];
 
       setMatchedIds(nextMatchedIds);
+      setRemovingIds((current) =>
+        current.includes(englishId) ? current : [...current, englishId]
+      );
       setFeedbackKey("feedbackCorrect");
+
+      window.setTimeout(() => {
+        setRemovedIds((current) =>
+          current.includes(englishId) ? current : [...current, englishId]
+        );
+        setRemovingIds((current) => current.filter((id) => id !== englishId));
+      }, 360);
 
       if (nextMatchedIds.length === cargoPairs.length && !hasAwardedXp) {
         completeCargoMatch();
+        void syncCargoMatchCompletion();
         setHasAwardedXp(true);
       }
     } else {
@@ -111,8 +130,49 @@ export function CargoMatchMission() {
     setSelectedEnglish(null);
     setSelectedTurkish(null);
     setMatchedIds([]);
+    setRemovingIds([]);
+    setRemovedIds([]);
     setFeedbackKey("selectPrompt");
     setHasAwardedXp(false);
+    setSyncMessage("");
+    setPromotion(null);
+  }
+
+  async function syncCargoMatchCompletion() {
+    setSyncMessage("Saving mission progress...");
+
+    const result = await completeSupabaseMission({
+      moduleSlug: "harbor-basics",
+      missionKey: "cargo-match",
+      reward: cargoMatchReward
+    });
+
+    if (result.error) {
+      const isLocalFallback =
+        result.error.includes("No authenticated user") ||
+        result.error.includes("Supabase is not configured");
+
+      if (!isLocalFallback) {
+        console.error("[Cargo Match] Supabase sync failed:", result.error);
+      }
+
+      setSyncMessage(
+        isLocalFallback
+          ? "Mission completed locally. Sign in to sync NM."
+          : `Supabase sync error: ${result.error}`
+      );
+      return;
+    }
+
+    setSyncMessage(
+      result.awarded
+        ? "Mission progress saved. +25 NM added to your profile."
+        : "Mission progress already saved today."
+    );
+
+    if (result.promotion) {
+      setPromotion(result.promotion);
+    }
   }
 
   return (
@@ -174,8 +234,8 @@ export function CargoMatchMission() {
       </section>
 
       <section className="section-shell py-8 sm:py-10 lg:py-12">
-        {isComplete ? (
-          <CompletionPanel onReset={resetMission} />
+        {shouldShowCompletion ? (
+          <CompletionPanel onReset={resetMission} syncMessage={syncMessage} />
         ) : (
           <>
             <div className="mb-6 flex flex-col justify-between gap-3 rounded-lg border border-ink/8 bg-white p-4 shadow-soft sm:flex-row sm:items-center">
@@ -201,6 +261,8 @@ export function CargoMatchMission() {
                 cards={cargoPairs}
                 selectedId={selectedEnglish}
                 matchedIds={matchedIds}
+                removingIds={removingIds}
+                removedIds={removedIds}
                 side="english"
                 onSelect={selectEnglish}
               />
@@ -209,6 +271,8 @@ export function CargoMatchMission() {
                 cards={meaningCards}
                 selectedId={selectedTurkish}
                 matchedIds={matchedIds}
+                removingIds={removingIds}
+                removedIds={removedIds}
                 side="turkish"
                 onSelect={selectTurkish}
               />
@@ -216,6 +280,12 @@ export function CargoMatchMission() {
           </>
         )}
       </section>
+      {promotion ? (
+        <PromotionModal
+          promotion={promotion}
+          onClose={() => setPromotion(null)}
+        />
+      ) : null}
     </main>
   );
 }
@@ -225,6 +295,8 @@ function CargoColumn({
   cards,
   selectedId,
   matchedIds,
+  removingIds,
+  removedIds,
   side,
   onSelect
 }: {
@@ -232,15 +304,20 @@ function CargoColumn({
   cards: CargoPair[];
   selectedId: string | null;
   matchedIds: string[];
+  removingIds: string[];
+  removedIds: string[];
   side: "english" | "turkish";
   onSelect: (id: string) => void;
 }) {
+  const visibleCards = cards.filter((pair) => !removedIds.includes(pair.id));
+
   return (
     <section className="rounded-lg border border-ink/8 bg-white p-5 shadow-soft">
       <h2 className="text-xl font-semibold text-ink">{title}</h2>
       <div className="mt-5 grid gap-3">
-        {cards.map((pair) => {
+        {visibleCards.map((pair) => {
           const isMatched = matchedIds.includes(pair.id);
+          const isRemoving = removingIds.includes(pair.id);
           const isSelected = selectedId === pair.id;
 
           return (
@@ -249,13 +326,13 @@ function CargoColumn({
               type="button"
               disabled={isMatched}
               onClick={() => onSelect(pair.id)}
-              className={`flex min-h-16 items-center justify-between rounded-lg border p-4 text-left font-semibold transition ${
+              className={`flex min-h-16 items-center justify-between rounded-lg border p-4 text-left font-semibold transition duration-300 ${
                 isMatched
                   ? "border-tide bg-tide/12 text-tide"
                   : isSelected
                     ? "border-signal bg-signal/18 text-ink shadow-glow"
                     : "border-ink/8 bg-[#f7f9f4] text-ink hover:-translate-y-0.5 hover:border-tide/30 hover:bg-white"
-              }`}
+              } ${isRemoving ? "scale-95 opacity-0" : "scale-100 opacity-100"}`}
             >
               <span>{side === "english" ? pair.english : pair.turkish}</span>
               {isMatched ? (
@@ -271,7 +348,13 @@ function CargoColumn({
   );
 }
 
-function CompletionPanel({ onReset }: { onReset: () => void }) {
+function CompletionPanel({
+  onReset,
+  syncMessage
+}: {
+  onReset: () => void;
+  syncMessage: string;
+}) {
   const { t } = useI18n();
 
   return (
@@ -296,6 +379,9 @@ function CompletionPanel({ onReset }: { onReset: () => void }) {
           <Sparkles className="h-5 w-5 text-tide" />
           {t("cargoMatch.completedReward")}
         </div>
+        {syncMessage ? (
+          <p className="mt-4 text-sm font-semibold text-tide">{syncMessage}</p>
+        ) : null}
 
         <div className="mt-6 rounded-lg border border-ink/8 bg-[#f6f8f3] p-5 text-left">
           <div className="flex items-center gap-3">
@@ -346,5 +432,62 @@ function CompletionPanel({ onReset }: { onReset: () => void }) {
         </div>
       </div>
     </section>
+  );
+}
+
+function PromotionModal({
+  promotion,
+  onClose
+}: {
+  promotion: MissionPromotion;
+  onClose: () => void;
+}) {
+  return (
+    <div className="fixed inset-0 z-50 grid place-items-center bg-ink/72 px-4 py-6 backdrop-blur-sm">
+      <section className="w-full max-w-lg overflow-hidden rounded-lg border border-white/14 bg-white text-center text-ink shadow-glow">
+        <div className="relative bg-ink p-8 text-white">
+          <div className="absolute inset-0 bg-chart-grid bg-[size:40px_40px] opacity-10" />
+          <div className="relative">
+            <div className="mx-auto grid h-20 w-20 place-items-center rounded-lg bg-signal text-ink shadow-glow">
+              <Medal className="h-10 w-10" />
+            </div>
+            <p className="mt-6 text-sm font-bold uppercase tracking-[0.18em] text-signal">
+              PROMOTION ACHIEVED
+            </p>
+            <h2 className="mt-3 text-3xl font-semibold">
+              New Rank: {promotion.newRankName}
+            </h2>
+          </div>
+        </div>
+
+        <div className="p-6 sm:p-8">
+          <div className="grid gap-3 text-left">
+            <PromotionRow label="Current NM" value={String(promotion.currentNm)} />
+            <PromotionRow label="Next Rank" value={promotion.nextRankName} />
+            <PromotionRow
+              label="NM remaining to next promotion"
+              value={String(promotion.nmRemaining)}
+            />
+          </div>
+
+          <button
+            type="button"
+            onClick={onClose}
+            className="mt-7 inline-flex w-full items-center justify-center rounded-lg bg-ink px-6 py-3 text-sm font-bold text-white transition hover:-translate-y-0.5 hover:bg-harbor"
+          >
+            Continue Voyage
+          </button>
+        </div>
+      </section>
+    </div>
+  );
+}
+
+function PromotionRow({ label, value }: { label: string; value: string }) {
+  return (
+    <div className="flex items-center justify-between gap-4 rounded-lg border border-ink/8 bg-[#f6f8f3] p-4">
+      <span className="text-sm font-semibold text-steel">{label}</span>
+      <span className="text-sm font-bold text-ink">{value}</span>
+    </div>
   );
 }
